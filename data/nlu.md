@@ -22,7 +22,6 @@
 - hello
 - Tjena tjena
 - hej?
-- Hej bot
 - Yo
 - yoyo
 - Yoyo
@@ -40,6 +39,7 @@
 - tjenare
 - tja!
 - tjenare mannen!
+- hej
 
 ## intent:goodbye
 - hejdå
@@ -62,6 +62,7 @@
 - avsluta
 - stäng
 - stäng av
+- Avsluta
 
 ## intent:affirm
 - ja
@@ -132,6 +133,7 @@
 - tack så hemskt mycket
 - underbart!
 - Coolt, tack
+- tack!
 
 ## intent:ask_howdoing
 - Hur mår du
@@ -157,23 +159,20 @@
 - Vad pågår?
 - är du okej
 - har du en bra dag?
-- Mår du bra?
 - mår du bra
-- Mår du bra?
 - Hur går det
 - hur är det med dig?
-- Hur står det till?
 - Är allting okej?
 - är allt okej?
 - har du en fantastisk dag?
 - jag mår bra, hur mår du?
 - mår du bra?
-- Hur mår du?
 - Hur mås det?
 - Vad händer?
 - Läget?
 - Sup?
 - Vad gör du?
+- hur mår du?
 
 ## intent:handleinsult
 - dra åt helvete
@@ -181,7 +180,6 @@
 - du är sämst
 - hatar dig
 - sämsta skiten
-- idiot
 - du kan ingenting
 - håll skäften
 - vad är detta för skit
@@ -203,7 +201,6 @@
 - you are fucking stupid guy！
 - go fuck yourself
 - Fuck off
-- Fuck off
 - fuck rasa
 - fuck you!
 - Fuck Off
@@ -211,6 +208,7 @@
 - FUCK
 - fucking work
 - ok shut up
+- du är korkad
 
 ## intent:telljoke
 - berätta ett skämt
@@ -221,6 +219,8 @@
 - Berätta något roligt
 - Detta är ett skämt
 - Säg ett roligt skämt
+- Berätta ett skämt
+- Säg ett skämt
 
 ## intent:ask_whoami
 - Vad heter du?
@@ -292,9 +292,14 @@
 ## intent:clear
 - starta om
 - börja om
+- Börja om
+- Starta om
 
 ## intent:goback
 - gå tillbaka
+- tillbaka
+- Tillbaka
+- Gå tillbaka
 
 ## intent:time_range
 - visa från igår till idag

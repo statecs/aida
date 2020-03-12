@@ -26,7 +26,7 @@ responses:
   utter_greet:
   - text: Hej! Mitt namn är Aida! Vad söker du?
   - text: Hej! Mitt namn är Aida! Vad söker du vård för?
-  - text: Hej! Mitt namn är Aida! Vad behöver du hjälp med?
+  - text: Hej! Mitt namn är Aida! Vad behöver hjälp med?
   utter_handleinsult:
   - text: Det var inte så snällt av dig! 😢 Jag har också känslor, även fast jag bara
       är en robot.
@@ -53,6 +53,7 @@ responses:
   - text: När de skulle göra pannkakor i fängelset använde de en fånge som smet.
   utter_chitchat:
   - text: Jag mår jättebra!
+  - text: Jag mår bra, tack!
   utter_goodbye:
   - text: Vi hörs igen
   - text: Hoppas du får en bra dag.
@@ -60,7 +61,7 @@ responses:
   - text: Ha det så bra!
   - text: Tack för denna gång! Jag finns här om du har några fler frågor.
   utter_clear:
-  - text: Ok! Startar om
+  - text: Ok! Startar om.
   utter_default:
   - text: Jag lär mig nya saker hela tiden! Tyvärr kan jag inte ge dig ett svar.
 actions:
