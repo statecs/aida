@@ -1,0 +1,77 @@
+session_config:
+  session_expiration_time: 0.0
+  carry_over_slots_to_new_session: true
+intents:
+- greet
+- goodbye
+- affirm
+- deny
+- mood_great
+- mood_unhappy
+- thankyou
+- ask_howdoing
+- handleinsult
+- telljoke
+- ask_whoami
+- bot_challenge
+- chitchat
+- stop
+- version
+- clear
+- goback
+- time_range
+responses:
+  utter_version:
+  - text: Model 1.0 - Mar 11, 2020
+  utter_greet:
+  - text: Hej! Mitt namn är Aida! Vad söker du?
+  - text: Hej! Mitt namn är Aida! Vad söker du vård för?
+  - text: Hej! Mitt namn är Aida! Vad behöver du hjälp med?
+  utter_handleinsult:
+  - text: Det var inte så snällt av dig! 😢 Jag har också känslor, även fast jag bara
+      är en robot.
+  - text: Det var inte snällt av dig att säga så.
+  utter_thanks:
+  - text: Mitt nöje.
+  - text: Tack själv
+  - text: Det var så lite
+  - text: Bra att jag kunde hjälpa till!
+  - text: Hör av dig om du har några fler frågor.
+  utter_ask_howdoing:
+  - text: Jag mår bra! Tack för att du frågar!
+  - text: Jag mår bra, tack!
+  - text: Jag mår helt fantastiskt.
+  - text: Det rullar.
+  - text: Min dag är helt underbar!
+  - text: Inget speciellt! Hur mår du?
+  - text: Läget är bra, tack!
+  - text: Jag mår suveränt!
+  utter_telljoke:
+  - text: Vad är klockan? En anordning som visar tiden.
+  - text: Vem i kryddskåpet jobbar extra? Tim-jan!
+  - text: Vilken kryddkille åker finlandsbåt? Per-silja!
+  - text: När de skulle göra pannkakor i fängelset använde de en fånge som smet.
+  utter_chitchat:
+  - text: Jag mår jättebra!
+  utter_goodbye:
+  - text: Vi hörs igen
+  - text: Hoppas du får en bra dag.
+  - text: Önskar dig en fortsatt trevlig dag!
+  - text: Ha det så bra!
+  - text: Tack för denna gång! Jag finns här om du har några fler frågor.
+  utter_clear:
+  - text: Ok! Startar om
+  utter_default:
+  - text: Jag lär mig nya saker hela tiden! Tyvärr kan jag inte ge dig ett svar.
+actions:
+- action_version
+- utter_version
+- utter_greet
+- utter_handleinsult
+- utter_thanks
+- utter_ask_howdoing
+- utter_telljoke
+- utter_chitchat
+- utter_goodbye
+- utter_clear
+- utter_default
