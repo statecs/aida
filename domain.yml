@@ -25,8 +25,29 @@ responses:
   - text: Model 1.0 - Mar 11, 2020
   utter_greet:
   - text: Hej! Mitt namn är Aida! Vad söker du?
+    buttons:
+    - title: Huvudvärk
+      payload: /utter_headache
+    - title: Ont i halsen
+      payload: /utter_soreThroat
+    - title: Hosta och feber
+      payload: /utter_coughFever
   - text: Hej! Mitt namn är Aida! Vad söker du vård för?
+    buttons:
+    - title: Huvudvärk
+      payload: /utter_headache
+    - title: Ont i halsen
+      payload: /utter_soreThroat
+    - title: Hosta och feber
+      payload: /utter_coughFever
   - text: Hej! Mitt namn är Aida! Vad behöver hjälp med?
+    buttons:
+    - title: Huvudvärk
+      payload: /utter_headache
+    - title: Ont i halsen
+      payload: /utter_soreThroat
+    - title: Hosta och feber
+      payload: /utter_coughFever
   utter_handleinsult:
   - text: Det var inte så snällt av dig! 😢 Jag har också känslor, även fast jag bara
       är en robot.
@@ -51,9 +72,6 @@ responses:
   - text: Vem i kryddskåpet jobbar extra? Tim-jan!
   - text: Vilken kryddkille åker finlandsbåt? Per-silja!
   - text: När de skulle göra pannkakor i fängelset använde de en fånge som smet.
-  utter_chitchat:
-  - text: Jag mår jättebra!
-  - text: Jag mår bra, tack!
   utter_goodbye:
   - text: Vi hörs igen
   - text: Hoppas du får en bra dag.
@@ -62,6 +80,17 @@ responses:
   - text: Tack för denna gång! Jag finns här om du har några fler frågor.
   utter_clear:
   - text: Ok! Startar om.
+  utter_headache:
+  - text: Hur ter sig huvudvärken? Du kan välja flera alternativ.
+  utter_soreThroat:
+  - text: Hur länge har du haft ont i halsen?
+  utter_coughFever:
+  - text: Jag behöver ställa några frågor för att kunna ge dig bra råd. Känns det
+      tungt att andas även när du inte hostar?
+  utter_chitchat:
+  - text: Jag mår jättebra!
+  - text: Jag mår bra, tack!
+    image: https://i.imgur.com/nGF1K8f.jpg
   utter_default:
   - text: Jag lär mig nya saker hela tiden! Tyvärr kan jag inte ge dig ett svar.
 actions:
@@ -72,7 +101,10 @@ actions:
 - utter_thanks
 - utter_ask_howdoing
 - utter_telljoke
-- utter_chitchat
 - utter_goodbye
 - utter_clear
+- utter_headache
+- utter_soreThroat
+- utter_coughFever
+- utter_chitchat
 - utter_default
