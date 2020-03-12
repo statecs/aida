@@ -53,6 +53,7 @@ responses:
   - text: När de skulle göra pannkakor i fängelset använde de en fånge som smet.
   utter_chitchat:
   - text: Jag mår jättebra!
+  - text: Jag mår bra, tack!
   utter_goodbye:
   - text: Vi hörs igen
   - text: Hoppas du får en bra dag.
