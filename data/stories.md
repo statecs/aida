@@ -2,6 +2,16 @@
 * greet <!--- User input expressed as intent. In this case it represents users message 'Hello'. -->
   - utter_greet <!--- The response of the chatbot expressed as an action. In this case it represents chatbot's response 'Hello, how can I help?' -->
 
+## Huvudvärk
+* greet
+  - utter_greet
+* huvudvärk
+  - utter_headache
+
+## Huvudvärk
+* huvudvärk
+  - utter_headache
+
 ## greet
 * greet
   - utter_greet
@@ -52,3 +62,7 @@
 
 * goback
     - action_back
+
+## New Story
+* utter_headache
+    - utter_headache

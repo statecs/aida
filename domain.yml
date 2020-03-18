@@ -20,6 +20,8 @@ intents:
 - clear
 - goback
 - time_range
+- huvudvärk
+- utter_headache
 responses:
   utter_version:
   - text: Model 1.0 - Mar 11, 2020
@@ -49,7 +51,7 @@ responses:
     - title: Hosta och feber
       payload: /utter_coughFever
   utter_handleinsult:
-  - text: Det var inte så snällt av dig! 😢 Jag har också känslor, även fast jag bara
+  - text: Det var inte så snällt av dig! Jag har också känslor, även fast jag bara
       är en robot.
   - text: Det var inte snällt av dig att säga så.
   utter_thanks:
@@ -81,9 +83,23 @@ responses:
   utter_clear:
   - text: Ok! Startar om.
   utter_headache:
-  - text: Hur ter sig huvudvärken? Du kan välja flera alternativ.
+  - text: Hur yttrar sig huvudvärken? Du kan välja flera alternativ.
+    buttons:
+    - title: En pågående episod av huvudvärk
+      payload: /utter_headache
+    - title: Återkommande huvudvärk
+      payload: /utter_soreThroat
+    - title: Inget av ovanför
+      payload: /utter_coughFever
   utter_soreThroat:
   - text: Hur länge har du haft ont i halsen?
+    buttons:
+    - title: Mindre än 24 timmar
+      payload: /utter_headache
+    - title: 1 - 30 dagar
+      payload: /utter_soreThroat
+    - title: 1 till 12 månander
+      payload: /utter_coughFever
   utter_coughFever:
   - text: Jag behöver ställa några frågor för att kunna ge dig bra råd. Känns det
       tungt att andas även när du inte hostar?
@@ -92,7 +108,7 @@ responses:
   - text: Jag mår bra, tack!
     image: https://i.imgur.com/nGF1K8f.jpg
   utter_default:
-  - text: Jag lär mig nya saker hela tiden! Tyvärr kan jag inte ge dig ett svar.
+  - text: Jag lär mig nya saker hela tiden! Kan du omformulera ditt svar?
 actions:
 - action_version
 - utter_version

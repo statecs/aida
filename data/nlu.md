@@ -324,3 +324,10 @@
 - sista oktober till och med idag
 - från 3 november till 8 januari
 - 1 januari till 28 februari
+
+## intent:huvudvärk
+- jag har huvudvärk
+- jag har ont i huvudet
+
+## intent:utter_headache
+- /utter_headache
