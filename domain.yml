@@ -84,13 +84,15 @@ responses:
   - text: Ok! Startar om.
   utter_headache:
   - text: Hur yttrar sig huvudvärken? Du kan välja flera alternativ.
-    buttons:
-    - title: En pågående episod av huvudvärk
-      payload: /utter_headache
-    - title: Återkommande huvudvärk
-      payload: /utter_soreThroat
-    - title: Inget av ovanför
-      payload: /utter_coughFever
+    custom:
+      type: multipleSelect
+      data:
+      - title: En pågående episod av huvudvärk
+        payloads: /utter_headache
+      - title: Återkommande huvudvärk
+        payload: /utter_soreThroat
+      - title: Inget av ovanför
+        payload: /utter_coughFever
   utter_soreThroat:
   - text: Hur länge har du haft ont i halsen?
     buttons:
