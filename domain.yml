@@ -88,20 +88,20 @@ responses:
       type: multipleSelect
       data:
       - title: En pågående episod av huvudvärk
-        payloads: /utter_headache
+        payload: /utter_headache_check
       - title: Återkommande huvudvärk
-        payload: /utter_soreThroat
+        payload: /utter_soreThroat_check
       - title: Inget av ovanför
-        payload: /utter_coughFever
+        payload: /utter_coughFever_check
   utter_soreThroat:
   - text: Hur länge har du haft ont i halsen?
     buttons:
     - title: Mindre än 24 timmar
-      payload: /utter_headache
+      payload: /utter_24
     - title: 1 - 30 dagar
-      payload: /utter_soreThroat
+      payload: /utter_30
     - title: 1 till 12 månander
-      payload: /utter_coughFever
+      payload: /utter_12
   utter_coughFever:
   - text: Jag behöver ställa några frågor för att kunna ge dig bra råd. Känns det
       tungt att andas även när du inte hostar?
