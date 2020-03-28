@@ -1,5 +1,5 @@
 action_endpoint:
-  url: http://185.157.221.84:5055/webhook
+  url: http://localhost:5055/webhook
 file_producer:
   filename: "/app/tracker_log.json"
   format: json

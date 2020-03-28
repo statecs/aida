@@ -20,36 +20,155 @@ intents:
 - clear
 - goback
 - time_range
+- ask_about_headache
+- ask_about_soreThroat
+- ask_about_coughFever
 - huvudvärk
 - utter_headache
+slots:
+  headache_changed:
+    type: unfeaturized
+    auto_fill: false
+  headache_expectation:
+    type: unfeaturized
+    auto_fill: false
+  headache_length_weight:
+    type: unfeaturized
+    auto_fill: false
+  headache_meds:
+    type: unfeaturized
+    auto_fill: false
+  headache_other:
+    type: unfeaturized
+    auto_fill: false
+  headache_other_symptoms:
+    type: unfeaturized
+    auto_fill: false
+  headache_pain:
+    type: unfeaturized
+    auto_fill: false
+  headache_utter:
+    type: unfeaturized
+    auto_fill: false
+  headache_when:
+    type: unfeaturized
+    auto_fill: false
+  headache_where:
+    type: unfeaturized
+    auto_fill: false
 responses:
   utter_version:
-  - text: Model 1.0 - Mar 11, 2020
+  - text: Model 1.0 - Mar 28, 2020
   utter_greet:
-  - text: Hej! Mitt namn är Aida! Vad söker du?
-    buttons:
-    - title: Huvudvärk
-      payload: /utter_headache
-    - title: Ont i halsen
-      payload: /utter_soreThroat
-    - title: Hosta och feber
-      payload: /utter_coughFever
   - text: Hej! Mitt namn är Aida! Vad söker du vård för?
     buttons:
     - title: Huvudvärk
-      payload: /utter_headache
+      payload: Huvudvärk
     - title: Ont i halsen
-      payload: /utter_soreThroat
+      payload: Ont i halsen
     - title: Hosta och feber
-      payload: /utter_coughFever
-  - text: Hej! Mitt namn är Aida! Vad behöver hjälp med?
+      payload: Hosta och feber
+  utter_ask_headache_utter:
+  - text: Hur yttrar sig huvudvärken? Du kan välja flera alternativ.
+    custom:
+      type: multipleSelect
+      data:
+      - title: En pågående episod av huvudvärk
+        payload: /ongoing
+      - title: Återkommande huvudvärk
+        payload: /recurrent
+      - title: Inget av ovanför
+        payload: /none
+  utter_ask_headache_when:
+  - text: När började din nuvarande huvudvärk?
     buttons:
-    - title: Huvudvärk
-      payload: /utter_headache
-    - title: Ont i halsen
-      payload: /utter_soreThroat
-    - title: Hosta och feber
-      payload: /utter_coughFever
+    - title: För 1 - 24 timmar sedan
+      payload: /1-24h
+    - title: För 1 - 30 dagar sedan
+      payload: /1-30d
+    - title: För 1 till 12 månander sedan
+      payload: /1-12m
+  utter_ask_headache_pain:
+  - text: På en skala från 1 (mycket lätt smärta) till 5 (värsta tänkbara smärta)
+      hur skulle du bedöma nivån på din huvudvärk?
+  utter_ask_headache_changed:
+  - text: Hur har din huvudvärk förändrats sedan den började?
+    buttons:
+    - title: Förvärrats
+      payload: /worse
+    - title: Oförändrad
+      payload: /unchanged
+    - title: Blivit bättre
+      payload: /better
+    - title: Försvunnit
+      payload: /vanished
+  utter_ask_headache_where:
+  - text: Vart sitter din huvudvärk? Du kan välja flera alternativ.
+    custom:
+      type: multipleSelect
+      data:
+      - title: Sidan av huvudet (tinning)
+        payload: /temple
+      - title: Runt eller bakom ögonen
+        payload: /eyes
+      - title: Runt öronen
+        payload: /ears
+      - title: Annat
+        payload: /other
+  utter_ask_headache_other_symptoms:
+  - text: Har du något av följande besvär i samband med din huvudvärk? Du kan välja
+      flera alternativ.
+    custom:
+      type: multipleSelect
+      data:
+      - title: Svindel
+        payload: /temple
+      - title: Illamående
+        payload: /eyes
+      - title: Kräkningar
+        payload: /ears
+      - title: Ökad ljudkänslighet
+        payload: /other
+      - title: Ökad ljuskänslighet
+        payload: /other
+      - title: Feber
+        payload: /other
+      - title: Muskelsmärta
+        payload: /other
+      - title: Synbesvär
+        payload: /other
+      - title: Oavsiktlig viktförändring
+        payload: /other
+      - title: Minnesförlust
+        payload: /other
+      - title: Personlighetsförändring
+        payload: /other
+      - title: Förvrängt tal
+        payload: /other
+      - title: Känselnedsättning eller domning
+        payload: /other
+      - title: Svaghet
+        payload: /other
+      - title: Hängande ögonlock
+        payload: /other
+  utter_ask_headache_meds:
+  - text: Tar du några läkemedel eller naturläkemedel mot din huvudvärk? Ange det
+      nedan.
+    custom:
+      type: multipleSelect
+      data:
+      - title: Paracetamol (Alvedon, Panodil, Pamol)
+        payload: /temple
+      - title: Ibuprofen (Ipren, Brufen, Ibumetin)
+        payload: /eyes
+      - title: Annat
+        payload: /other
+  utter_ask_headache_length_weight:
+  - text: Ange din längd och vikt
+  utter_ask_headache_other:
+  - text: Är det något som oroar dig?
+  utter_ask_headache_expectation:
+  - text: Vad förväntar du dig av kontakten med oss?
   utter_handleinsult:
   - text: Det var inte så snällt av dig! Jag har också känslor, även fast jag bara
       är en robot.
@@ -82,29 +201,6 @@ responses:
   - text: Tack för denna gång! Jag finns här om du har några fler frågor.
   utter_clear:
   - text: Ok! Startar om.
-  utter_headache:
-  - text: Hur yttrar sig huvudvärken? Du kan välja flera alternativ.
-    custom:
-      type: multipleSelect
-      data:
-      - title: En pågående episod av huvudvärk
-        payload: /utter_headache_check
-      - title: Återkommande huvudvärk
-        payload: /utter_soreThroat_check
-      - title: Inget av ovanför
-        payload: /utter_coughFever_check
-  utter_soreThroat:
-  - text: Hur länge har du haft ont i halsen?
-    buttons:
-    - title: Mindre än 24 timmar
-      payload: /utter_24
-    - title: 1 - 30 dagar
-      payload: /utter_30
-    - title: 1 till 12 månander
-      payload: /utter_12
-  utter_coughFever:
-  - text: Jag behöver ställa några frågor för att kunna ge dig bra råd. Känns det
-      tungt att andas även när du inte hostar?
   utter_chitchat:
   - text: Jag mår jättebra!
   - text: Jag mår bra, tack!
@@ -121,8 +217,19 @@ actions:
 - utter_telljoke
 - utter_goodbye
 - utter_clear
-- utter_headache
-- utter_soreThroat
-- utter_coughFever
 - utter_chitchat
 - utter_default
+- utter_ask_headache_utter
+- utter_ask_headache_when
+- utter_ask_headache_pain
+- utter_ask_headache_changed
+- utter_ask_headache_where
+- utter_ask_headache_other_symptoms
+- utter_ask_headache_meds
+- utter_ask_headache_length_weight
+- utter_ask_headache_other
+- utter_ask_headache_expectation
+forms:
+- headache_form
+- soreThroat_form
+- coughFever_form

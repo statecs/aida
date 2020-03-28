@@ -66,7 +66,7 @@ docker run -it -v $(pwd):/app rasa/rasa:${RASA_VERSION} shell --debug
 With Docker:
 
 ```sh
-export RASA_X_VERSION=1.5.1-full
+export RASA_X_VERSION=0.26.1
 export RASA_MODEL_SERVER="https://localhost:5002"
 docker run --it --rm --network=$(basename `pwd`)_default -v $(pwd):/app rasa/rasa:${RASA_X_VERSION} shell --model /app/models/$(ls models) --endpoints endpoints_local.yml
 ```

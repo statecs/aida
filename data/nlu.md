@@ -325,9 +325,18 @@
 - från 3 november till 8 januari
 - 1 januari till 28 februari
 
-## intent:huvudvärk
+## intent:ask_about_headache
 - jag har huvudvärk
+- Jag har huvudvärk
 - jag har ont i huvudet
+- huvudvärk
 
-## intent:utter_headache
-- /utter_headache
+## intent:ask_about_soreThroat
+- Jag har ont i halsen
+- jag har ont i halsen
+- ont i halsen
+
+## intent:ask_about_coughFever
+- Jag har feber och hosta
+- jag har feber och hosta
+- feber och hosta
