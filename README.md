@@ -66,6 +66,13 @@ docker-compose up app
 docker run -it -v $(pwd):/app rasa/rasa:1.8.1 shell --debug --endpoints endpoints_local.yml
 ```
 
+Starts an interactive learning session to create new training data by chatting.
+https://rasa.com/docs/rasa/user-guide/command-line-interface/
+
+```sh
+docker run -it -v $(pwd):/app rasa/rasa:1.8.1 interactive --debug --endpoints endpoints_local.yml
+```
+
 # Scripts
 
 The project includes the following scripts:
