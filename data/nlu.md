@@ -330,6 +330,7 @@
 - Jag har huvudvärk
 - jag har ont i huvudet
 - huvudvärk
+- Huvudvärk
 
 ## intent:ask_about_soreThroat
 - Jag har ont i halsen
@@ -340,3 +341,11 @@
 - Jag har feber och hosta
 - jag har feber och hosta
 - feber och hosta
+
+## intent:headache_utter
+- En pågående episod av huvudvärk
+- Återkommande huvudvärk
+
+## intent:headache_meds
+- Paracetamol (Alvedon, Panodil, Pamol)
+- Ibuprofen (Ipren, Brufen, Ibumetin)

@@ -52,8 +52,6 @@ class HeadacheForm(FormAction):
     def required_slots(tracker: Tracker) -> List[Text]:
         """A list of required slots that the form has to fill"""
 
-        logger.info("submit, first_name: {}, phone: {}")
-
         return ["headache_utter", "headache_when", "headache_pain", "headache_changed", "headache_where", "headache_other_symptoms",  "headache_meds", "headache_length_weight", "headache_other", "headache_expectation"]
 
     def slot_mappings(self) -> Dict[Text, Union[Dict, List[Dict]]]:
@@ -64,24 +62,16 @@ class HeadacheForm(FormAction):
             or a list of them, where a first match will be picked"""
 
         return {
-            "headache_utter": self.from_entity(entity="cuisine", not_intent="chitchat"),
-            "headache_when": [
-                self.from_entity(
-                    entity="num_people", intent=["inform", "request_restaurant"]
-                ),
-                self.from_entity(entity="number"),
-            ],
-            "headache_pain": [
-                self.from_entity(entity="seating"),
-                self.from_intent(intent="affirm", value=True),
-                self.from_intent(intent="deny", value=False),
-            ],
-            "headache_changed": [
-                self.from_intent(
-                    intent="deny", value="no additional preferences"),
-                self.from_text(not_intent="affirm"),
-            ],
-            "feedback": [self.from_entity(entity="feedback"), self.from_text()],
+            "headache_utter": [self.from_entity(entity="headache_utter"), self.from_text()],
+            "headache_when": [self.from_entity(entity="headache_when"), self.from_text()],
+            "headache_pain": [self.from_entity(entity="headache_pain"), self.from_text()],
+            "headache_changed": [self.from_entity(entity="headache_changed"), self.from_text()],
+            "headache_where": [self.from_entity(entity="headache_where"), self.from_text()],
+            "headache_other_symptoms": [self.from_entity(entity="headache_other_symptoms"), self.from_text()],
+            "headache_meds": [self.from_entity(entity="headache_meds"), self.from_text()],
+            "headache_length_weight": [self.from_entity(entity="headache_length_weight"), self.from_text()],
+            "headache_other": [self.from_entity(entity="headache_other"), self.from_text()],
+            "headache_expectation": [self.from_entity(entity="headache_expectation"), self.from_text()],
         }
 
     def submit(
@@ -94,5 +84,5 @@ class HeadacheForm(FormAction):
             after all required slots are filled"""
 
         # utter submit template
-        dispatcher.utter_message(template="utter_submit")
-        return []
+        dispatcher.utter_message(template="utter_submit_headache")
+        return [AllSlotsReset()]

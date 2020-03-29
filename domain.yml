@@ -2,6 +2,8 @@ session_config:
   session_expiration_time: 0.0
   carry_over_slots_to_new_session: true
 intents:
+- ask_about_headache
+- headache_utter
 - greet
 - goodbye
 - affirm
@@ -20,11 +22,9 @@ intents:
 - clear
 - goback
 - time_range
-- ask_about_headache
 - ask_about_soreThroat
 - ask_about_coughFever
-- huvudvärk
-- utter_headache
+- headache_meds
 slots:
   headache_changed:
     type: unfeaturized
@@ -56,129 +56,114 @@ slots:
   headache_where:
     type: unfeaturized
     auto_fill: false
+  requested_slot:
+    type: unfeaturized
 responses:
-  utter_version:
-  - text: Model 1.0 - Mar 28, 2020
-  utter_greet:
-  - text: Hej! Mitt namn är Aida! Vad söker du vård för?
-    buttons:
-    - title: Huvudvärk
-      payload: Huvudvärk
-    - title: Ont i halsen
-      payload: Ont i halsen
-    - title: Hosta och feber
-      payload: Hosta och feber
-  utter_ask_headache_utter:
-  - text: Hur yttrar sig huvudvärken? Du kan välja flera alternativ.
-    custom:
-      type: multipleSelect
+  utter_submit_headache:
+  - text: "Tack för dina svar:? - {utter_ask_headache_utter}\n {headache_when}\n {headache_pain}\n\
+      \  {headache_changed}\n {headache_where}\n  {headache_other_symptoms}\n {headache_meds}\n\
+      \  {headache_length_weight}\n {headache_other}\n {headache_expectation}"
+  utter_ask_headache_changed:
+  - buttons:
+    - payload: Förvärrats
+      title: Förvärrats
+    - payload: Oförändrad
+      title: Oförändrad
+    - payload: Blivit bättre
+      title: Blivit bättre
+    - payload: Försvunnit
+      title: Försvunnit
+    text: Hur har din huvudvärk förändrats sedan den började?
+  utter_ask_headache_expectation:
+  - text: Vad förväntar du dig av kontakten med oss?
+  utter_ask_headache_length_weight:
+  - text: Ange din längd och vikt
+  utter_ask_headache_meds:
+  - custom:
       data:
-      - title: En pågående episod av huvudvärk
-        payload: /ongoing
-      - title: Återkommande huvudvärk
-        payload: /recurrent
-      - title: Inget av ovanför
-        payload: /none
-  utter_ask_headache_when:
-  - text: När började din nuvarande huvudvärk?
-    buttons:
-    - title: För 1 - 24 timmar sedan
-      payload: /1-24h
-    - title: För 1 - 30 dagar sedan
-      payload: /1-30d
-    - title: För 1 till 12 månander sedan
-      payload: /1-12m
+      - payload: Paracetamol (Alvedon, Panodil, Pamol)
+        title: Paracetamol (Alvedon, Panodil, Pamol)
+      - payload: Ibuprofen (Ipren, Brufen, Ibumetin)
+        title: Ibuprofen (Ipren, Brufen, Ibumetin)
+      - payload: Annat
+        title: Annat
+      type: multipleSelect
+    text: Tar du några läkemedel eller naturläkemedel mot din huvudvärk? Ange det
+      nedan.
+  utter_ask_headache_other:
+  - text: Är det något som oroar dig?
+  utter_ask_headache_other_symptoms:
+  - custom:
+      data:
+      - payload: Svindel
+        title: Svindel
+      - payload: Illamående
+        title: Illamående
+      - payload: Kräkningar
+        title: Kräkningar
+      - payload: Ökad ljudkänslighet
+        title: Ökad ljudkänslighet
+      - payload: Ökad ljuskänslighet
+        title: Ökad ljuskänslighet
+      - payload: Feber
+        title: Feber
+      - payload: Muskelsmärta
+        title: Muskelsmärta
+      - payload: Synbesvär
+        title: Synbesvär
+      - payload: Oavsiktlig viktförändring
+        title: Oavsiktlig viktförändring
+      - payload: Minnesförlust
+        title: Minnesförlust
+      - payload: Personlighetsförändring
+        title: Personlighetsförändring
+      - payload: Förvrängt tal
+        title: Förvrängt tal
+      - payload: Känselnedsättning eller domning
+        title: Känselnedsättning eller domning
+      - payload: Svaghet
+        title: Svaghet
+      - payload: Hängande ögonlock
+        title: Hängande ögonlock
+      type: multipleSelect
+    text: Har du något av följande besvär i samband med din huvudvärk? Du kan välja
+      flera alternativ.
   utter_ask_headache_pain:
   - text: På en skala från 1 (mycket lätt smärta) till 5 (värsta tänkbara smärta)
       hur skulle du bedöma nivån på din huvudvärk?
-  utter_ask_headache_changed:
-  - text: Hur har din huvudvärk förändrats sedan den började?
-    buttons:
-    - title: Förvärrats
-      payload: /worse
-    - title: Oförändrad
-      payload: /unchanged
-    - title: Blivit bättre
-      payload: /better
-    - title: Försvunnit
-      payload: /vanished
+  utter_ask_headache_utter:
+  - custom:
+      data:
+      - payload: En pågående episod av huvudvärk
+        title: En pågående episod av huvudvärk
+      - payload: Återkommande huvudvärk
+        title: Återkommande huvudvärk
+      - payload: Inget av ovanför
+        title: Inget av ovanför
+      type: multipleSelect
+    text: Hur yttrar sig huvudvärken? Du kan välja flera alternativ.
+  utter_ask_headache_when:
+  - buttons:
+    - payload: För 1 - 24 timmar sedan
+      title: För 1 - 24 timmar sedan
+    - payload: För 1 - 30 dagar sedan
+      title: För 1 - 30 dagar sedan
+    - payload: För 1 till 12 månander sedan
+      title: För 1 till 12 månander sedan
+    text: När började din nuvarande huvudvärk?
   utter_ask_headache_where:
-  - text: Vart sitter din huvudvärk? Du kan välja flera alternativ.
-    custom:
-      type: multipleSelect
+  - custom:
       data:
-      - title: Sidan av huvudet (tinning)
-        payload: /temple
-      - title: Runt eller bakom ögonen
-        payload: /eyes
-      - title: Runt öronen
-        payload: /ears
-      - title: Annat
-        payload: /other
-  utter_ask_headache_other_symptoms:
-  - text: Har du något av följande besvär i samband med din huvudvärk? Du kan välja
-      flera alternativ.
-    custom:
+      - payload: Sidan av huvudet (tinning)
+        title: Sidan av huvudet (tinning)
+      - payload: Runt eller bakom ögonen
+        title: Runt eller bakom ögonen
+      - payload: Runt öronen
+        title: Runt öronen
+      - payload: Annat
+        title: Annat
       type: multipleSelect
-      data:
-      - title: Svindel
-        payload: /temple
-      - title: Illamående
-        payload: /eyes
-      - title: Kräkningar
-        payload: /ears
-      - title: Ökad ljudkänslighet
-        payload: /other
-      - title: Ökad ljuskänslighet
-        payload: /other
-      - title: Feber
-        payload: /other
-      - title: Muskelsmärta
-        payload: /other
-      - title: Synbesvär
-        payload: /other
-      - title: Oavsiktlig viktförändring
-        payload: /other
-      - title: Minnesförlust
-        payload: /other
-      - title: Personlighetsförändring
-        payload: /other
-      - title: Förvrängt tal
-        payload: /other
-      - title: Känselnedsättning eller domning
-        payload: /other
-      - title: Svaghet
-        payload: /other
-      - title: Hängande ögonlock
-        payload: /other
-  utter_ask_headache_meds:
-  - text: Tar du några läkemedel eller naturläkemedel mot din huvudvärk? Ange det
-      nedan.
-    custom:
-      type: multipleSelect
-      data:
-      - title: Paracetamol (Alvedon, Panodil, Pamol)
-        payload: /temple
-      - title: Ibuprofen (Ipren, Brufen, Ibumetin)
-        payload: /eyes
-      - title: Annat
-        payload: /other
-  utter_ask_headache_length_weight:
-  - text: Ange din längd och vikt
-  utter_ask_headache_other:
-  - text: Är det något som oroar dig?
-  utter_ask_headache_expectation:
-  - text: Vad förväntar du dig av kontakten med oss?
-  utter_handleinsult:
-  - text: Det var inte så snällt av dig! Jag har också känslor, även fast jag bara
-      är en robot.
-  - text: Det var inte snällt av dig att säga så.
-  utter_thanks:
-  - text: Mitt nöje.
-  - text: Tack själv
-  - text: Det var så lite
-  - text: Bra att jag kunde hjälpa till!
-  - text: Hör av dig om du har några fler frågor.
+    text: Vart sitter din huvudvärk? Du kan välja flera alternativ.
   utter_ask_howdoing:
   - text: Jag mår bra! Tack för att du frågar!
   - text: Jag mår bra, tack!
@@ -188,48 +173,70 @@ responses:
   - text: Inget speciellt! Hur mår du?
   - text: Läget är bra, tack!
   - text: Jag mår suveränt!
-  utter_telljoke:
-  - text: Vad är klockan? En anordning som visar tiden.
-  - text: Vem i kryddskåpet jobbar extra? Tim-jan!
-  - text: Vilken kryddkille åker finlandsbåt? Per-silja!
-  - text: När de skulle göra pannkakor i fängelset använde de en fånge som smet.
+  utter_chitchat:
+  - text: Jag mår jättebra!
+  - image: https://i.imgur.com/nGF1K8f.jpg
+    text: Jag mår bra, tack!
+  utter_clear:
+  - text: Ok! Startar om.
+  utter_default:
+  - text: Jag lär mig nya saker hela tiden! Kan du omformulera ditt svar?
   utter_goodbye:
   - text: Vi hörs igen
   - text: Hoppas du får en bra dag.
   - text: Önskar dig en fortsatt trevlig dag!
   - text: Ha det så bra!
   - text: Tack för denna gång! Jag finns här om du har några fler frågor.
-  utter_clear:
-  - text: Ok! Startar om.
-  utter_chitchat:
-  - text: Jag mår jättebra!
-  - text: Jag mår bra, tack!
-    image: https://i.imgur.com/nGF1K8f.jpg
-  utter_default:
-  - text: Jag lär mig nya saker hela tiden! Kan du omformulera ditt svar?
+  utter_greet:
+  - buttons:
+    - payload: Huvudvärk
+      title: Huvudvärk
+    - payload: Ont i halsen
+      title: Ont i halsen
+    - payload: Hosta och feber
+      title: Hosta och feber
+    text: Hej! Mitt namn är Aida! Vad söker du vård för?
+  utter_handleinsult:
+  - text: Det var inte så snällt av dig! Jag har också känslor, även fast jag bara
+      är en robot.
+  - text: Det var inte snällt av dig att säga så.
+  utter_telljoke:
+  - text: Vad är klockan? En anordning som visar tiden.
+  - text: Vem i kryddskåpet jobbar extra? Tim-jan!
+  - text: Vilken kryddkille åker finlandsbåt? Per-silja!
+  - text: När de skulle göra pannkakor i fängelset använde de en fånge som smet.
+  utter_thanks:
+  - text: Mitt nöje.
+  - text: Tack själv
+  - text: Det var så lite
+  - text: Bra att jag kunde hjälpa till!
+  - text: Hör av dig om du har några fler frågor.
+  utter_version:
+  - text: Model 1.0 - Mar 28, 2020
 actions:
 - action_version
-- utter_version
-- utter_greet
-- utter_handleinsult
-- utter_thanks
-- utter_ask_howdoing
-- utter_telljoke
-- utter_goodbye
-- utter_clear
-- utter_chitchat
-- utter_default
+- utter_ask_headache_changed
+- utter_ask_headache_expectation
+- utter_ask_headache_length_weight
+- utter_ask_headache_meds
+- utter_ask_headache_other
+- utter_ask_headache_other_symptoms
+- utter_ask_headache_pain
 - utter_ask_headache_utter
 - utter_ask_headache_when
-- utter_ask_headache_pain
-- utter_ask_headache_changed
 - utter_ask_headache_where
-- utter_ask_headache_other_symptoms
-- utter_ask_headache_meds
-- utter_ask_headache_length_weight
-- utter_ask_headache_other
-- utter_ask_headache_expectation
+- utter_ask_howdoing
+- utter_chitchat
+- utter_clear
+- utter_default
+- utter_goodbye
+- utter_greet
+- utter_handleinsult
+- utter_telljoke
+- utter_thanks
+- utter_version
+- utter_submit_headache
 forms:
+- coughFever_form
 - headache_form
 - soreThroat_form
-- coughFever_form
