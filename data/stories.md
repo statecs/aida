@@ -58,5 +58,5 @@
 
 ## clear
 * clear
-  - utter_clear
+  - utter_greet
   - action_restart

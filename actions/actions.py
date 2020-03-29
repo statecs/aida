@@ -86,3 +86,92 @@ class HeadacheForm(FormAction):
         # utter submit template
         dispatcher.utter_message(template="utter_submit_headache")
         return [AllSlotsReset()]
+
+
+class soreThroatForm(FormAction):
+    """soreThroatForm form action"""
+
+    def name(self) -> Text:
+        """Unique identifier of the form"""
+
+        return "soreThroat_form"
+
+    @staticmethod
+    def required_slots(tracker: Tracker) -> List[Text]:
+        """A list of required slots that the form has to fill"""
+
+        return ["soreThroat_duration", "soreThroat_pain", "soreThroat_location", "soreThroat_other_symptoms", "soreThroat_open", "soreThroat_other", "soreThroat_expectation"]
+
+    def slot_mappings(self) -> Dict[Text, Union[Dict, List[Dict]]]:
+        """A dictionary to map required slots to
+            - an extracted entity
+            - intent: value pairs
+            - a whole message
+            or a list of them, where a first match will be picked"""
+
+        return {
+            "soreThroat_duration": [self.from_entity(entity="soreThroat_duration"), self.from_text()],
+            "soreThroat_pain": [self.from_entity(entity="soreThroat_pain"), self.from_text()],
+            "soreThroat_location": [self.from_entity(entity="soreThroat_location"), self.from_text()],
+            "soreThroat_other_symptoms": [self.from_entity(entity="soreThroat_other_symptoms"), self.from_text()],
+            "soreThroat_open": [self.from_entity(entity="soreThroat_open"), self.from_text()],
+            "soreThroat_other": [self.from_entity(entity="soreThroat_other"), self.from_text()],
+            "soreThroat_expectation": [self.from_entity(entity="soreThroat_expectation"), self.from_text()],
+        }
+
+    def submit(
+        self,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any],
+    ) -> List[Dict]:
+        """Define what the form has to do
+            after all required slots are filled"""
+
+        # utter submit template
+        dispatcher.utter_message(template="utter_submit_soreThroat")
+        return [AllSlotsReset()]
+
+
+class coughFeverForm(FormAction):
+    """coughFeverForm form action"""
+
+    def name(self) -> Text:
+        """Unique identifier of the form"""
+
+        return "coughFever_form"
+
+    @staticmethod
+    def required_slots(tracker: Tracker) -> List[Text]:
+        """A list of required slots that the form has to fill"""
+
+        return ["coughFever_heavyBreathe", "coughFever_breastPain", "coughFever_health", "coughFever_respiratory", "coughFever_time", "coughFever_temperature"]
+
+    def slot_mappings(self) -> Dict[Text, Union[Dict, List[Dict]]]:
+        """A dictionary to map required slots to
+            - an extracted entity
+            - intent: value pairs
+            - a whole message
+            or a list of them, where a first match will be picked"""
+
+        return {
+            "coughFever_heavyBreathe": [self.from_entity(entity="coughFever_heavyBreathe"), self.from_text()],
+            "coughFever_breastPain": [self.from_entity(entity="coughFever_breastPain"), self.from_text()],
+            "coughFever_health": [self.from_entity(entity="coughFever_health"), self.from_text()],
+            "coughFever_respiratory": [self.from_entity(entity="coughFever_respiratory"), self.from_text()],
+            "coughFever_time": [self.from_entity(entity="coughFever_time"), self.from_text()],
+            "coughFever_temperature": [self.from_entity(entity="coughFever_temperature"), self.from_text()],
+        }
+
+    def submit(
+        self,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any],
+    ) -> List[Dict]:
+        """Define what the form has to do
+            after all required slots are filled"""
+
+        # utter submit template
+        dispatcher.utter_message(template="utter_submit_coughFever")
+        return [AllSlotsReset()]

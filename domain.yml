@@ -2,7 +2,6 @@ session_config:
   session_expiration_time: 0.0
   carry_over_slots_to_new_session: true
 intents:
-- ask_about_headache
 - headache_utter
 - greet
 - goodbye
@@ -22,10 +21,29 @@ intents:
 - clear
 - goback
 - time_range
+- ask_about_headache
 - ask_about_soreThroat
 - ask_about_coughFever
 - headache_meds
 slots:
+  coughFever_breastPain:
+    type: unfeaturized
+    auto_fill: false
+  coughFever_health:
+    type: unfeaturized
+    auto_fill: false
+  coughFever_heavyBreathe:
+    type: unfeaturized
+    auto_fill: false
+  coughFever_respiratory:
+    type: unfeaturized
+    auto_fill: false
+  coughFever_temperature:
+    type: unfeaturized
+    auto_fill: false
+  coughFever_time:
+    type: unfeaturized
+    auto_fill: false
   headache_changed:
     type: unfeaturized
     auto_fill: false
@@ -58,11 +76,113 @@ slots:
     auto_fill: false
   requested_slot:
     type: unfeaturized
+  soreThroat_duration:
+    type: unfeaturized
+    auto_fill: false
+  soreThroat_expectation:
+    type: unfeaturized
+    auto_fill: false
+  soreThroat_location:
+    type: unfeaturized
+    auto_fill: false
+  soreThroat_open:
+    type: unfeaturized
+    auto_fill: false
+  soreThroat_other:
+    type: unfeaturized
+    auto_fill: false
+  soreThroat_other_symptoms:
+    type: unfeaturized
+    auto_fill: false
+  soreThroat_pain:
+    type: unfeaturized
+    auto_fill: false
 responses:
   utter_submit_headache:
-  - text: "Tack för dina svar:? - {utter_ask_headache_utter}\n {headache_when}\n {headache_pain}\n\
-      \  {headache_changed}\n {headache_where}\n  {headache_other_symptoms}\n {headache_meds}\n\
-      \  {headache_length_weight}\n {headache_other}\n {headache_expectation}"
+  - text: "Tack för dina svar: - {headache_utter}\n {headache_when}\n {headache_pain}\n\
+      \  {headache_changed}\n  {headache_where}\n {headache_other_symptoms}\n {headache_meds}\n\
+      \ {headache_length_weight}\n {headache_other}\n {headache_expectation}\n"
+  utter_submit_soreThroat:
+  - text: "Tack för dina svar: - {soreThroat_duration}\n {soreThroat_pain}\n {soreThroat_location}\n\
+      \ {soreThroat_other_symptoms}\n {soreThroat_open}\n {soreThroat_other}\n {soreThroat_expectation}\n\
+      \ {coughFever_heavyBreathe}\n {coughFever_breastPain}\n {coughFever_health}\n\
+      \ {coughFever_respiratory}\n {coughFever_time}\n {coughFever_temperature}\n"
+  utter_submit_coughFever:
+  - text: "Tack för dina svar: - {coughFever_heavyBreathe}\n {coughFever_breastPain}\n\
+      \ {coughFever_health}\n {coughFever_respiratory}\n {coughFever_time}\n {coughFever_temperature}\n"
+  utter_ask_coughFever_heavyBreathe:
+  - buttons:
+    - payload: Ja
+      title: Ja
+    - payload: Nej
+      title: Nej
+    text: Känns det tungt att andas även när du inte hostar?
+  utter_ask_coughFever_breastPain:
+  - buttons:
+    - payload: Ja
+      title: Ja
+    - payload: Nej
+      title: Nej
+    text: Gör det ont i bröstet när du andas djupt?
+  utter_ask_coughFever_health:
+  - text: Hur bra är din hälsa idag? 1 (bästa hälsa) till 5 (sämsta tänkbara hälsan)
+  utter_ask_coughFever_respiratory:
+  - buttons:
+    - payload: Ja
+      title: Ja
+    - payload: Nej
+      title: Nej
+    text: ' Har någon i din närhet varit sjuk i luftvägsinfektion eller feber den
+      senaste tiden?'
+  utter_ask_coughFever_time:
+  - text: Hur länge har du haft feber?
+  utter_ask_coughFever_temperature:
+  - text: Vilken var din senast uppmätta temperatur?
+  utter_ask_soreThroat_duration:
+  - buttons:
+    - payload: Mindre än 24 timmar
+      title: Mindre än 24 timmar
+    - payload: 1 - 30 dagar
+      title: 1 - 30 dagar
+    - payload: 1 till 12 månader
+      title: 1 till 12 månader
+    text: Hur länge har du haft ont i halsen?
+  utter_ask_soreThroat_pain:
+  - buttons:
+    - payload: Lindriga
+      title: Lindriga
+    - payload: Måttliga
+      title: Måttliga
+    - payload: Svåra
+      title: Svåra
+    - payload: Mycket svåra
+      title: Mycket svåra
+    text: Hur svåra är dina halsbesvär just nu?
+  utter_ask_soreThroat_location:
+  - text: Vart i halsen har du ont?
+  utter_ask_soreThroat_other_symptoms:
+  - custom:
+      data:
+      - payload: Svår sväljningssmärta
+        title: Svår sväljningssmärta
+      - payload: Heshet
+        title: Heshet
+      - payload: Rinnande näsa
+        title: Rinnande näsa
+      - payload: Öronvärk
+        title: Öronvärk
+      - payload: Ögonbesvär
+        title: Ögonbesvär
+      type: multipleSelect
+    text: ' Har du något av följande i samband med dina halsbesvär? Du kan välja flera
+      alternativ.'
+  utter_ask_soreThroat_open:
+  - buttons:
+    - payload: Ja
+      title: Ja
+    - payload: Nej
+      title: Nej
+    text: Har du svårt att öppna munnen?
   utter_ask_headache_changed:
   - buttons:
     - payload: Förvärrats
@@ -74,6 +194,10 @@ responses:
     - payload: Försvunnit
       title: Försvunnit
     text: Hur har din huvudvärk förändrats sedan den började?
+  utter_ask_soreThroat_other:
+  - text: Är det något du är orolig över?
+  utter_ask_soreThroat_expectation:
+  - text: Vad förväntar du dig av kontakten med oss?
   utter_ask_headache_expectation:
   - text: Vad förväntar du dig av kontakten med oss?
   utter_ask_headache_length_weight:
@@ -88,8 +212,8 @@ responses:
       - payload: Annat
         title: Annat
       type: multipleSelect
-    text: Tar du några läkemedel eller naturläkemedel mot din huvudvärk? Ange det
-      nedan.
+    text: ' Tar du några läkemedel eller naturläkemedel mot din huvudvärk? Ange det
+      nedan.'
   utter_ask_headache_other:
   - text: Är det något som oroar dig?
   utter_ask_headache_other_symptoms:
@@ -126,11 +250,11 @@ responses:
       - payload: Hängande ögonlock
         title: Hängande ögonlock
       type: multipleSelect
-    text: Har du något av följande besvär i samband med din huvudvärk? Du kan välja
-      flera alternativ.
+    text: ' Har du något av följande besvär i samband med din huvudvärk? Du kan välja
+      flera alternativ.'
   utter_ask_headache_pain:
-  - text: På en skala från 1 (mycket lätt smärta) till 5 (värsta tänkbara smärta)
-      hur skulle du bedöma nivån på din huvudvärk?
+  - text: ' På en skala från 1 (mycket lätt smärta) till 5 (värsta tänkbara smärta)
+      hur skulle du bedöma nivån på din huvudvärk?'
   utter_ask_headache_utter:
   - custom:
       data:
@@ -177,8 +301,6 @@ responses:
   - text: Jag mår jättebra!
   - image: https://i.imgur.com/nGF1K8f.jpg
     text: Jag mår bra, tack!
-  utter_clear:
-  - text: Ok! Startar om.
   utter_default:
   - text: Jag lär mig nya saker hela tiden! Kan du omformulera ditt svar?
   utter_goodbye:
@@ -197,8 +319,8 @@ responses:
       title: Hosta och feber
     text: Hej! Mitt namn är Aida! Vad söker du vård för?
   utter_handleinsult:
-  - text: Det var inte så snällt av dig! Jag har också känslor, även fast jag bara
-      är en robot.
+  - text: ' Det var inte så snällt av dig! Jag har också känslor, även fast jag bara
+      är en robot.'
   - text: Det var inte snällt av dig att säga så.
   utter_telljoke:
   - text: Vad är klockan? En anordning som visar tiden.
@@ -227,7 +349,6 @@ actions:
 - utter_ask_headache_where
 - utter_ask_howdoing
 - utter_chitchat
-- utter_clear
 - utter_default
 - utter_goodbye
 - utter_greet
@@ -235,7 +356,23 @@ actions:
 - utter_telljoke
 - utter_thanks
 - utter_version
+- utter_submit
+- utter_ask_coughFever_heavyBreathe
+- utter_ask_coughFever_breastPain
+- utter_ask_coughFever_health
+- utter_ask_coughFever_respiratory
+- utter_ask_coughFever_time
+- utter_ask_coughFever_temperature
+- utter_ask_soreThroat_duration
+- utter_ask_soreThroat_pain
+- utter_ask_soreThroat_location
+- utter_ask_soreThroat_other_symptoms
+- utter_ask_soreThroat_open
+- utter_ask_soreThroat_other
+- utter_ask_soreThroat_expectation
 - utter_submit_headache
+- utter_submit_soreThroat
+- utter_submit_coughFever
 forms:
 - coughFever_form
 - headache_form

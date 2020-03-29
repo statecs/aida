@@ -294,6 +294,14 @@
 - börja om
 - Börja om
 - Starta om
+- avbryt
+- Avbryt
+- stäng
+- Stäng
+- sluta
+- Sluta
+- stopp
+- Stopp
 
 ## intent:goback
 - gå tillbaka
