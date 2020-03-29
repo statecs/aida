@@ -2,14 +2,15 @@ session_config:
   session_expiration_time: 0.0
   carry_over_slots_to_new_session: true
 intents:
-- headache_utter
 - greet
+- thankyou
+- ask_about_headache
+- headache_utter
 - goodbye
 - affirm
 - deny
 - mood_great
 - mood_unhappy
-- thankyou
 - ask_howdoing
 - handleinsult
 - telljoke
@@ -21,7 +22,6 @@ intents:
 - clear
 - goback
 - time_range
-- ask_about_headache
 - ask_about_soreThroat
 - ask_about_coughFever
 - headache_meds
@@ -98,25 +98,6 @@ slots:
     type: unfeaturized
     auto_fill: false
 responses:
-  utter_submit_headache:
-  - text: "Tack för dina svar: - {headache_utter}\n {headache_when}\n {headache_pain}\n\
-      \  {headache_changed}\n  {headache_where}\n {headache_other_symptoms}\n {headache_meds}\n\
-      \ {headache_length_weight}\n {headache_other}\n {headache_expectation}\n"
-  utter_submit_soreThroat:
-  - text: "Tack för dina svar: - {soreThroat_duration}\n {soreThroat_pain}\n {soreThroat_location}\n\
-      \ {soreThroat_other_symptoms}\n {soreThroat_open}\n {soreThroat_other}\n {soreThroat_expectation}\n\
-      \ {coughFever_heavyBreathe}\n {coughFever_breastPain}\n {coughFever_health}\n\
-      \ {coughFever_respiratory}\n {coughFever_time}\n {coughFever_temperature}\n"
-  utter_submit_coughFever:
-  - text: "Tack för dina svar: - {coughFever_heavyBreathe}\n {coughFever_breastPain}\n\
-      \ {coughFever_health}\n {coughFever_respiratory}\n {coughFever_time}\n {coughFever_temperature}\n"
-  utter_ask_coughFever_heavyBreathe:
-  - buttons:
-    - payload: Ja
-      title: Ja
-    - payload: Nej
-      title: Nej
-    text: Känns det tungt att andas även när du inte hostar?
   utter_ask_coughFever_breastPain:
   - buttons:
     - payload: Ja
@@ -126,6 +107,13 @@ responses:
     text: Gör det ont i bröstet när du andas djupt?
   utter_ask_coughFever_health:
   - text: Hur bra är din hälsa idag? 1 (bästa hälsa) till 5 (sämsta tänkbara hälsan)
+  utter_ask_coughFever_heavyBreathe:
+  - buttons:
+    - payload: Ja
+      title: Ja
+    - payload: Nej
+      title: Nej
+    text: Känns det tungt att andas även när du inte hostar?
   utter_ask_coughFever_respiratory:
   - buttons:
     - payload: Ja
@@ -134,55 +122,10 @@ responses:
       title: Nej
     text: ' Har någon i din närhet varit sjuk i luftvägsinfektion eller feber den
       senaste tiden?'
-  utter_ask_coughFever_time:
-  - text: Hur länge har du haft feber?
   utter_ask_coughFever_temperature:
   - text: Vilken var din senast uppmätta temperatur?
-  utter_ask_soreThroat_duration:
-  - buttons:
-    - payload: Mindre än 24 timmar
-      title: Mindre än 24 timmar
-    - payload: 1 - 30 dagar
-      title: 1 - 30 dagar
-    - payload: 1 till 12 månader
-      title: 1 till 12 månader
-    text: Hur länge har du haft ont i halsen?
-  utter_ask_soreThroat_pain:
-  - buttons:
-    - payload: Lindriga
-      title: Lindriga
-    - payload: Måttliga
-      title: Måttliga
-    - payload: Svåra
-      title: Svåra
-    - payload: Mycket svåra
-      title: Mycket svåra
-    text: Hur svåra är dina halsbesvär just nu?
-  utter_ask_soreThroat_location:
-  - text: Vart i halsen har du ont?
-  utter_ask_soreThroat_other_symptoms:
-  - custom:
-      data:
-      - payload: Svår sväljningssmärta
-        title: Svår sväljningssmärta
-      - payload: Heshet
-        title: Heshet
-      - payload: Rinnande näsa
-        title: Rinnande näsa
-      - payload: Öronvärk
-        title: Öronvärk
-      - payload: Ögonbesvär
-        title: Ögonbesvär
-      type: multipleSelect
-    text: ' Har du något av följande i samband med dina halsbesvär? Du kan välja flera
-      alternativ.'
-  utter_ask_soreThroat_open:
-  - buttons:
-    - payload: Ja
-      title: Ja
-    - payload: Nej
-      title: Nej
-    text: Har du svårt att öppna munnen?
+  utter_ask_coughFever_time:
+  - text: Hur länge har du haft feber?
   utter_ask_headache_changed:
   - buttons:
     - payload: Förvärrats
@@ -194,10 +137,6 @@ responses:
     - payload: Försvunnit
       title: Försvunnit
     text: Hur har din huvudvärk förändrats sedan den började?
-  utter_ask_soreThroat_other:
-  - text: Är det något du är orolig över?
-  utter_ask_soreThroat_expectation:
-  - text: Vad förväntar du dig av kontakten med oss?
   utter_ask_headache_expectation:
   - text: Vad förväntar du dig av kontakten med oss?
   utter_ask_headache_length_weight:
@@ -297,6 +236,55 @@ responses:
   - text: Inget speciellt! Hur mår du?
   - text: Läget är bra, tack!
   - text: Jag mår suveränt!
+  utter_ask_soreThroat_duration:
+  - buttons:
+    - payload: Mindre än 24 timmar
+      title: Mindre än 24 timmar
+    - payload: 1 - 30 dagar
+      title: 1 - 30 dagar
+    - payload: 1 till 12 månader
+      title: 1 till 12 månader
+    text: Hur länge har du haft ont i halsen?
+  utter_ask_soreThroat_expectation:
+  - text: Vad förväntar du dig av kontakten med oss?
+  utter_ask_soreThroat_location:
+  - text: Vart i halsen har du ont?
+  utter_ask_soreThroat_open:
+  - buttons:
+    - payload: Ja
+      title: Ja
+    - payload: Nej
+      title: Nej
+    text: Har du svårt att öppna munnen?
+  utter_ask_soreThroat_other:
+  - text: Är det något du är orolig över?
+  utter_ask_soreThroat_other_symptoms:
+  - custom:
+      data:
+      - payload: Svår sväljningssmärta
+        title: Svår sväljningssmärta
+      - payload: Heshet
+        title: Heshet
+      - payload: Rinnande näsa
+        title: Rinnande näsa
+      - payload: Öronvärk
+        title: Öronvärk
+      - payload: Ögonbesvär
+        title: Ögonbesvär
+      type: multipleSelect
+    text: ' Har du något av följande i samband med dina halsbesvär? Du kan välja flera
+      alternativ.'
+  utter_ask_soreThroat_pain:
+  - buttons:
+    - payload: Lindriga
+      title: Lindriga
+    - payload: Måttliga
+      title: Måttliga
+    - payload: Svåra
+      title: Svåra
+    - payload: Mycket svåra
+      title: Mycket svåra
+    text: Hur svåra är dina halsbesvär just nu?
   utter_chitchat:
   - text: Jag mår jättebra!
   - image: https://i.imgur.com/nGF1K8f.jpg
@@ -322,6 +310,18 @@ responses:
   - text: ' Det var inte så snällt av dig! Jag har också känslor, även fast jag bara
       är en robot.'
   - text: Det var inte snällt av dig att säga så.
+  utter_submit_coughFever:
+  - text: "Tack för dina svar: - {coughFever_heavyBreathe}\n {coughFever_breastPain}\n\
+      \ {coughFever_health}\n {coughFever_respiratory}\n {coughFever_time}\n {coughFever_temperature}\n"
+  utter_submit_headache:
+  - text: "Tack för dina svar: - {headache_utter}\n {headache_when}\n {headache_pain}\n\
+      \  {headache_changed}\n  {headache_where}\n {headache_other_symptoms}\n {headache_meds}\n\
+      \ {headache_length_weight}\n {headache_other}\n {headache_expectation}\n"
+  utter_submit_soreThroat:
+  - text: "Tack för dina svar: - {soreThroat_duration}\n {soreThroat_pain}\n {soreThroat_location}\n\
+      \ {soreThroat_other_symptoms}\n {soreThroat_open}\n {soreThroat_other}\n {soreThroat_expectation}\n\
+      \ {coughFever_heavyBreathe}\n {coughFever_breastPain}\n {coughFever_health}\n\
+      \ {coughFever_respiratory}\n {coughFever_time}\n {coughFever_temperature}\n"
   utter_telljoke:
   - text: Vad är klockan? En anordning som visar tiden.
   - text: Vem i kryddskåpet jobbar extra? Tim-jan!
@@ -337,6 +337,12 @@ responses:
   - text: Model 1.0 - Mar 28, 2020
 actions:
 - action_version
+- utter_ask_coughFever_breastPain
+- utter_ask_coughFever_health
+- utter_ask_coughFever_heavyBreathe
+- utter_ask_coughFever_respiratory
+- utter_ask_coughFever_temperature
+- utter_ask_coughFever_time
 - utter_ask_headache_changed
 - utter_ask_headache_expectation
 - utter_ask_headache_length_weight
@@ -348,31 +354,25 @@ actions:
 - utter_ask_headache_when
 - utter_ask_headache_where
 - utter_ask_howdoing
+- utter_ask_soreThroat_duration
+- utter_ask_soreThroat_expectation
+- utter_ask_soreThroat_location
+- utter_ask_soreThroat_open
+- utter_ask_soreThroat_other
+- utter_ask_soreThroat_other_symptoms
+- utter_ask_soreThroat_pain
 - utter_chitchat
 - utter_default
 - utter_goodbye
 - utter_greet
 - utter_handleinsult
+- utter_submit
+- utter_submit_coughFever
+- utter_submit_headache
+- utter_submit_soreThroat
 - utter_telljoke
 - utter_thanks
 - utter_version
-- utter_submit
-- utter_ask_coughFever_heavyBreathe
-- utter_ask_coughFever_breastPain
-- utter_ask_coughFever_health
-- utter_ask_coughFever_respiratory
-- utter_ask_coughFever_time
-- utter_ask_coughFever_temperature
-- utter_ask_soreThroat_duration
-- utter_ask_soreThroat_pain
-- utter_ask_soreThroat_location
-- utter_ask_soreThroat_other_symptoms
-- utter_ask_soreThroat_open
-- utter_ask_soreThroat_other
-- utter_ask_soreThroat_expectation
-- utter_submit_headache
-- utter_submit_soreThroat
-- utter_submit_coughFever
 forms:
 - coughFever_form
 - headache_form

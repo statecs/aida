@@ -339,6 +339,7 @@
 - jag har ont i huvudet
 - huvudvärk
 - Huvudvärk
+- ont i huvudet
 
 ## intent:ask_about_soreThroat
 - Jag har ont i halsen
