@@ -12,8 +12,8 @@ import requests
 import json
 import csv
 
-from rasa_sdk import Action, Tracker
-from rasa_sdk.events import SlotSet, AllSlotsReset, EventType
+from rasa_sdk import Action, Tracker, ActionExecutionRejection
+from rasa_sdk.events import SlotSet, AllSlotsReset, EventType, FollowupAction, UserUtteranceReverted
 from rasa_sdk.forms import FormAction, REQUESTED_SLOT
 from rasa_sdk.executor import CollectingDispatcher
 
@@ -21,6 +21,19 @@ from datetime import datetime, date, time, timedelta
 
 logger = logging.getLogger(__name__)
 vers = 'Vers: 0.7.0, Date: Mar 11, 2020'
+
+
+class ActionRewind(Action):
+    def name(self):
+        logger.info("actionrewind self called")
+        # define the name of the action which can then be included in training stories
+        return "action_rewind"
+
+    def run(self, dispatcher, tracker, domain):
+        # only utter the template if it is available
+        dispatcher.utter_template("utter_back", tracker,
+                                  silent_fail=True)
+        return [UserUtteranceReverted(), UserUtteranceReverted()]
 
 
 class ActionVersion(Action):
@@ -74,6 +87,45 @@ class HeadacheForm(FormAction):
             "headache_expectation": [self.from_entity(entity="headache_expectation"), self.from_text()],
         }
 
+    def validate(self,
+                 dispatcher: CollectingDispatcher,
+                 tracker: Tracker,
+                 domain: Dict[Text, Any]) -> List[Dict]:
+        """Validate extracted requested slot else reject the execution of the form action"""
+        # extract other slots that were not requested
+        # but set by corresponding entity
+
+        slot_values = self.extract_other_slots(dispatcher, tracker, domain)
+        # extract requested slot
+        slot_to_fill = tracker.get_slot(REQUESTED_SLOT)
+        if slot_to_fill:
+            slot_values.update(self.extract_requested_slot(
+                dispatcher, tracker, domain))
+
+            if not slot_values:
+                # reject form action execution
+                # if some slot was requested but nothing was extracted
+                # it will allow other policies to predict another action
+                raise ActionExecutionRejection(self.name(),
+                                               "Failed to validate slot {0} "
+                                               "with action {1}"
+                                               "".format(slot_to_fill,
+                                                         self.name()))
+
+         # we'll check when validation failed in order
+         # to add appropriate utterances
+        for slot, value in slot_values.items():
+
+            msg = tracker.latest_message.get('text')
+            if msg == "/back":
+                dispatcher.utter_template(
+                    "utter_back", tracker, silent_fail=True)
+                # return [FollowupAction('action_listen')]
+                return [FollowupAction("action_rewind")]
+
+        # validation succeed, set the slots values to the extracted values
+        return [SlotSet(slot, value) for slot, value in slot_values.items()]
+
     def submit(
         self,
         dispatcher: CollectingDispatcher,
@@ -119,6 +171,45 @@ class soreThroatForm(FormAction):
             "soreThroat_expectation": [self.from_entity(entity="soreThroat_expectation"), self.from_text()],
         }
 
+    def validate(self,
+                 dispatcher: CollectingDispatcher,
+                 tracker: Tracker,
+                 domain: Dict[Text, Any]) -> List[Dict]:
+        """Validate extracted requested slot else reject the execution of the form action"""
+        # extract other slots that were not requested
+        # but set by corresponding entity
+
+        slot_values = self.extract_other_slots(dispatcher, tracker, domain)
+        # extract requested slot
+        slot_to_fill = tracker.get_slot(REQUESTED_SLOT)
+        if slot_to_fill:
+            slot_values.update(self.extract_requested_slot(
+                dispatcher, tracker, domain))
+
+            if not slot_values:
+                # reject form action execution
+                # if some slot was requested but nothing was extracted
+                # it will allow other policies to predict another action
+                raise ActionExecutionRejection(self.name(),
+                                               "Failed to validate slot {0} "
+                                               "with action {1}"
+                                               "".format(slot_to_fill,
+                                                         self.name()))
+
+         # we'll check when validation failed in order
+         # to add appropriate utterances
+        for slot, value in slot_values.items():
+
+            msg = tracker.latest_message.get('text')
+            if msg == "/back":
+                dispatcher.utter_template(
+                    "utter_back", tracker, silent_fail=True)
+                # return [FollowupAction('action_listen')]
+                return [FollowupAction("action_rewind")]
+
+        # validation succeed, set the slots values to the extracted values
+        return [SlotSet(slot, value) for slot, value in slot_values.items()]
+
     def submit(
         self,
         dispatcher: CollectingDispatcher,
@@ -162,6 +253,45 @@ class coughFeverForm(FormAction):
             "coughFever_time": [self.from_entity(entity="coughFever_time"), self.from_text()],
             "coughFever_temperature": [self.from_entity(entity="coughFever_temperature"), self.from_text()],
         }
+
+    def validate(self,
+                 dispatcher: CollectingDispatcher,
+                 tracker: Tracker,
+                 domain: Dict[Text, Any]) -> List[Dict]:
+        """Validate extracted requested slot else reject the execution of the form action"""
+        # extract other slots that were not requested
+        # but set by corresponding entity
+
+        slot_values = self.extract_other_slots(dispatcher, tracker, domain)
+        # extract requested slot
+        slot_to_fill = tracker.get_slot(REQUESTED_SLOT)
+        if slot_to_fill:
+            slot_values.update(self.extract_requested_slot(
+                dispatcher, tracker, domain))
+
+            if not slot_values:
+                # reject form action execution
+                # if some slot was requested but nothing was extracted
+                # it will allow other policies to predict another action
+                raise ActionExecutionRejection(self.name(),
+                                               "Failed to validate slot {0} "
+                                               "with action {1}"
+                                               "".format(slot_to_fill,
+                                                         self.name()))
+
+         # we'll check when validation failed in order
+         # to add appropriate utterances
+        for slot, value in slot_values.items():
+
+            msg = tracker.latest_message.get('text')
+            if msg == "/back":
+                dispatcher.utter_template(
+                    "utter_back", tracker, silent_fail=True)
+                # return [FollowupAction('action_listen')]
+                return [FollowupAction("action_rewind")]
+
+        # validation succeed, set the slots values to the extracted values
+        return [SlotSet(slot, value) for slot, value in slot_values.items()]
 
     def submit(
         self,

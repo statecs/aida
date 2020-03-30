@@ -337,6 +337,7 @@ responses:
   - text: Model 1.0 - Mar 28, 2020
 actions:
 - action_version
+- action_rewind
 - utter_ask_coughFever_breastPain
 - utter_ask_coughFever_health
 - utter_ask_coughFever_heavyBreathe
