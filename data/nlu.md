@@ -350,6 +350,8 @@
 - Jag har feber och hosta
 - jag har feber och hosta
 - feber och hosta
+- feber
+- hosta
 
 ## intent:headache_utter
 - En pågående episod av huvudvärk

@@ -65,7 +65,7 @@ class HeadacheForm(FormAction):
     def required_slots(tracker: Tracker) -> List[Text]:
         """A list of required slots that the form has to fill"""
 
-        return ["headache_utter", "headache_when", "headache_pain", "headache_changed", "headache_where", "headache_other_symptoms",  "headache_meds", "headache_length_weight", "headache_other", "headache_expectation"]
+        return ["state_of_health", "headache_utter", "headache_when", "headache_pain", "headache_changed", "headache_where", "headache_other_symptoms",  "headache_meds", "headache_length_weight", "headache_other", "headache_expectation"]
 
     def slot_mappings(self) -> Dict[Text, Union[Dict, List[Dict]]]:
         """A dictionary to map required slots to
@@ -75,6 +75,7 @@ class HeadacheForm(FormAction):
             or a list of them, where a first match will be picked"""
 
         return {
+            "state_of_health": [self.from_entity(entity="state_of_health"), self.from_text()],
             "headache_utter": [self.from_entity(entity="headache_utter"), self.from_text()],
             "headache_when": [self.from_entity(entity="headache_when"), self.from_text()],
             "headache_pain": [self.from_entity(entity="headache_pain"), self.from_text()],
@@ -152,7 +153,7 @@ class soreThroatForm(FormAction):
     def required_slots(tracker: Tracker) -> List[Text]:
         """A list of required slots that the form has to fill"""
 
-        return ["soreThroat_duration", "soreThroat_pain", "soreThroat_location", "soreThroat_other_symptoms", "soreThroat_open", "soreThroat_other", "soreThroat_expectation"]
+        return ["state_of_health", "soreThroat_duration", "soreThroat_pain", "soreThroat_location", "soreThroat_other_symptoms", "soreThroat_open", "soreThroat_other", "soreThroat_expectation"]
 
     def slot_mappings(self) -> Dict[Text, Union[Dict, List[Dict]]]:
         """A dictionary to map required slots to
@@ -162,6 +163,7 @@ class soreThroatForm(FormAction):
             or a list of them, where a first match will be picked"""
 
         return {
+            "state_of_health": [self.from_entity(entity="state_of_health"), self.from_text()],
             "soreThroat_duration": [self.from_entity(entity="soreThroat_duration"), self.from_text()],
             "soreThroat_pain": [self.from_entity(entity="soreThroat_pain"), self.from_text()],
             "soreThroat_location": [self.from_entity(entity="soreThroat_location"), self.from_text()],
@@ -236,7 +238,7 @@ class coughFeverForm(FormAction):
     def required_slots(tracker: Tracker) -> List[Text]:
         """A list of required slots that the form has to fill"""
 
-        return ["coughFever_heavyBreathe", "coughFever_breastPain", "coughFever_health", "coughFever_respiratory", "coughFever_time", "coughFever_temperature"]
+        return ["state_of_health", "coughFever_heavyBreathe", "coughFever_breastPain", "coughFever_health", "coughFever_respiratory", "coughFever_time", "coughFever_temperature"]
 
     def slot_mappings(self) -> Dict[Text, Union[Dict, List[Dict]]]:
         """A dictionary to map required slots to
@@ -246,6 +248,7 @@ class coughFeverForm(FormAction):
             or a list of them, where a first match will be picked"""
 
         return {
+            "state_of_health": [self.from_entity(entity="state_of_health"), self.from_text()],
             "coughFever_heavyBreathe": [self.from_entity(entity="coughFever_heavyBreathe"), self.from_text()],
             "coughFever_breastPain": [self.from_entity(entity="coughFever_breastPain"), self.from_text()],
             "coughFever_health": [self.from_entity(entity="coughFever_health"), self.from_text()],
