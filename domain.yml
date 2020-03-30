@@ -18,6 +18,9 @@ intents:
 - bot_challenge
 - chitchat
 - stop
+- ask_about_corona_symptom
+- ask_about_corona_virus
+- ask_about_corona_death
 - version
 - clear
 - goback
@@ -347,6 +350,50 @@ responses:
   - text: Hör av dig om du har några fler frågor.
   utter_version:
   - text: Model 1.0 - Mar 28, 2020
+  utter_corona_symptom:
+  - text: Enligt Folkhälsomyndigheten är de vanligaste symtomen feber och hosta, men
+      även andningspåverkan, halsont, huvudvärk, muskel- och ledvärk är vanliga symtom.
+      De flesta får lindriga besvär som går över av sig själva med egenvård i hemmet.
+      En del blir allvarligt sjuka med exempelvis svårigheter att andas och lunginflammation.
+  - text: Alla kan få coronavirus. Många får bara milda symptom, men vissa blir väldigt
+      sjuka och behöver vård. Även de med milda symptom kan smitta, vilket kan bli
+      farligt om de smittar människor i riskgrupper. Enligt Folkhälsomyndigheten visar
+      studier att hög ålder är den främsta riskfaktorn för att bli väldigt sjuk. Personer
+      med hög ålder i kombination med andra sjukdomar, såsom högt blodtryck, hjärt-
+      kärlsjukdom, lungsjukdom, cancer eller diabetes är extra utsatta. Just nu rekommenderas
+      du som är över 70 år att försöka undvika platser med många människor, för att
+      vara extra försiktig. Det kan exempelvis vara kollektivtrafiken, affärer eller
+      apotek. Har du någon i din närhet som kan hjälpa dig med ärenden, så fråga dem.
+      Men undvik nära kontakt med andra människor. Du kan också kontakta kommunen
+      där du bor om du behöver hjälp.
+  utter_corona_virus:
+  - text: Enligt Folkhälsomyndigheten är de vanligaste symtomen feber och hosta, men
+      även andningspåverkan, halsont, huvudvärk, muskel- och ledvärk är vanliga symtom.
+      De flesta får lindriga besvär som går över av sig själva med egenvård i hemmet.
+      En del blir allvarligt sjuka med exempelvis svårigheter att andas och lunginflammation.
+  - text: Enligt Folkhälsomyndigheten blir flesta som fått lindriga symtom friska
+      efter två veckor. För de som blev allvarligt sjuka tog det mellan tre och sex
+      veckor innan de var friska igen. De som blev allvarligt sjuka hade andningssvårigheter,
+      som snabb andning och låg syresättning av blodet. En del av dem behövde intensivvård,
+      till exempel med respirator. Dessa allvarliga symtom kom vanligen en vecka efter
+      insjuknandet.
+  utter_corona_death:
+  - text: Enligt Vårdguiden blir de allra flesta som smittas lindrigt sjuka med luftvägssymtom
+      som går över av sig själva, men vissa drabbas av allvarligare sjukdom som lunginflammation.
+      De som blir allvarligt sjuka kan behöva läggas in på sjukhus och få hjälp med
+      andningen. Därför är det viktigt att inte för många blir sjuka samtidigt.
+  - text: Många har dött i sjukdomen, främst äldre och sjuka. WHO uppskattar idag
+      att dödligheten är 1–2 % av de redan smittade men uppskattningarna är fortfarande
+      osäkra. Det kan finnas fler fall än vad som har rapporterats vilket kan innebära
+      att dödligheten kommer att sjunka. Det är mycket ovanligt att unga friska människor
+      dör, men äldre och sjuka är en riskgrupp som dör mycket oftare. Enligt den Brittiska
+      regeringens expertråd kan dödligheten bland människor över 80 år vara över 8%,
+      medans den bland människor yngre än 50 år är mindre än 0.5%. Bland dem som behöver
+      läggas in på sjukhus uppskattar expertrådet att det kan vara 12% som dör.
+  - text: Folkhälsomyndighetens bedömning av forskningen är att viruset smittar när
+      man är sjuk och i samband med insjuknandet, och inte under inkubationstiden.
+      De som har varit utsatta för smitta ska vara uppmärksamma på tidiga sjukdomstecken,
+      eftersom du smittar så fort du har även milda symtom.
 actions:
 - action_version
 - action_rewind
@@ -387,6 +434,9 @@ actions:
 - utter_telljoke
 - utter_thanks
 - utter_version
+- utter_corona_symptom
+- utter_corona_virus
+- utter_corona_death
 forms:
 - coughFever_form
 - headache_form
