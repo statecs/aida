@@ -57,18 +57,20 @@ docker-compose run rasa-x rasa test core --stories test/test_stories.md
 
 # Rasa Interactive Shell
 
-```sh
-docker run -v $(pwd):/app rasa/rasa:${RASA_VERSION} run actions --actions actions.actions
-docker-compose up app -d
-docker run -it -v $(pwd):/app rasa/rasa:${RASA_VERSION} shell --debug
-```
 
 With Docker:
 
 ```sh
-export RASA_X_VERSION=1.5.1-full
-export RASA_MODEL_SERVER="https://localhost:5002"
-docker run --it --rm --network=$(basename `pwd`)_default -v $(pwd):/app rasa/rasa:${RASA_X_VERSION} shell --model /app/models/$(ls models) --endpoints endpoints_local.yml
+docker run -it -v $(pwd):/app rasa/rasa:1.8.1 run actions --actions actions.actions
+docker-compose up app
+docker run -it -v $(pwd):/app rasa/rasa:1.8.1 shell --debug --endpoints endpoints_local.yml
+```
+
+Starts an interactive learning session to create new training data by chatting.
+https://rasa.com/docs/rasa/user-guide/command-line-interface/
+
+```sh
+docker run -it -v $(pwd):/app rasa/rasa:1.8.1 interactive --debug --endpoints endpoints_local.yml
 ```
 
 # Scripts

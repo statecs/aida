@@ -26,3 +26,4 @@ policies:
   epochs: 100
   evaluate_on_num_examples: 0
 - name: FormPolicy
+- name: MappingPolicy

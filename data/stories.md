@@ -2,15 +2,23 @@
 * greet <!--- User input expressed as intent. In this case it represents users message 'Hello'. -->
   - utter_greet <!--- The response of the chatbot expressed as an action. In this case it represents chatbot's response 'Hello, how can I help?' -->
 
-## Huvudvärk
-* greet
-  - utter_greet
-* huvudvärk
-  - utter_headache
+## happy path headache_form
+* ask_about_headache
+    - headache_form
+    - form{"name": "headache_form"}
+    - form{"name": null}
 
-## Huvudvärk
-* huvudvärk
-  - utter_headache
+## happy path soreThroat_form
+* ask_about_soreThroat
+    - soreThroat_form
+    - form{"name": "soreThroat_form"}
+    - form{"name": null}
+
+## happy path coughFever_form
+* ask_about_coughFever
+    - coughFever_form
+    - form{"name": "coughFever_form"}
+    - form{"name": null}
 
 ## greet
 * greet
@@ -48,21 +56,19 @@
 * goback
   - action_back
 
+## Corona
+* ask_about_corona_symptom
+  - utter_corona_symptom
+
+## Corona Virus
+* ask_about_corona_virus
+  - utter_corona_virus
+
+## Corona Death
+* ask_about_corona_death
+  - utter_corona_death
+
 ## clear
 * clear
-  - utter_clear
+  - utter_greet
   - action_restart
-
-## New Story
-
-* goback
-    - action_back
-
-## New Story
-
-* goback
-    - action_back
-
-## New Story
-* utter_headache
-    - utter_headache
