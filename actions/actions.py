@@ -75,17 +75,17 @@ class HeadacheForm(FormAction):
             or a list of them, where a first match will be picked"""
 
         return {
-            "state_of_health": [self.from_entity(entity="state_of_health"), self.from_text()],
-            "headache_utter": [self.from_entity(entity="headache_utter"), self.from_text()],
-            "headache_when": [self.from_entity(entity="headache_when"), self.from_text()],
-            "headache_pain": [self.from_entity(entity="headache_pain"), self.from_text()],
-            "headache_changed": [self.from_entity(entity="headache_changed"), self.from_text()],
-            "headache_where": [self.from_entity(entity="headache_where"), self.from_text()],
-            "headache_other_symptoms": [self.from_entity(entity="headache_other_symptoms"), self.from_text()],
-            "headache_meds": [self.from_entity(entity="headache_meds"), self.from_text()],
-            "headache_length_weight": [self.from_entity(entity="headache_length_weight"), self.from_text()],
-            "headache_other": [self.from_entity(entity="headache_other"), self.from_text()],
-            "headache_expectation": [self.from_entity(entity="headache_expectation"), self.from_text()],
+            "state_of_health": [self.from_text()],
+            "headache_utter": [self.from_text()],
+            "headache_when": [self.from_text()],
+            "headache_pain": [self.from_text()],
+            "headache_changed": [self.from_text()],
+            "headache_where": [self.from_text()],
+            "headache_other_symptoms": [self.from_text()],
+            "headache_meds": [self.from_text()],
+            "headache_length_weight": [self.from_text()],
+            "headache_other": [self.from_text()],
+            "headache_expectation": [self.from_text()],
         }
 
     def validate(self,
@@ -123,6 +123,12 @@ class HeadacheForm(FormAction):
                     "utter_back", tracker, silent_fail=True)
                 # return [FollowupAction('action_listen')]
                 return [FollowupAction("action_rewind")]
+
+            if msg == "/restart":
+                dispatcher.utter_template(
+                    "utter_restart", tracker, silent_fail=True)
+                # return [FollowupAction('action_listen')]
+                return [FollowupAction("action_restart")]
 
         # validation succeed, set the slots values to the extracted values
         return [SlotSet(slot, value) for slot, value in slot_values.items()]
@@ -163,14 +169,14 @@ class soreThroatForm(FormAction):
             or a list of them, where a first match will be picked"""
 
         return {
-            "state_of_health": [self.from_entity(entity="state_of_health"), self.from_text()],
-            "soreThroat_duration": [self.from_entity(entity="soreThroat_duration"), self.from_text()],
-            "soreThroat_pain": [self.from_entity(entity="soreThroat_pain"), self.from_text()],
-            "soreThroat_location": [self.from_entity(entity="soreThroat_location"), self.from_text()],
-            "soreThroat_other_symptoms": [self.from_entity(entity="soreThroat_other_symptoms"), self.from_text()],
-            "soreThroat_open": [self.from_entity(entity="soreThroat_open"), self.from_text()],
-            "soreThroat_other": [self.from_entity(entity="soreThroat_other"), self.from_text()],
-            "soreThroat_expectation": [self.from_entity(entity="soreThroat_expectation"), self.from_text()],
+            "state_of_health": [self.from_text()],
+            "soreThroat_duration": [self.from_text()],
+            "soreThroat_pain": [self.from_text()],
+            "soreThroat_location": [self.from_text()],
+            "soreThroat_other_symptoms": [self.from_text()],
+            "soreThroat_open": [self.from_text()],
+            "soreThroat_other": [self.from_text()],
+            "soreThroat_expectation": [self.from_text()],
         }
 
     def validate(self,
@@ -208,6 +214,12 @@ class soreThroatForm(FormAction):
                     "utter_back", tracker, silent_fail=True)
                 # return [FollowupAction('action_listen')]
                 return [FollowupAction("action_rewind")]
+
+            if msg == "/restart":
+                dispatcher.utter_template(
+                    "utter_restart", tracker, silent_fail=True)
+                # return [FollowupAction('action_listen')]
+                return [FollowupAction("action_restart")]
 
         # validation succeed, set the slots values to the extracted values
         return [SlotSet(slot, value) for slot, value in slot_values.items()]
@@ -248,13 +260,13 @@ class coughFeverForm(FormAction):
             or a list of them, where a first match will be picked"""
 
         return {
-            "state_of_health": [self.from_entity(entity="state_of_health"), self.from_text()],
-            "coughFever_heavyBreathe": [self.from_entity(entity="coughFever_heavyBreathe"), self.from_text()],
-            "coughFever_breastPain": [self.from_entity(entity="coughFever_breastPain"), self.from_text()],
-            "coughFever_health": [self.from_entity(entity="coughFever_health"), self.from_text()],
-            "coughFever_respiratory": [self.from_entity(entity="coughFever_respiratory"), self.from_text()],
-            "coughFever_time": [self.from_entity(entity="coughFever_time"), self.from_text()],
-            "coughFever_temperature": [self.from_entity(entity="coughFever_temperature"), self.from_text()],
+            "state_of_health": [self.from_text()],
+            "coughFever_heavyBreathe": [self.from_text()],
+            "coughFever_breastPain": [self.from_text()],
+            "coughFever_health": [self.from_text()],
+            "coughFever_respiratory": [self.from_text()],
+            "coughFever_time": [self.from_text()],
+            "coughFever_temperature": [self.from_text()],
         }
 
     def validate(self,
@@ -292,6 +304,12 @@ class coughFeverForm(FormAction):
                     "utter_back", tracker, silent_fail=True)
                 # return [FollowupAction('action_listen')]
                 return [FollowupAction("action_rewind")]
+
+            if msg == "/restart":
+                dispatcher.utter_template(
+                    "utter_restart", tracker, silent_fail=True)
+                # return [FollowupAction('action_listen')]
+                return [FollowupAction("action_restart")]
 
         # validation succeed, set the slots values to the extracted values
         return [SlotSet(slot, value) for slot, value in slot_values.items()]
