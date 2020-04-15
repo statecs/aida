@@ -167,7 +167,7 @@ responses:
     text: ' Tar du några läkemedel eller naturläkemedel mot din huvudvärk? Ange det
       nedan.'
   utter_ask_headache_other:
-  - text: Är det något som oroar dig?
+  - text: Är det något du vill tillägga?
   utter_ask_headache_other_symptoms:
   - custom:
       data:
@@ -226,8 +226,8 @@ responses:
       title: För 1 - 24 timmar sedan
     - payload: För 1 - 30 dagar sedan
       title: För 1 - 30 dagar sedan
-    - payload: För 1 till 12 månander sedan
-      title: För 1 till 12 månander sedan
+    - payload: För 1 till 12 månader sedan
+      title: För 1 till 12 månader sedan
     text: När började din nuvarande huvudvärk?
   utter_ask_headache_where:
   - custom:
@@ -241,7 +241,7 @@ responses:
       - payload: Annat
         title: Annat
       type: multipleSelect
-    text: Vart sitter din huvudvärk? Du kan välja flera alternativ.
+    text: Var sitter din huvudvärk? Du kan välja flera alternativ.
   utter_ask_howdoing:
   - text: Jag mår bra! Tack för att du frågar!
   - text: Jag mår bra, tack!
@@ -272,7 +272,7 @@ responses:
       title: Nej
     text: Har du svårt att öppna munnen?
   utter_ask_soreThroat_other:
-  - text: Är det något du är orolig över?
+  - text: Är det något du vill tillägga?
   utter_ask_soreThroat_other_symptoms:
   - custom:
       data:
@@ -313,30 +313,86 @@ responses:
   - text: Ha det så bra!
   - text: Tack för denna gång! Jag finns här om du har några fler frågor.
   utter_greet:
-  - buttons:
-    - payload: Huvudvärk
-      title: Huvudvärk
-    - payload: Ont i halsen
-      title: Ont i halsen
-    - payload: Hosta och feber
-      title: Hosta och feber
-    text: Hej! Mitt namn är Aida! Vad söker du vård för?
+  - text: Hej! Mitt namn är Aida! Vad söker du?
   utter_handleinsult:
   - text: ' Det var inte så snällt av dig! Jag har också känslor, även fast jag bara
       är en robot.'
   - text: Det var inte snällt av dig att säga så.
   utter_submit_coughFever:
-  - text: "Tack för dina svar: - {coughFever_heavyBreathe}\n {coughFever_breastPain}\n\
-      \ {coughFever_health}\n {coughFever_respiratory}\n {coughFever_time}\n {coughFever_temperature}\n"
+  - custom:
+      data:
+      - title: Känns det tungt att andas även när du inte hostar?
+        answer: '{coughFever_heavyBreathe}'
+      - title: Gör det ont i bröstet när du andas djupt?
+        answer: '{coughFever_breastPain}'
+      - title: Hur bra är din hälsa idag? 1 (bästa hälsa) till 5 (sämsta tänkbara
+          hälsan)
+        answer: '{coughFever_health}'
+      - title: Har någon i din närhet varit sjuk i luftvägsinfektion eller feber den
+          senaste tiden?
+        answer: '{coughFever_respiratory}'
+      - title: Hur länge har du haft feber?
+        answer: '{coughFever_time}'
+      - title: Vilken var din senast uppmätta temperatur?
+        answer: '{coughFever_temperature}'
+      type: finalPage
+    text: Tack för dina svar
   utter_submit_headache:
-  - text: "Tack för dina svar: - {headache_utter}\n {headache_when}\n {headache_pain}\n\
-      \  {headache_changed}\n  {headache_where}\n {headache_other_symptoms}\n {headache_meds}\n\
-      \ {headache_length_weight}\n {headache_other}\n {headache_expectation}\n"
+  - custom:
+      data:
+      - title: Hur yttrar sig huvudvärken? Du kan välja flera alternativ.
+        answer: '{headache_utter}'
+      - title: När började din nuvarande huvudvärk?
+        answer: '{headache_when}'
+      - title: På en skala från 1 (mycket lätt smärta) till 5 (värsta tänkbara smärta)
+          hur skulle du bedöma nivån på din huvudvärk?'
+        answer: '{headache_pain}'
+      - title: Hur har din huvudvärk förändrats sedan den började?
+        answer: '{headache_changed}'
+      - title: Var sitter din huvudvärk? Du kan välja flera alternativ.
+        answer: '{headache_where}'
+      - title: Har du något av följande besvär i samband med din huvudvärk? Du kan
+          välja flera alternativ.
+        answer: '{headache_other_symptoms}'
+      - title: Tar du några läkemedel eller naturläkemedel mot din huvudvärk? Ange
+          det nedan.
+        answer: '{headache_meds}'
+      - title: Vilken var din senast uppmätta temperatur?
+        answer: '{headache_length_weight}'
+      - title: Är det något du vill tillägga?
+        answer: '{headache_other}'
+      - title: Vad förväntar du dig av kontakten med oss?
+        answer: '{headache_expectation}'
+      type: finalPage
+    text: Tack för dina svar
   utter_submit_soreThroat:
-  - text: "Tack för dina svar: - {soreThroat_duration}\n {soreThroat_pain}\n {soreThroat_location}\n\
-      \ {soreThroat_other_symptoms}\n {soreThroat_open}\n {soreThroat_other}\n {soreThroat_expectation}\n\
-      \ {coughFever_heavyBreathe}\n {coughFever_breastPain}\n {coughFever_health}\n\
-      \ {coughFever_respiratory}\n {coughFever_time}\n {coughFever_temperature}\n"
+  - custom:
+      data:
+      - title: Hur yttrar sig huvudvärken? Du kan välja flera alternativ.
+        answer: '{soreThroat_duration}'
+      - title: När började din nuvarande huvudvärk?
+        answer: '{soreThroat_pain}'
+      - title: På en skala från 1 (mycket lätt smärta) till 5 (värsta tänkbara smärta)
+          hur skulle du bedöma nivån på din huvudvärk?'
+        answer: '{soreThroat_location}'
+      - title: Hur har din huvudvärk förändrats sedan den började?
+        answer: '{headache_changed}'
+      - title: Var sitter din huvudvärk? Du kan välja flera alternativ.
+        answer: '{soreThroat_other_symptoms}'
+      - title: Har du något av följande besvär i samband med din huvudvärk? Du kan
+          välja flera alternativ.
+        answer: '{soreThroat_open}'
+      - title: Tar du några läkemedel eller naturläkemedel mot din huvudvärk? Ange
+          det nedan.
+        answer: '{soreThroat_other}'
+      - title: Vilken var din senast uppmätta temperatur?
+        answer: '{soreThroat_expectation}'
+      - title: Är det något du vill tillägga?
+        answer: '{headache_other}'
+      - title: Vad förväntar du dig av kontakten med oss?
+        answer: '{headache_expectation}'
+      type: finalPage
+    text: Tack för dina svar
   utter_telljoke:
   - text: Vad är klockan? En anordning som visar tiden.
   - text: Vem i kryddskåpet jobbar extra? Tim-jan!
