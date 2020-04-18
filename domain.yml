@@ -106,9 +106,12 @@ slots:
 responses:
   utter_ask_state_of_health:
   - custom:
-      type: reactRangeUp
-    text: Hur bedömer du ditt allmänna hälsotillstånd? 1 (sämsta tänkbara tillstånd)
-      till 100 (bästa tänkbara tillstånd)
+      alt:
+        firstItem: Sämsta tillstånd
+        lastItem: Bästa tänkbara tillstånd
+      type: range100
+    text: Hur bedömer du ditt allmänna hälsotillstånd? 1 (sämsta tillstånd) till 100
+      (bästa tänkbara tillstånd)
   utter_ask_coughFever_breastPain:
   - buttons:
     - payload: Ja
@@ -118,7 +121,10 @@ responses:
     text: Gör det ont i bröstet när du andas djupt?
   utter_ask_coughFever_health:
   - custom:
-      type: reactRange
+      alt:
+        firstItem: Bästa hälsa
+        lastItem: Sämsta tänkbara hälsan
+      type: range5
     text: Hur bra är din hälsa idag? 1 (bästa hälsa) till 5 (sämsta tänkbara hälsan)
   utter_ask_coughFever_heavyBreathe:
   - buttons:
@@ -138,7 +144,13 @@ responses:
   utter_ask_coughFever_temperature:
   - custom:
       units:
-      - unit: °C
+      - unit: ℃
+        step:
+          number: '1'
+          values: '50'
+        range:
+          firstItem: '0'
+          lastItem: '200'
       type: numberInput
     text: Vilken var din senast uppmätta temperatur?
   utter_ask_coughFever_time:
@@ -160,7 +172,19 @@ responses:
   - custom:
       units:
       - unit: cm
+        step:
+          number: '1'
+          values: '160'
+        range:
+          firstItem: '100'
+          lastItem: '220'
       - unit: kg
+        step:
+          number: '0.1'
+          values: '70'
+        range:
+          firstItem: '30'
+          lastItem: '200'
       type: numberInput
     text: Ange din längd och vikt
   utter_ask_headache_meds:
@@ -211,13 +235,16 @@ responses:
       - payload: Hängande ögonlock
         title: Hängande ögonlock
       type: multipleSelect
-    text: ' Har du något av följande besvär i samband med din huvudvärk? Du kan välja
-      flera alternativ.'
+    text: Har du något av följande besvär i samband med din huvudvärk? Du kan välja
+      flera alternativ.
   utter_ask_headache_pain:
   - custom:
-      type: reactRange
-    text: På en skala från 1 (mycket lätt smärta) till 5 (värsta tänkbara smärta)
-      hur skulle du bedöma nivån på din huvudvärk?
+      alt:
+        firstItem: Ingen smärta
+        lastItem: Värsta tänkbara smärta
+      type: range5
+    text: På en skala från 1 (ingen smärta) till 5 (värsta tänkbara smärta) hur skulle
+      du bedöma nivån på din huvudvärk?
   utter_ask_headache_utter:
   - custom:
       data:
@@ -322,7 +349,7 @@ responses:
   - text: Ha det så bra!
   - text: Tack för denna gång! Jag finns här om du har några fler frågor.
   utter_greet:
-  - text: Hej! Mitt namn är Aida! Vad söker du?
+  - text: Hej! Mitt namn är Aida! Vad har du för symtom?
   utter_handleinsult:
   - text: ' Det var inte så snällt av dig! Jag har också känslor, även fast jag bara
       är en robot.'
