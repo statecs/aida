@@ -372,6 +372,12 @@ responses:
       - title: Vilken var din senast uppmätta temperatur?
         answer: '{coughFever_temperature}'
       type: finalPage
+      severity: medium
+      text:
+      - title: Tack för dina svar
+        content: Det verkar som att du svår hosta.
+        linkText: Läs mer på 1177.se
+        link: https://1177.se
     text: Tack för dina svar
   utter_submit_headache:
   - custom:
@@ -400,6 +406,12 @@ responses:
       - title: Vad förväntar du dig av kontakten med oss?
         answer: '{headache_expectation}'
       type: finalPage
+      severity: low
+      text:
+      - title: Tack för dina svar
+        content: Det verkar som att du behöver mer vård än vad vi kan ge dig.
+        linkText: Läs mer på 1177.se
+        link: https://1177.se
     text: Tack för dina svar
   utter_submit_soreThroat:
   - custom:
@@ -428,6 +440,12 @@ responses:
       - title: Vad förväntar du dig av kontakten med oss?
         answer: '{headache_expectation}'
       type: finalPage
+      severity: high
+      text:
+      - title: Tack för dina svar
+        content: Det verkar som att du behöver mer vård än vad vi kan ge dig.
+        linkText: Läs mer på 1177.se
+        link: https://1177.se
     text: Tack för dina svar
   utter_telljoke:
   - text: Vad är klockan? En anordning som visar tiden.
