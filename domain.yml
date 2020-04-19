@@ -167,7 +167,12 @@ responses:
       title: Försvunnit
     text: Hur har din huvudvärk förändrats sedan den började?
   utter_ask_headache_expectation:
-  - text: Vad förväntar du dig av kontakten med oss?
+  - custom:
+      options:
+      - name: Ett bra bemötande
+      - name: Trygghet
+      type: searchSelect
+    text: Vad förväntar du dig av kontakten med oss?
   utter_ask_headache_length_weight:
   - custom:
       units:
@@ -297,7 +302,12 @@ responses:
       title: 1 till 12 månader
     text: Hur länge har du haft ont i halsen?
   utter_ask_soreThroat_expectation:
-  - text: Vad förväntar du dig av kontakten med oss?
+  - custom:
+      options:
+      - name: Ett bra bemötande
+      - name: Trygghet
+      type: searchSelect
+    text: Vad förväntar du dig av kontakten med oss?
   utter_ask_soreThroat_location:
   - text: Vart i halsen har du ont?
   utter_ask_soreThroat_open:
@@ -349,7 +359,13 @@ responses:
   - text: Ha det så bra!
   - text: Tack för denna gång! Jag finns här om du har några fler frågor.
   utter_greet:
-  - text: Hej! Mitt namn är Aida! Vad har du för symtom?
+  - custom:
+      options:
+      - name: Huvudvärk
+      - name: Ont i halsen
+      - name: Feber och hosta
+      type: searchSelect
+    text: Hej! Mitt namn är Aida! Vad har du för symtom?
   utter_handleinsult:
   - text: ' Det var inte så snällt av dig! Jag har också känslor, även fast jag bara
       är en robot.'
@@ -416,29 +432,24 @@ responses:
   utter_submit_soreThroat:
   - custom:
       data:
-      - title: Hur yttrar sig huvudvärken? Du kan välja flera alternativ.
+      - title: Hur länge har du haft ont i halsen?
         answer: '{soreThroat_duration}'
-      - title: När började din nuvarande huvudvärk?
+      - title: Hur svåra är dina halsbesvär just nu?
         answer: '{soreThroat_pain}'
-      - title: På en skala från 1 (mycket lätt smärta) till 5 (värsta tänkbara smärta)
-          hur skulle du bedöma nivån på din huvudvärk?'
+      - title: Vart i halsen har du ont?
         answer: '{soreThroat_location}'
-      - title: Hur har din huvudvärk förändrats sedan den började?
-        answer: '{headache_changed}'
-      - title: Var sitter din huvudvärk? Du kan välja flera alternativ.
-        answer: '{soreThroat_other_symptoms}'
-      - title: Har du något av följande besvär i samband med din huvudvärk? Du kan
-          välja flera alternativ.
+      - title: Har du svårt att öppna munnen?
         answer: '{soreThroat_open}'
+      - title: Är det något du vill tillägga?
+        answer: '{soreThroat_other}'
+      - title: Har du något av följande i samband med dina halsbesvär? Du kan välja
+          flera alternativ.
+        answer: '{soreThroat_other_symptoms}'
       - title: Tar du några läkemedel eller naturläkemedel mot din huvudvärk? Ange
           det nedan.
         answer: '{soreThroat_other}'
-      - title: Vilken var din senast uppmätta temperatur?
-        answer: '{soreThroat_expectation}'
-      - title: Är det något du vill tillägga?
-        answer: '{headache_other}'
       - title: Vad förväntar du dig av kontakten med oss?
-        answer: '{headache_expectation}'
+        answer: '{soreThroat_expectation}'
       type: finalPage
       severity: high
       text:
