@@ -1,3 +1,14 @@
+
+
+## intent:out_of_scope/other
+- asfsfa
+- Vad är 1+1?
+- är du på riktig?
+- är du mänsklig?
+- jag förstår dig inte
+- asdasfsf
+- mksamasmas
+
 ## intent:greet
 - Hej
 - hej där
@@ -340,6 +351,7 @@
 - huvudvärk
 - Huvudvärk
 - ont i huvudet
+
 
 ## intent:ask_about_soreThroat
 - Jag har ont i halsen

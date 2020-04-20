@@ -2,6 +2,7 @@ session_config:
   session_expiration_time: 0.0
   carry_over_slots_to_new_session: true
 intents:
+- ask_about_headache_detail
 - greet
 - thankyou
 - ask_about_headache
@@ -9,6 +10,7 @@ intents:
 - goodbye
 - affirm
 - deny
+- out_of_scope
 - mood_great
 - mood_unhappy
 - ask_howdoing
@@ -28,6 +30,7 @@ intents:
 - ask_about_soreThroat
 - ask_about_coughFever
 - headache_meds
+- out_of_scope/other
 slots:
   coughFever_breastPain:
     type: unfeaturized
@@ -47,6 +50,11 @@ slots:
   coughFever_time:
     type: unfeaturized
     auto_fill: false
+  feedback_value:
+    type: categorical
+    values:
+    - positive
+    - negative
   headache_changed:
     type: unfeaturized
     auto_fill: false
@@ -351,7 +359,19 @@ responses:
   - image: https://i.imgur.com/nGF1K8f.jpg
     text: Jag mår bra, tack!
   utter_default:
+  - text: Jag förstod tyvärr inte din fråga. Jag kan hjälpa dig med frågor kring huvudvärk,
+      halsont, feber och hosta.
+  utter_ask_rephrase:
   - text: Jag lär mig nya saker hela tiden! Kan du omformulera ditt svar?
+  utter_ask_feedback:
+  - buttons:
+    - payload: /feedback{"feedback_value":"positive"}
+      title: 👍
+    - payload: /feedback{"feedback_value":"negative"}
+      title: 👎
+    text: Vad tycker du om tjänsten?
+  utter_restart_with_button:
+  - text: Klicka på knappen nedan för att starta om.
   utter_goodbye:
   - text: Vi hörs igen
   - text: Hoppas du får en bra dag.
@@ -518,6 +538,8 @@ responses:
 actions:
 - action_version
 - action_rewind
+- action_default_fallback
+- action_default_ask_affirmation
 - utter_ask_state_of_health
 - utter_ask_coughFever_breastPain
 - utter_ask_coughFever_health
@@ -548,7 +570,6 @@ actions:
 - utter_goodbye
 - utter_greet
 - utter_handleinsult
-- utter_submit
 - utter_submit_coughFever
 - utter_submit_headache
 - utter_submit_soreThroat
@@ -558,6 +579,9 @@ actions:
 - utter_corona_symptom
 - utter_corona_virus
 - utter_corona_death
+- utter_ask_rephrase
+- utter_ask_feedback
+- utter_restart_with_button
 forms:
 - coughFever_form
 - headache_form
