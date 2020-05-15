@@ -13,7 +13,7 @@
 - jag har [regelbunden](headache_utter) [huvudvärk](symptom) 
 - Jag har jätte [ont i huvudet](symptom) och blir jätte trött. 
 
-## intent:ask_about_headache+ask_about_coughFever
+## intent:ask_about_headache+ask_about_cough
 - [Huvudvärk](symptom) och [hosta](symptom)
 - [huvudvärk](symptom) och [hosta](symptom)
 - jag har [huvudvärk](symptom) och [hosta](symptom)

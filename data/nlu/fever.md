@@ -1,0 +1,17 @@
+## intent:ask_about_fever
+- Jag har [feber](symptom)
+- jag har [feber](symptom) 
+- [feber](symptom)
+- [feber](symptom)
+- [feber](symptom)
+- frugan har [feber](symptom)
+- godkväll [feber](symptom) här hos mig
+- hallå jag har problem med  [feber](symptom)
+- har hög [feber](symptom) och behöver hjälp för att jag är gammal
+- har badat kallt har nu [feber](symptom)
+- har frågor om [feber](symptom)
+- har [feber](symptom) men jag är inte förkyld
+- har varit i Thailand har [feber](symptom) nu
+- hej du har problem med [feber](symptom
+- hejsan jag har problem med [feber](symptom)
+- hög [feber](symptom)

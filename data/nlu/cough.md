@@ -1,4 +1,27 @@
-## intent:ask_about_coughFever
+## intent:ask_about_cough
+- Jag har [hosta](symptom)
+- jag har [hosta](symptom)
+- [hosta](symptom)
+- [Hosta](symptom)
+- [hosta](symptom) 
+- [hosta](symptom)
+- frugan [hostar](symptom)
+- godkväll [hostar](symptom) här hos mig
+- hallå jag har problem med [hosta](symptom)
+- har åkt på en hemsk [hosta](symptom) och behöver hjälp för att jag är gammal
+- har badat kallt har nu [hosta](symptom)
+- har frågor om [hosta](symptom)
+- har [hosta](symptom) men jag är inte förkyld
+- har varit i Thailand har [hosta](symptom) nu
+- hej du har problem med [hosta](symptom)
+- hejsan jag har problem med [hosta](symptom)
+- jobbig [hosta](symptom)
+- [hosta](symptom) i [3-9 veckor](time_range)
+- konstant [hosta](symptom) hela dagen
+- [hosta](symptom) sitter kvar från förskylning eller influensa nyligen
+- förvärrande [hosta](symptom) 
+
+## intent:ask_about_cough+ask_about_fever
 - Jag har [feber](symptom) och [hosta](symptom)
 - jag har [feber](symptom) och [hosta](symptom)
 - [feber](symptom) och [hosta](symptom)
