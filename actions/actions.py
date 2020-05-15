@@ -64,7 +64,7 @@ class ActionDefaultAskAffirmation(Action):
         ]
 
         message_title = (
-            "Ledsen, men jag är osäker om jag förstod din fråga."
+            "Ledsen, men jag är osäker om jag förstod din fråga. Du kan fråga mig om huvudvärk, halsont och hosta och feber "
         )
 
         entities = tracker.latest_message.get("entities", [])
@@ -113,6 +113,17 @@ class ActionDefaultAskAffirmation(Action):
     #        button_title = utterances[0] if len(utterances) > 0 else intent
     #
     #    return button_title.format(**entities)
+
+
+class SymtomsList(Action):
+    def name(self):
+        return "action_symptoms"
+
+    def run(self, dispatcher, tracker, domain):
+        numb_user_list = tracker.get_slot("symptom")
+        numb_user_string = ' och '.join(numb_user_list)
+
+        return [SlotSet("symptoms", numb_user_string)]
 
 
 class ActionDefaultFallback(Action):

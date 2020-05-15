@@ -1,5 +1,3 @@
-
-
 ## intent:out_of_scope/other
 - asfsfa
 - Vad är 1+1?
@@ -86,6 +84,7 @@
 - yep
 - ok
 - okej
+- Ja
 
 ## intent:deny
 - nej
@@ -96,6 +95,7 @@
 - stop
 - har du något annat
 - nej det här fungerar inte
+- Nej
 
 ## intent:mood_great
 - perfekt
@@ -343,60 +343,4 @@
 - sista oktober till och med idag
 - från 3 november till 8 januari
 - 1 januari till 28 februari
-
-## intent:ask_about_headache
-- jag har huvudvärk
-- Jag har huvudvärk
-- jag har ont i huvudet
-- huvudvärk
-- Huvudvärk
-- ont i huvudet
-
-
-## intent:ask_about_soreThroat
-- Jag har ont i halsen
-- jag har ont i halsen
-- ont i halsen
-
-## intent:ask_about_coughFever
-- Jag har feber och hosta
-- jag har feber och hosta
-- feber och hosta
-- feber
-- hosta
-
-## intent:headache_utter
-- En pågående episod av huvudvärk
-- Återkommande huvudvärk
-
-## intent:headache_meds
-- Paracetamol (Alvedon, Panodil, Pamol)
-- Ibuprofen (Ipren, Brufen, Ibumetin)
-
-## intent:ask_about_corona_symptom
-- Vad är symptomen av corona?
-- vad är symptomen för corona?
-- hur märker man om man har corona
-- hur mår man om man har corona
-- vad innebär corona
-- hur vet jag om jag har corona
-- hur vet man att man har corona
-- vad är symptom för corona
-- vad är covid-19?
-
-## intent:ask_about_corona_virus
-- Hur sjuk blir man av covid-19?
-- hur sjuk blir man av corona
-- blir man jättesjuk av corona
-- hur pass sjuk blir man av corona
-- hur sjuk kan jag bli av corona
-- blir man alltid väldigt sjuk av corona
-
-## intent:ask_about_corona_death
-- Smittar covid-19 under inkubationstiden?
-- smittar corona hela tiden
-- smittar corona direkt
-- blir jag smittsam direkt om jag har fått corona
-- är corona genast smittsamt
-- hur snabbt smittar jag om jag fått covid-19
-- smittar jag under inkubationstiden
+- För 1 - 30 dagar
