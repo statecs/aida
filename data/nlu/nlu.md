@@ -344,3 +344,18 @@
 - från 3 november till 8 januari
 - 1 januari till 28 februari
 - För 1 - 30 dagar
+
+## lookup:startade
+- började
+- grundades
+- utbröt
+- skapades
+
+## lookup:kropp
+- kroppen
+- människokroppen
+- människan
+- människa
+- person
+- personen
+- personer

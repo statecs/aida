@@ -7,7 +7,6 @@ intents:
 - deny
 - goodbye
 - time_range
-- medication
 - mood_unhappy
 - greet
 - thankyou
@@ -31,16 +30,37 @@ intents:
 - ask_about_cough
 - ask_about_fever
 - out_of_scope/other
-- ask_about_headache+ask_about_cough
+- medication
 - ask_about_fever+ask_about_cough
-- headache_meds
-- ask_about_cough+ask_about_fever
+- ask_about_fever+ask_about_soreThroat
+- ask_about_cough+ask_about_soreThroat
 - ask_about_headache+ask_about_fever
+- ask_about_headache+ask_about_cough
+- ask_about_headache+ask_about_soreThroat
+- ask_about_headache+ask_about_soreThroat+ask_about_fever
+- ask_about_headache+ask_about_soreThroat+ask_about_cough
+- ask_about_headache+ask_about_soreThroat+ask_about_cough+ask_about_fever
 entities:
 - headache
 - recurrent
+- fever_length
 - headache_utter
+- headache_where
+- symptoms_changed
+- headache_when
 - time_range
+- state_of_health
+- other_symptoms
+- cough_shape
+- other
+- fever_temperature
+- soreThroat_duration
+- headache_pain
+- medication
+- cough_length
+- cough_chronic
+- cough_cold
+- other_symptom
 - symptom
 slots:
   cough_chronic:
@@ -78,11 +98,11 @@ slots:
   length_weight:
     type: unfeaturized
   medication:
-    type: unfeaturized
+    type: list
   other:
     type: unfeaturized
   other_symptoms:
-    type: unfeaturized
+    type: list
   requested_slot:
     type: unfeaturized
   soreThroat_duration:
@@ -92,10 +112,6 @@ slots:
   soreThroat_pain:
     type: unfeaturized
   state_of_health:
-    type: unfeaturized
-  symptom:
-    type: list
-  symptoms:
     type: unfeaturized
   symptoms_changed:
     type: unfeaturized
@@ -454,8 +470,9 @@ responses:
   - custom:
       options:
       - name: Huvudvärk
-      - name: Ont i halsen
-      - name: Feber och hosta
+      - name: Halsont
+      - name: Feber
+      - name: Hosta
       type: searchSelect
     text: Hej! Mitt namn är Aida! Vad har du för symtom?
   utter_handleinsult:
@@ -504,7 +521,124 @@ responses:
         linkText: Läs mer på 1177.se
         title: Tack för dina svar
       type: finalPage
-    text: Tack för dina svar
+  utter_submit_cough_soreThroat:
+  - custom:
+      data:
+      - answer: '{state_of_health}'
+        title: Hur bra är din hälsa idag? Från 1 (sämsta tillstånd) till 100 (bästa
+          tänkbara tillstånd)
+      - answer: '{cough_length}'
+        title: Hur länge har du haft hosta?
+      - answer: '{cough_pain}'
+        title: Hur svår är dina hosta just nu?
+      - answer: '{cough_shape}'
+        title: Vilket av följande beskriver din hosta bäst? Du kan välja flera alternativ.
+      - answer: '{other_symptoms}'
+        title: Har du något av följande i samband med dina besvär? Du kan välja flera
+          alternativ.
+      - answer: '{cough_chronic}'
+        title: Har du någon av följande kroniska sjukdomar eller tillstånd? Du kan
+          välja flera alternativ.
+      - answer: '{cough_cold}'
+        title: Sitter hostan kvar från en förkylning eller influensa som du haft nyligen?
+      - answer: '{medication}'
+        title: Tar du några läkemedel eller naturläkemedel? Ange det nedan.
+      - answer: '{cough_smoke}'
+        title: Röker du?
+      - answer: '{length_weight}'
+        title: Ange din längd och vikt
+      - answer: '{soreThroat_duration}'
+        title: Hur länge har du haft ont i halsen?
+      - answer: '{soreThroat_pain}'
+        title: Hur svåra är dina halsbesvär just nu?
+      - answer: '{soreThroat_location}'
+        title: Vart i halsen har du ont?
+      - answer: '{other}'
+        title: Är det något du vill tillägga?
+      - answer: '{expectation}'
+        title: Vad förväntar du dig av kontakten med oss?
+      severity: medium
+      text:
+      - content: Det verkar som att du behöver mer vård än vad vi kan ge dig.
+        link: https://1177.se
+        linkText: Läs mer på 1177.se
+        title: Tack för dina svar
+      type: finalPage
+  utter_submit_fever_cough:
+  - custom:
+      data:
+      - answer: '{state_of_health}'
+        title: Hur bra är din hälsa idag? Från 1 (sämsta tillstånd) till 100 (bästa
+          tänkbara tillstånd)
+      - answer: '{other_symptoms}'
+        title: Har du något av följande i samband med dina besvär? Du kan välja flera
+          alternativ.
+      - answer: '{fever_length}'
+        title: Hur länge har du haft feber?
+      - answer: '{fever_temperature}'
+        title: Vilken var din senast uppmätta temperatur?
+      - answer: '{symptoms_changed}'
+        title: Hur har dina besvär utvecklats senaste tiden?
+      - answer: '{cough_length}'
+        title: Hur länge har du haft hosta?
+      - answer: '{cough_pain}'
+        title: Hur svår är dina hosta just nu?
+      - answer: '{cough_shape}'
+        title: Vilket av följande beskriver din hosta bäst? Du kan välja flera alternativ.
+      - answer: '{cough_chronic}'
+        title: Har du någon av följande kroniska sjukdomar eller tillstånd? Du kan
+          välja flera alternativ.
+      - answer: '{cough_cold}'
+        title: Sitter hostan kvar från en förkylning eller influensa som du haft nyligen?
+      - answer: '{medication}'
+        title: Tar du några läkemedel eller naturläkemedel? Ange det nedan.
+      - answer: '{cough_smoke}'
+        title: Röker du?
+      - answer: '{length_weight}'
+        title: Ange din längd och vikt
+      - answer: '{other}'
+        title: Är det något du vill tillägga?
+      - answer: '{expectation}'
+        title: Vad förväntar du dig av kontakten med oss?
+      severity: medium
+      text:
+      - content: Det verkar som att du behöver mer vård än vad vi kan ge dig.
+        link: https://1177.se
+        linkText: Läs mer på 1177.se
+        title: Tack för dina svar
+      type: finalPage
+  utter_submit_fever_soreThroat:
+  - custom:
+      data:
+      - answer: '{state_of_health}'
+        title: Hur bra är din hälsa idag? Från 1 (sämsta tillstånd) till 100 (bästa
+          tänkbara tillstånd)
+      - answer: '{fever_length}'
+        title: Hur länge har du haft feber?
+      - answer: '{fever_temperature}'
+        title: Vilken var din senast uppmätta temperatur?
+      - answer: '{symptoms_changed}'
+        title: Hur har dina besvär utvecklats senaste tiden?
+      - answer: '{soreThroat_duration}'
+        title: Hur länge har du haft ont i halsen?
+      - answer: '{soreThroat_pain}'
+        title: Hur svåra är dina halsbesvär just nu?
+      - answer: '{soreThroat_location}'
+        title: Vart i halsen har du ont?
+      - answer: '{other_symptoms}'
+        title: Har du något av följande i samband med dina besvär? Du kan välja flera
+          alternativ.
+      - answer: '{other}'
+        title: Är det något du vill tillägga?
+      - answer: '{expectation}'
+        title: Vad förväntar du dig av kontakten med oss?
+      severity: medium
+      text:
+      - content: Det verkar som att du behöver mer vård än vad vi kan ge dig.
+        link: https://1177.se
+        linkText: Läs mer på 1177.se
+        title: Tack för dina svar
+      type: finalPage
   utter_submit_fever:
   - custom:
       data:
@@ -531,7 +665,6 @@ responses:
         linkText: Läs mer på 1177.se
         title: Tack för dina svar
       type: finalPage
-    text: Tack för dina svar
   utter_submit_headache:
   - custom:
       data:
@@ -567,7 +700,285 @@ responses:
         linkText: Läs mer på 1177.se
         title: Tack för dina svar
       type: finalPage
-    text: Tack för dina svar
+  utter_submit_headache_fever:
+  - custom:
+      data:
+      - answer: '{state_of_health}'
+        title: Hur bra är din hälsa idag? Från 1 (sämsta tillstånd) till 100 (bästa
+          tänkbara tillstånd)
+      - answer: '{headache_utter}'
+        title: Hur yttrar sig huvudvärken? Du kan välja flera alternativ.
+      - answer: '{headache_when}'
+        title: När började din nuvarande huvudvärk?
+      - answer: '{headache_pain}'
+        title: På en skala från 1 (ingen smärta) till 5 (värsta tänkbara smärta) hur
+          skulle du bedöma nivån på din huvudvärk?'
+      - answer: '{symptoms_changed}'
+        title: Hur har dina besvär utvecklats senaste tiden?
+      - answer: '{headache_where}'
+        title: Var sitter din huvudvärk? Du kan välja flera alternativ.
+      - answer: '{other_symptoms}'
+        title: Har du något av följande i samband med dina besvär? Du kan välja flera
+          alternativ.
+      - answer: '{medication}'
+        title: Tar du några läkemedel eller naturläkemedel? Ange det nedan.
+      - answer: '{length_weight}'
+        title: Ange din längd och vikt
+      - answer: '{fever_length}'
+        title: Hur länge har du haft feber?
+      - answer: '{fever_temperature}'
+        title: Vilken var din senast uppmätta temperatur?
+      - answer: '{symptoms_changed}'
+        title: Hur har dina besvär utvecklats senaste tiden?
+      - answer: '{other}'
+        title: Är det något du vill tillägga?
+      - answer: '{expectation}'
+        title: Vad förväntar du dig av kontakten med oss?
+      severity: low
+      text:
+      - content: Det verkar som att du behöver mer vård än vad vi kan ge dig.
+        link: https://1177.se
+        linkText: Läs mer på 1177.se
+        title: Tack för dina svar
+      type: finalPage
+  utter_submit_headache_cough:
+  - custom:
+      data:
+      - answer: '{state_of_health}'
+        title: Hur bra är din hälsa idag? Från 1 (sämsta tillstånd) till 100 (bästa
+          tänkbara tillstånd)
+      - answer: '{headache_utter}'
+        title: Hur yttrar sig huvudvärken? Du kan välja flera alternativ.
+      - answer: '{headache_when}'
+        title: När började din nuvarande huvudvärk?
+      - answer: '{headache_pain}'
+        title: På en skala från 1 (ingen smärta) till 5 (värsta tänkbara smärta) hur
+          skulle du bedöma nivån på din huvudvärk?'
+      - answer: '{symptoms_changed}'
+        title: Hur har dina besvär utvecklats senaste tiden?
+      - answer: '{headache_where}'
+        title: Var sitter din huvudvärk? Du kan välja flera alternativ.
+      - answer: '{other_symptoms}'
+        title: Har du något av följande i samband med dina besvär? Du kan välja flera
+          alternativ.
+      - answer: '{medication}'
+        title: Tar du några läkemedel eller naturläkemedel? Ange det nedan.
+      - answer: '{length_weight}'
+        title: Ange din längd och vikt
+      - answer: '{cough_length}'
+        title: Hur länge har du haft hosta?
+      - answer: '{cough_pain}'
+        title: Hur svår är dina hosta just nu?
+      - answer: '{cough_shape}'
+        title: Vilket av följande beskriver din hosta bäst? Du kan välja flera alternativ.
+      - answer: '{cough_chronic}'
+        title: Har du någon av följande kroniska sjukdomar eller tillstånd? Du kan
+          välja flera alternativ.
+      - answer: '{cough_cold}'
+        title: Sitter hostan kvar från en förkylning eller influensa som du haft nyligen?
+      - answer: '{cough_smoke}'
+        title: Röker du?
+      - answer: '{other}'
+        title: Är det något du vill tillägga?
+      - answer: '{expectation}'
+        title: Vad förväntar du dig av kontakten med oss?
+      severity: low
+      text:
+      - content: Det verkar som att du behöver mer vård än vad vi kan ge dig.
+        link: https://1177.se
+        linkText: Läs mer på 1177.se
+        title: Tack för dina svar
+      type: finalPage
+  utter_submit_headache_soreThroat:
+  - custom:
+      data:
+      - answer: '{state_of_health}'
+        title: Hur bra är din hälsa idag? Från 1 (sämsta tillstånd) till 100 (bästa
+          tänkbara tillstånd)
+      - answer: '{headache_utter}'
+        title: Hur yttrar sig huvudvärken? Du kan välja flera alternativ.
+      - answer: '{headache_when}'
+        title: När började din nuvarande huvudvärk?
+      - answer: '{headache_pain}'
+        title: På en skala från 1 (ingen smärta) till 5 (värsta tänkbara smärta) hur
+          skulle du bedöma nivån på din huvudvärk?'
+      - answer: '{symptoms_changed}'
+        title: Hur har dina besvär utvecklats senaste tiden?
+      - answer: '{headache_where}'
+        title: Var sitter din huvudvärk? Du kan välja flera alternativ.
+      - answer: '{other_symptoms}'
+        title: Har du något av följande i samband med dina besvär? Du kan välja flera
+          alternativ.
+      - answer: '{medication}'
+        title: Tar du några läkemedel eller naturläkemedel? Ange det nedan.
+      - answer: '{soreThroat_duration}'
+        title: Hur länge har du haft ont i halsen?
+      - answer: '{soreThroat_pain}'
+        title: Hur svåra är dina halsbesvär just nu?
+      - answer: '{soreThroat_location}'
+        title: Vart i halsen har du ont?
+      - answer: '{other}'
+        title: Är det något du vill tillägga?
+      - answer: '{expectation}'
+        title: Vad förväntar du dig av kontakten med oss?
+      severity: high
+      text:
+      - content: Det verkar som att du behöver mer vård än vad vi kan ge dig.
+        link: https://1177.se
+        linkText: Läs mer på 1177.se
+        title: Tack för dina svar
+      type: finalPage
+  utter_submit_headache_soreThroat_fever:
+  - custom:
+      data:
+      - answer: '{state_of_health}'
+        title: Hur bra är din hälsa idag? Från 1 (sämsta tillstånd) till 100 (bästa
+          tänkbara tillstånd)
+      - answer: '{headache_utter}'
+        title: Hur yttrar sig huvudvärken? Du kan välja flera alternativ.
+      - answer: '{headache_when}'
+        title: När började din nuvarande huvudvärk?
+      - answer: '{headache_pain}'
+        title: På en skala från 1 (ingen smärta) till 5 (värsta tänkbara smärta) hur
+          skulle du bedöma nivån på din huvudvärk?'
+      - answer: '{symptoms_changed}'
+        title: Hur har dina besvär utvecklats senaste tiden?
+      - answer: '{headache_where}'
+        title: Var sitter din huvudvärk? Du kan välja flera alternativ.
+      - answer: '{other_symptoms}'
+        title: Har du något av följande i samband med dina besvär? Du kan välja flera
+          alternativ.
+      - answer: '{medication}'
+        title: Tar du några läkemedel eller naturläkemedel? Ange det nedan.
+      - answer: '{soreThroat_duration}'
+        title: Hur länge har du haft ont i halsen?
+      - answer: '{soreThroat_pain}'
+        title: Hur svåra är dina halsbesvär just nu?
+      - answer: '{soreThroat_location}'
+        title: Vart i halsen har du ont?
+      - answer: '{fever_length}'
+        title: Hur länge har du haft feber?
+      - answer: '{fever_temperature}'
+        title: Vilken var din senast uppmätta temperatur?
+      - answer: '{other}'
+        title: Är det något du vill tillägga?
+      - answer: '{expectation}'
+        title: Vad förväntar du dig av kontakten med oss?
+      severity: high
+      text:
+      - content: Det verkar som att du behöver mer vård än vad vi kan ge dig.
+        link: https://1177.se
+        linkText: Läs mer på 1177.se
+        title: Tack för dina svar
+      type: finalPage
+  utter_submit_headache_soreThroat_cough:
+  - custom:
+      data:
+      - answer: '{state_of_health}'
+        title: Hur bra är din hälsa idag? Från 1 (sämsta tillstånd) till 100 (bästa
+          tänkbara tillstånd)
+      - answer: '{headache_utter}'
+        title: Hur yttrar sig huvudvärken? Du kan välja flera alternativ.
+      - answer: '{headache_when}'
+        title: När började din nuvarande huvudvärk?
+      - answer: '{headache_pain}'
+        title: På en skala från 1 (ingen smärta) till 5 (värsta tänkbara smärta) hur
+          skulle du bedöma nivån på din huvudvärk?'
+      - answer: '{symptoms_changed}'
+        title: Hur har dina besvär utvecklats senaste tiden?
+      - answer: '{headache_where}'
+        title: Var sitter din huvudvärk? Du kan välja flera alternativ.
+      - answer: '{other_symptoms}'
+        title: Har du något av följande i samband med dina besvär? Du kan välja flera
+          alternativ.
+      - answer: '{medication}'
+        title: Tar du några läkemedel eller naturläkemedel? Ange det nedan.
+      - answer: '{soreThroat_duration}'
+        title: Hur länge har du haft ont i halsen?
+      - answer: '{soreThroat_pain}'
+        title: Hur svåra är dina halsbesvär just nu?
+      - answer: '{soreThroat_location}'
+        title: Vart i halsen har du ont?
+      - answer: '{cough_length}'
+        title: Hur länge har du haft hosta?
+      - answer: '{cough_pain}'
+        title: Hur svår är dina hosta just nu?
+      - answer: '{cough_shape}'
+        title: Vilket av följande beskriver din hosta bäst? Du kan välja flera alternativ.
+      - answer: '{cough_chronic}'
+        title: Har du någon av följande kroniska sjukdomar eller tillstånd? Du kan
+          välja flera alternativ.
+      - answer: '{cough_cold}'
+        title: Sitter hostan kvar från en förkylning eller influensa som du haft nyligen?
+      - answer: '{cough_smoke}'
+        title: Röker du?
+      - answer: '{other}'
+        title: Är det något du vill tillägga?
+      - answer: '{expectation}'
+        title: Vad förväntar du dig av kontakten med oss?
+      severity: high
+      text:
+      - content: Det verkar som att du behöver mer vård än vad vi kan ge dig.
+        link: https://1177.se
+        linkText: Läs mer på 1177.se
+        title: Tack för dina svar
+      type: finalPage
+  utter_submit_headache_soreThroat_cough_fever:
+  - custom:
+      data:
+      - answer: '{state_of_health}'
+        title: Hur bra är din hälsa idag? Från 1 (sämsta tillstånd) till 100 (bästa
+          tänkbara tillstånd)
+      - answer: '{headache_utter}'
+        title: Hur yttrar sig huvudvärken? Du kan välja flera alternativ.
+      - answer: '{headache_when}'
+        title: När började din nuvarande huvudvärk?
+      - answer: '{headache_pain}'
+        title: På en skala från 1 (ingen smärta) till 5 (värsta tänkbara smärta) hur
+          skulle du bedöma nivån på din huvudvärk?'
+      - answer: '{symptoms_changed}'
+        title: Hur har dina besvär utvecklats senaste tiden?
+      - answer: '{headache_where}'
+        title: Var sitter din huvudvärk? Du kan välja flera alternativ.
+      - answer: '{other_symptoms}'
+        title: Har du något av följande i samband med dina besvär? Du kan välja flera
+          alternativ.
+      - answer: '{medication}'
+        title: Tar du några läkemedel eller naturläkemedel? Ange det nedan.
+      - answer: '{soreThroat_duration}'
+        title: Hur länge har du haft ont i halsen?
+      - answer: '{soreThroat_pain}'
+        title: Hur svåra är dina halsbesvär just nu?
+      - answer: '{soreThroat_location}'
+        title: Vart i halsen har du ont?
+      - answer: '{cough_length}'
+        title: Hur länge har du haft hosta?
+      - answer: '{cough_pain}'
+        title: Hur svår är dina hosta just nu?
+      - answer: '{cough_shape}'
+        title: Vilket av följande beskriver din hosta bäst? Du kan välja flera alternativ.
+      - answer: '{cough_chronic}'
+        title: Har du någon av följande kroniska sjukdomar eller tillstånd? Du kan
+          välja flera alternativ.
+      - answer: '{cough_cold}'
+        title: Sitter hostan kvar från en förkylning eller influensa som du haft nyligen?
+      - answer: '{cough_smoke}'
+        title: Röker du?
+      - answer: '{fever_length}'
+        title: Hur länge har du haft feber?
+      - answer: '{fever_temperature}'
+        title: Vilken var din senast uppmätta temperatur?
+      - answer: '{other}'
+        title: Är det något du vill tillägga?
+      - answer: '{expectation}'
+        title: Vad förväntar du dig av kontakten med oss?
+      severity: high
+      text:
+      - content: Det verkar som att du behöver mer vård än vad vi kan ge dig.
+        link: https://1177.se
+        linkText: Läs mer på 1177.se
+        title: Tack för dina svar
+      type: finalPage
   utter_submit_soreThroat:
   - custom:
       data:
@@ -594,7 +1005,6 @@ responses:
         linkText: Läs mer på 1177.se
         title: Tack för dina svar
       type: finalPage
-    text: Tack för dina svar
   utter_telljoke:
   - text: Vad är klockan? En anordning som visar tiden.
   - text: Vem i kryddskåpet jobbar extra? Tim-jan!
@@ -613,6 +1023,7 @@ actions:
 - action_default_fallback
 - action_rewind
 - action_version
+- action_reset
 - utter_ask_howdoing
 - utter_ask_is_symptom
 - utter_ask_rephrase
@@ -649,13 +1060,21 @@ actions:
 - utter_handleinsult
 - utter_restart_with_button
 - utter_submit_cough
+- utter_submit_cough_soreThroat
 - utter_submit_fever
+- utter_submit_fever_cough
+- utter_submit_fever_soreThroat
 - utter_submit_headache
+- utter_submit_headache_cough
+- utter_submit_headache_fever
+- utter_submit_headache_soreThroat
+- utter_submit_headache_soreThroat_fever
 - utter_submit_soreThroat
 - utter_telljoke
 - utter_thanks
 - utter_version
-- action_symptoms
+- utter_submit_headache_soreThroat_cough
+- utter_submit_headache_soreThroat_cough_fever
 forms:
 - cough_form
 - fever_form

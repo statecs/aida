@@ -2,4 +2,5 @@
 * ask_about_soreThroat
     - soreThroat_form
     - form{"name": "soreThroat_form"}
-    - form{"name": null}
+    - utter_submit_soreThroat
+    - action_reset

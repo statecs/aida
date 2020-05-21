@@ -115,15 +115,12 @@ class ActionDefaultAskAffirmation(Action):
     #    return button_title.format(**entities)
 
 
-class SymtomsList(Action):
+class ActionReset(Action):
     def name(self):
-        return "action_symptoms"
+        return "action_reset"
 
     def run(self, dispatcher, tracker, domain):
-        numb_user_list = tracker.get_slot("symptom")
-        numb_user_string = ' och '.join(numb_user_list)
-
-        return [SlotSet("symptoms", numb_user_string)]
+        return [AllSlotsReset()]
 
 
 class ActionDefaultFallback(Action):
@@ -233,16 +230,6 @@ class HeadacheForm(FormAction):
             slot_values.update(self.extract_requested_slot(
                 dispatcher, tracker, domain))
 
-            if not slot_values:
-                # reject form action execution
-                # if some slot was requested but nothing was extracted
-                # it will allow other policies to predict another action
-                raise ActionExecutionRejection(self.name(),
-                                               "Failed to validate slot {0} "
-                                               "with action {1}"
-                                               "".format(slot_to_fill,
-                                                         self.name()))
-
          # we'll check when validation failed in order
          # to add appropriate utterances
         for slot, value in slot_values.items():
@@ -273,8 +260,7 @@ class HeadacheForm(FormAction):
             after all required slots are filled"""
 
         # utter submit template
-        dispatcher.utter_message(template="utter_submit_headache")
-        return [AllSlotsReset()]
+        return []
 
 
 class soreThroatForm(FormAction):
@@ -323,16 +309,6 @@ class soreThroatForm(FormAction):
             slot_values.update(self.extract_requested_slot(
                 dispatcher, tracker, domain))
 
-            if not slot_values:
-                # reject form action execution
-                # if some slot was requested but nothing was extracted
-                # it will allow other policies to predict another action
-                raise ActionExecutionRejection(self.name(),
-                                               "Failed to validate slot {0} "
-                                               "with action {1}"
-                                               "".format(slot_to_fill,
-                                                         self.name()))
-
          # we'll check when validation failed in order
          # to add appropriate utterances
         for slot, value in slot_values.items():
@@ -363,8 +339,7 @@ class soreThroatForm(FormAction):
             after all required slots are filled"""
 
         # utter submit template
-        dispatcher.utter_message(template="utter_submit_soreThroat")
-        return [AllSlotsReset()]
+        return []
 
 
 class coughForm(FormAction):
@@ -418,16 +393,6 @@ class coughForm(FormAction):
             slot_values.update(self.extract_requested_slot(
                 dispatcher, tracker, domain))
 
-            if not slot_values:
-                # reject form action execution
-                # if some slot was requested but nothing was extracted
-                # it will allow other policies to predict another action
-                raise ActionExecutionRejection(self.name(),
-                                               "Failed to validate slot {0} "
-                                               "with action {1}"
-                                               "".format(slot_to_fill,
-                                                         self.name()))
-
          # we'll check when validation failed in order
          # to add appropriate utterances
         for slot, value in slot_values.items():
@@ -458,8 +423,7 @@ class coughForm(FormAction):
             after all required slots are filled"""
 
         # utter submit template
-        dispatcher.utter_message(template="utter_submit_cough")
-        return [AllSlotsReset()]
+        return []
 
 
 class feverForm(FormAction):
@@ -508,16 +472,6 @@ class feverForm(FormAction):
             slot_values.update(self.extract_requested_slot(
                 dispatcher, tracker, domain))
 
-            if not slot_values:
-                # reject form action execution
-                # if some slot was requested but nothing was extracted
-                # it will allow other policies to predict another action
-                raise ActionExecutionRejection(self.name(),
-                                               "Failed to validate slot {0} "
-                                               "with action {1}"
-                                               "".format(slot_to_fill,
-                                                         self.name()))
-
          # we'll check when validation failed in order
          # to add appropriate utterances
         for slot, value in slot_values.items():
@@ -548,5 +502,4 @@ class feverForm(FormAction):
             after all required slots are filled"""
 
         # utter submit template
-        dispatcher.utter_message(template="utter_submit_fever")
-        return [AllSlotsReset()]
+        return []
