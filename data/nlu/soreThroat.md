@@ -1,19 +1,62 @@
 ## intent:ask_about_soreThroat
+- [halsont](soreThroat)
+- Halsont
 - jag har ont i halsen
-- ont i halsen
+- [ont i halsen](soreThroat)
+- Ont i halsen
 - Jag har haft [ont i halsen i 3 veckor](soreThroat_duration)
-- Jag har varit [småförkyld](symptom) sedan mitten av förra veckan och [känt av i luftrören sedan lördags](soreThroat_duration). Jag har inte problem att andas men känner av det. Jag har tidigare blivit hjälpt av [pulmicort](medication) och [bricanyl](medication)
+- Jag har varit [småförkyld](other_symptoms) sedan mitten av förra veckan och [känt av i luftrören sedan lördags](soreThroat_duration). Jag har inte problem att andas men känner av det. Jag har tidigare blivit hjälpt av [pulmicort](medication) och [bricanyl](medication)
 - Har haft besvär med [bronker och luftrören i 3 veckor](soreThroat_duration), det har gått fram och tillbaka. Ingen feber men [trött](other_symptoms)
 - Har [ont i halsen ifredags förra veckan](soreThroat_duration). Känns mest [tjock i halsen](other_symptoms).
-- halsont
+- [Önskar bli kontaktad](expectation) då vi förra veckan bestämde att jag skulle höra av mig om jag inte blivit bättre denna veckan. Har fortfarande [ont i halsen sedan 4 veckor tillbaka](soreThroat_duration)
+- Jag har [haft ont i halsen i mer än 2v](soreThroat_duration)
+- Jag har haft ont i halsen sen jag drack kaffe
+- [väldigt mycket ont i halsen](soreThroat_pain)
+- [extremt ont](soreThroat_pain) i halsen
+- mycket ont i halsen
+- [förkyld](other_symptoms), ont i halsen
+- Jag har haft [ont i halsen i 5 dagar](soreThroat_duration)
+- besvär med [ont i halsen](soreThroat)
+- Ont i halsen efter [vanlig förkylning](other_symptoms), en infektion med bakterier eller att jag har skrikit eller sjungit högt
+- ont i [halsen någon gång om året](soreThroat_duration)
+- ont i [halsen flera gånger per år](soreThroat_duration)
+- [Näsan är röd och irriterad](other_symptoms) och jag kan ha ont i halsen.
+- Halsfluss är en infektion som orsakas av virus eller bakterier i halsmandlarna.
+- halsfluss av streptokockerna
+- Halsfluss går över av sig själv inom [en till två veckor](soreThroat_duration)
+- jag får ont i halsen av att sjunga eller skrika högt. Då är det [stämbanden som har överansträngts och blivit inflammerade](other_symptoms)
+- När du har [stämbandsinflammation](other_symptoms) med halsont och [heshet](other_symptoms) är det oftast orsakat av ett virus
+- [Halsbränna](other_symptoms) och [sura uppstötningar](other_symptoms) kan ge en känsla av ont i halsen.
+- Jar har ont i halsen och är samtidigt [svullen utanpå halsen](other_symptoms).
+- Jag har [ont i halsen i ett par veckor](soreThroat_duration) och har inte har några andra symtom. 
+- Du har mycket [ont på ena sidan av halsen](soreThroat_location) och har svårt att gapa.
+- struplocksinflammation eller halsböld. 
+- Jag har ont i halsen när jag sväljer.
+- [Lymfkörtlarna i halsen är svullna](other_symptoms), oftast de vid käkvinklarna. 
+- Du har ont i halsen och är samtidigt [svullen utanpå halsen](soreThroat_location) 
+- ont i halsne och [svårt att svälja](other_symptoms)
+- ont i halsen och [örat](other_symptoms)
+- ont på [ensa sidan av halsen](soreThroat_location)
+- [ont i halsen ena sidan](soreThroat_location) utan feber
+- ont i halsen och nacken
+- jag har ont i halsen och [svårt att svälja](other_symptoms) och har antagligen en [luftvägsinfektion](other_symptoms).
+- Jag har har [halsont som inte blir bättre efter en vecka](soreThroat_duration)
+- Har särskilt [ont på ena sidan av halsen](soreThroat_location) och [svårt att gapa](other_symptoms) eller [mycket svårt att svälja](other_symptoms)
+- feber i kombination [kraftigt påverkat allmäntillstånd](state_of_health:20), [svår frossa](other_symptoms), [smärta](other_symptoms) eller [andningsbesvär](other_symptoms)
+- [halsont som återkommer](soreThroat_duration)
+- Vid anamnes på halsont
+- Ont i halsen kan även bero på andra saker så som [körtelfeber](other_symptoms), [halsböld](other_symptoms), [torr luft](other_symptoms) och [överanstränga stämband](other_symptoms).
+- Mina stämband är inflammerade och gör ont, och jag är hes
+- Vid sväljningssmärtor. Man kan dock avvakta några dagar om jag i övrigt är frisk och inte har stora svårigheter att äta eller dricka.
 
-## lookup:halsont
-- ont i halsen
 
-## synonym:halsont
-- halson
-- haslont
-- haslont
-
-## synonym:ont i halsen
-- ont i halsne
+## intent:ask_about_soreThroat+ask_about_cough+ask_about_fever
+- Snuva, halsont, hosta och ibland feber brukar vara typiska symptom vid övre luftvägsinfektioner som orsakas av virus.
+- halsont, hosta och feber
+- Halsont, hosta och feber
+- ont i halsen och samtidigt har [snuva](other_symptoms), [heshet](other_symptoms) eller hosta, ibland feber, så är det troligtvis ett [förkylningsvirus](other_symptoms) som ligger bakom.
+- halsont, multifokala symtom såsom hosta, [snuva](other_symptoms), [nästäppa](other_symptoms), [heshet](other_symptoms), [svalgblåsor](other_symptoms), konjunktivit är genesen viral. 
+- Jag har varit [förkyld](other_symptoms) i över en vecka, lite feber, går inte över, jag är trött lite ont i halsen också.
+- Vanliga symtom är snuva, hosta, halsont och feber.  Vissa symtom som [hosta kan sitta i upp till några veckor](cough_length)
+- Vid en bihåleinflammation har vuxna oftast varigsnuva i mer än 10 dagar och samtidig påtaglig smärta över kinder och tänder. 
+- Vid samtidig [hög feber](fever_temperature:39,0-39,9 grader), påtaglig sjukdomskänsla, [andningsbesvär](other_symptoms), snabb andning eller ont vid inandning.

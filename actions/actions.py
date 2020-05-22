@@ -13,7 +13,7 @@ import json
 import csv
 
 from rasa_sdk import Action, Tracker, ActionExecutionRejection
-from rasa_sdk.events import SlotSet, AllSlotsReset, EventType, FollowupAction, UserUtteranceReverted
+from rasa_sdk.events import SlotSet, AllSlotsReset, EventType, FollowupAction, UserUtteranceReverted, ActionReverted
 from rasa_sdk.forms import FormAction, REQUESTED_SLOT
 from rasa_sdk.executor import CollectingDispatcher
 

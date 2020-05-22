@@ -20,9 +20,47 @@
 - [mycket hög feber](fever_temperature:40,0,0-40,9 grader)
 - jag har [feber upp till tre dagar](fever_length)
 - Haft [feber i sex dagar](fever_length)
-- Jag har varit [förkyld i snart 4 veckor](other_symptoms). Jag har [haft feber i 9 dagar](fever_length), har nu haft [37.0-37.5](fever_temperature).
-- [Tryck mitt i bröstet](other_symptoms) och [feber till och från](fever_length). Trycket i bröstet känns ibland mer brännande. [Feber kring 38 grader](fever_temperature) uppträder främst efter ansträngning.
-- [feber i tre dygn](fever_length)
+- Jag har varit [förkyld i snart 4 veckor](other_symptoms). Jag har [haft feber i 9 dagar](fever_length), har nu haft [37.0-37.5](fever_temperature:Under 38,0 grader).
+- [Tryck mitt i bröstet](other_symptoms) och [feber till och från](fever_length). Trycket i bröstet känns ibland mer brännande. [Feber kring 38 grader](fever_temperature:38,0-38,4 grader) uppträder främst efter ansträngning.
+- [feber i tre dygn](fever_length) [behöver läkarintyg](expectation)
+- Att jag har haft [feber i 9 dagar](fever_length)
+- [Med värk i kroppen](other_symptoms) och feber.
+- Haft [feber i sex dagar](fever_length)
+- Jag känner mig [hängig](other_symptoms) med [kraftig feber](fever_temperature:39,0-39,9 grader)
+- [hög feber](fever_temperature:39,0-39,9 grader) [i en månad](fever_length)
+- körtelfeber symtomen [svullna lymfkörtlar](other_symptoms) och feber
+- Scharlakansfeber
+- kroppstemperatur är [38 grader](fever_temperature:38,0-38,4 grader) eller högre.
+- [febern har inte gått över efter fem dagar](fever_length)
+- plötsligt får [hög feber](fever_temperature:39,0-39,9 grader) med [kraftig frossa](other_symptoms) eller [medvetandepåverkan](other_symptoms)
+- Normal kroppstemperatur hos vuxna brukar ligga mellan [36 och 37.5 grader](fever_temperature:Under 38,0 grader)
+- [förhöjd kroppstemperatur](fever_temperature:37,6-37,9 grader)
+- [temperaturen överstiger 38 grader](fever_temperature:38,0-38,4 grader) med feber.
+- febern [överstiger 41 grader](fever_temperature:Över 41,0 grader)
+- Feber är ofta ett av flera symptom i samband med [infektioner](other_symptoms) och olika sjukdomar.
+- jag har en förhöjd kroppstemperatur utan att vara sjuk. 
+- När [kroppstemperaturen är 38 grader](fever_temperature) eller högre är det vanligt att du känner dig [matt](other_symptoms) och [svag](other_symptoms). Även små ansträngningar gör att du kan känna dig [trött](other_symptoms) och [orkeslös](other_symptoms)
+- du haft [hög feber](fever_temperature:39,0-39,9 grader) kan du istället börja svettas när febern går ner igen
+- feber och symptom i samband [bakterieinfektion](other_symptoms)
+- [Feber i mer än fem dagar](fever_length) utan förkylning 
+- Långvarig feber utan känd orsak, kan bero på flera olika sjukdomar och behöver [utredas](expectation)
+- Feber och behöver [utredas](expectation)
+- feber och [förkylning](other_symptoms) och [influensa](other_symptoms)
+- [hög feber](fever_temperature:39,0-39,9 grader) och har [stora temperatursvängningar](other_symptoms)
+- feber vill ha en [undersökning med provtagning](expectation), odling eller röntgen.
+- bakterieinfektiom behöver behandla med [antibiotika](medication) för min feber
+- tillfälligt förhöjt värde för att jag just har varit fysiskt aktiv
+- feber med [påverkat allmäntillstånd](state_of_health:40)
+- oförklarlig [feber som inte ger med sig efter fem dagar](fever_length) eller om febern först går ner och sedan kommer tillbaka.
+- feber i kombination [kraftigt påverkat allmäntillstånd](state_of_health:20)
+- feber och blir [stel i nacken](other_symptoms)
+- om du har [feber i mer än två dagar](fever_length)
+- Vuxna har [hög feber](fever_temperature:39,0-39,9 grader) eller påtaglig sjukdomskänsla i mer än [4–5 dagar i samband med förkylning](fever_length). Kortare tid för små barn
+- [42 grader feber](fever_temperature:Över 41,0 grader) [sedan 3 dagar tillbaka](fever_length)
+- [feber 38 grader](fever_temperature)
+- [feber sedan 10 dagar](fever_length)
+- [feber 40 dgar](fever_length)
+- [41 grader feber](fever_temperature)
 
 ## intent:ask_about_fever+ask_about_cough
 - Jag har feber och hosta
@@ -42,12 +80,12 @@
 - hej du har problem med feber hosta
 - hejsan jag har problem med hosta och feber
 - [hög feber](fever_temperature:39,0-39,9 grader) och [jobbig hosta](cough_shape)
-- Feber och [värk i kroppen](other_symptoms). Jag har [hostat en del del två tre dagar](cough_length). Hostan sitter i [rosslar och piper i luftrören](cough_shape) när jag andas. Tog feber med muntermometer igår [36,7](fever_temperature) och nu [36,8](fever_temperature). 
+- Feber och [värk i kroppen](other_symptoms). Jag har [hostat en del del två tre dagar](cough_length). Hostan sitter i [rosslar och piper i luftrören](cough_shape) när jag andas. Tog feber med muntermometer igår [36,7](fever_temperature:Under 38,0 grader) och nu [36,8](fever_temperature:Under 38,0 grader). 
 - Jag hostar och är fortfarande lite snorig. Jag har varit hemma pga [förkylning](cough_cold) som började med feber och snuva, och tillslut kom hostan. 
 - Haft [feber i sex dagar](fever_length) men det har släppt nu men har otroligt [ansträngda luftvägar](other_symptoms) och hosta nu och [det kom blod](other_symptoms). 
 - Hosta feber [svårt att andas](other_symptoms) ordentligt
-- Jag har varit hemma med snuva, [torrhosta](cough_shape) o [smärta i bröstkorg](other_symptoms)[bröstryggen](other_symptoms). [Idag har jag även lite feber](fever_length) 
-- Har [39 gr feber](fever_temperature), [feber i 2 dagar](fever_length) men sedan dess feberfri, men har som ett [tryck över revbenen](other_symptoms). Obeskrivligt [trött i 10 dagar](other_symptoms). [Lätt hosta](cough_shape).
+- Jag har varit hemma med snuva, [torrhosta](cough_shape) o [smärta i bröstkorg](other_symptoms). [Idag har jag även lite feber](fever_length) 
+- Har [39 gr feber](fever_temperature:39,0-39,9 grader), [feber i 2 dagar](fever_length) men sedan dess feberfri, men har som ett [tryck över revbenen](other_symptoms). Obeskrivligt [trött i 10 dagar](other_symptoms). [Lätt hosta](cough_shape).
 - Jag har haft feber, [hosta som har kommit och gått sedan förra måndagen](cough_length). Har fått [diarré](other_symptoms:Diarré) också. Lite yrsel ibland. 
 - Jag har varit hemma jag har haft feber, muskelvärk, snuva, hosta. Det är [torrhosta](cough_shape). 
 - Jag har hosta, [högre feber sedan igår em](fever_length). [Ont i hela kroppen](other_symptoms).
@@ -55,16 +93,30 @@
 - Mitt barn har haft [feber måndag-lördag förra veckan](fever_length) och fått en [taskig hosta](cough_shape) som gör att hon har [svårt att sova](other_symptoms). Hon har haft [rethosta](cough_shape) som gått över till [slem i halsen](cough_shape:Slemhosta) som lossnar när hon hostar
 - Jag har [ont i muskel](other_symptoms), feber, hosta, [andningssvårigheter](other_symptoms) och ont i bröstkorgen. 
 - Haft [feber i över en vecka](fever_length), [mycket hosta](cough_shape) pga att jag har [astma](cough_chronic). 
-- Jag har dragits med en  [hosta sedan den 23 januari](cough_length), både [slem](cough_shape:Slemhosta) samt [rethosta](cough_shape:Torrhosta) [till och från feber](fever_length). 
+- Jag har dragits med en  [hosta sedan den 23 januari](cough_length), både [slem](cough_shape:Slemhosta) samt [rethosta](cough_shape:Torrhosta) [till och från feber](fever_length).
+- Jag behöver [läkarintyg](expectation) för idag och imorgon och Torsdag. Jag har varit hemma pga förkylning som började med feber och snuva, och tillslut kom hostan som fortfarande är kvar så jag får absolut inte komma till jobbet.  
+- [Svullna halsmandlar](other_symptoms). Snuva och [kraftig rosslande hosta](cough_shape). [39 grader feber](fever_temperature:39,0-39,9 grader)
+- feber och [snuva](other_symptoms).
+- feber och [nästäppa](other_symptoms)
+- Jan kan få feber, [ont i öronen](other_symptoms), [snuva](other_symptoms) och hosta om du är [förkyld](other_symptoms)
+- Feber och hosta är vanligt. 
+- samtidigt har jag andra symtom som [snuva](other_symptoms), hosta och [heshet](other_symptoms). Det beror ofta på en förkylning som orsakats av virus.
+- Jag har [ont i halsen i två dagar](cough_length) med feber
 
 ## intent:ask_about_fever+ask_about_soreThroat
 - feber och halsont
 - halsont och feber
-- Jag har varit förkyld sen början av februari och blir inte bra. Jag har [inte haft hög feber](fever_temperature:Under 38,0 grader), utan är [trött](other_symptoms), har ont i halsen och [täppt i näsan](other_symptoms) och känner [tryck i bihålorna](other_symptoms) och är väldigt [“slemmig”](other_symptoms)
-- Har sedan [tre veckor haft luftvägsbesvär](soreThroat_duration) med [svidande luftvägar](other_symptoms), hosta, [värk i bröstkorg](other_symptoms), [allmän värk i kroppen](other_symptoms). [Feber rent 38](fever_temperature) första veckan. 
+- Jag har [inte haft hög feber](fever_temperature:Under 38,0 grader), utan är [trött](other_symptoms), har ont i halsen och [täppt i näsan](other_symptoms) och känner [tryck i bihålorna](other_symptoms) och är väldigt [“slemmig”](other_symptoms)
+- Har sedan [tre veckor haft luftvägsbesvär](soreThroat_duration) med [svidande luftvägar](other_symptoms), hosta, [värk i bröstkorg](other_symptoms), [allmän värk i kroppen](other_symptoms). [Feber rent 38](fever_temperature:38,0-38,4 grader) första veckan. 
 - Har haft [förkylningsinfluensa](other_symptoms) med [luftvägsproblem en månad, början av feb](soreThroat_duration). Ingen ork. Blir [andfådd](other_symptoms) av att gå uppför en trappa. 
 - Ont i halsen, [ont i muskler](other_symptoms), feber och [högt blodtryck](other_symptoms).
-
-## lookup:halsont
-- ont i halsen
-- halsont
+- har varit i 2 veckor hemma, som tidigare jag hade halsont, feber
+- [Jätteont i halsen, haft länge, 7 dgr](soreThroat_duration), känns som influensa. Har LOC feber, ingen termometer. [Trött](other_symptoms), orkar inte ens se tv el läsa. 
+- kraftiga symtom som [trötthet](other_symptoms), [svullna lymfkörtlar](other_symptoms), ont i halsen, feber och [inflammerade halsmandlar](other_symptoms) med en vit beläggning
+- Jag har ont i halsen och [feber i två dagar](fever_length), men inga förkylningssymtom
+- Du har ont i halsen, feber och [små knottriga utslag](other_symptoms).
+- Du kan inte svälja saliven, har feber och [svårt att andas](other_symptoms)
+- halsont får [hög feber](fever_temperature:39,0-39,9 grader), [frossa](other_symptoms) och [andningsbesvär](other_symptoms)
+- Jag har ont i halsen, har [svårt att svälja](other_symptoms), feber och känner mig sjuk.
+- ont i halsen och har drabbats av [halsfluss](other_symptoms)
+- scharlakansfeber med feber, [röda kinder](other_symptoms) och [blekhet runt munnen.](other_symptoms)

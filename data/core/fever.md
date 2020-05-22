@@ -8,8 +8,8 @@
 ## happy path fever+cough
 * ask_about_fever+ask_about_cough 
     - fever_form
-    - cough_form
     - form{"name": "fever_form"}
+    - cough_form
     - form{"name": "cough_form"}
     - form{"name": null}
     - utter_submit_fever_cough
@@ -18,8 +18,8 @@
 ## happy path fever+soreThroat
 * ask_about_fever+ask_about_soreThroat
     - fever_form
-    - soreThroat_form
     - form{"name": "fever_form"}
+    - soreThroat_form
     - form{"name": "soreThroat_form"}
     - form{"name": null}
     - utter_submit_fever_soreThroat

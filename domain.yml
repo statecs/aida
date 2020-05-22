@@ -18,13 +18,17 @@ intents:
 - ask_whoami
 - bot_challenge
 - chitchat
+- good_song
 - stop
 - ask_about_corona_symptom
 - ask_about_corona_virus
 - ask_about_corona_death
 - version
 - clear
+- pain
+- chronic
 - goback
+- location
 - ask_about_headache
 - ask_about_soreThroat
 - ask_about_cough
@@ -40,8 +44,15 @@ intents:
 - ask_about_headache+ask_about_soreThroat+ask_about_fever
 - ask_about_headache+ask_about_soreThroat+ask_about_cough
 - ask_about_headache+ask_about_soreThroat+ask_about_cough+ask_about_fever
+- ask_about_soreThroat+ask_about_cough+ask_about_fever
+- length_weight
+- fever_temperature
+- symptoms_changed
+- other_symptoms
+- cough_shape
 entities:
 - headache
+- soreThroat
 - recurrent
 - fever_length
 - headache_utter
@@ -55,13 +66,19 @@ entities:
 - other
 - fever_temperature
 - soreThroat_duration
+- soreThroat_pain
 - headache_pain
 - medication
+- expectation
 - cough_length
+- soreThroat_location
 - cough_chronic
 - cough_cold
 - other_symptom
 - symptom
+- cold
+- cough
+- corona
 slots:
   cough_chronic:
     type: unfeaturized
@@ -162,10 +179,6 @@ responses:
         title: Astma
       - payload: Annan lungsjukdom
         title: Annan lungsjukdom
-      - payload: Kittlande
-        title: Kittlande
-      - payload: Hjärtsjukdom
-        title: Hjärtsjukdom
       - payload: Hjärtsjukdom
         title: Hjärtsjukdom
       - payload: Annat
@@ -203,7 +216,7 @@ responses:
       title: Mer än 7 dygn
     text: Hur länge har du haft feber?
   utter_ask_fever_temperature:
-  - buttons:
+  - :
     - payload: Under 38,0 grader
       title: Under 38,0 grader
     - payload: 38,0-38,4 grader
@@ -355,6 +368,7 @@ responses:
   utter_ask_howdoing:
   - text: Jag mår bra! Tack för att du frågar!
   - text: Jag mår bra, tack!
+  - text: Bra, tack! Själv?
   - text: Jag mår helt fantastiskt.
   - text: Det rullar.
   - text: Min dag är helt underbar!
@@ -410,9 +424,13 @@ responses:
     text: Hur bra är din hälsa idag? Från 1 (sämsta tillstånd) till 100 (bästa tänkbara
       tillstånd)
   utter_chitchat:
-  - text: Jag mår jättebra!
-  - image: https://i.imgur.com/nGF1K8f.jpg
-    text: Jag mår bra, tack!
+  - text: Jag finns fär för att svara på dina frågor.
+  - text: Jag skapades som ett examensarbete på KTH
+  - text: Jag tror inte det. Men vad vet jag, jag är bara en robot.
+  - text: Tråkigt att höra! Jag kanske kan hjälpa dig på något sätt?
+  - text: Okej. Undrar du över något mer?
+  - text: Mitt namn är Symptomguiden och jag kan svara på frågor om halsont, feber,
+      hosta och huvudvärk
   utter_corona_death:
   - text: Enligt Vårdguiden blir de allra flesta som smittas lindrigt sjuka med luftvägssymtom
       som går över av sig själva, men vissa drabbas av allvarligare sjukdom som lunginflammation.
@@ -465,6 +483,8 @@ responses:
   - text: Hoppas du får en bra dag.
   - text: Önskar dig en fortsatt trevlig dag!
   - text: Ha det så bra!
+  - text: Hoppas du fick svar på det du undrade om. Välkommen tillbaka om du har fler
+      frågor!
   - text: Tack för denna gång! Jag finns här om du har några fler frågor.
   utter_greet:
   - custom:
@@ -979,6 +999,51 @@ responses:
         linkText: Läs mer på 1177.se
         title: Tack för dina svar
       type: finalPage
+  utter_submit_soreThroat_cough_fever:
+  - custom:
+      data:
+      - answer: '{state_of_health}'
+        title: Hur bra är din hälsa idag? Från 1 (sämsta tillstånd) till 100 (bästa
+          tänkbara tillstånd)
+      - answer: '{other_symptoms}'
+        title: Har du något av följande i samband med dina besvär? Du kan välja flera
+          alternativ.
+      - answer: '{medication}'
+        title: Tar du några läkemedel eller naturläkemedel? Ange det nedan.
+      - answer: '{soreThroat_duration}'
+        title: Hur länge har du haft ont i halsen?
+      - answer: '{soreThroat_pain}'
+        title: Hur svåra är dina halsbesvär just nu?
+      - answer: '{soreThroat_location}'
+        title: Vart i halsen har du ont?
+      - answer: '{cough_length}'
+        title: Hur länge har du haft hosta?
+      - answer: '{cough_pain}'
+        title: Hur svår är dina hosta just nu?
+      - answer: '{cough_shape}'
+        title: Vilket av följande beskriver din hosta bäst? Du kan välja flera alternativ.
+      - answer: '{cough_chronic}'
+        title: Har du någon av följande kroniska sjukdomar eller tillstånd? Du kan
+          välja flera alternativ.
+      - answer: '{cough_cold}'
+        title: Sitter hostan kvar från en förkylning eller influensa som du haft nyligen?
+      - answer: '{cough_smoke}'
+        title: Röker du?
+      - answer: '{fever_length}'
+        title: Hur länge har du haft feber?
+      - answer: '{fever_temperature}'
+        title: Vilken var din senast uppmätta temperatur?
+      - answer: '{other}'
+        title: Är det något du vill tillägga?
+      - answer: '{expectation}'
+        title: Vad förväntar du dig av kontakten med oss?
+      severity: high
+      text:
+      - content: Det verkar som att du behöver mer vård än vad vi kan ge dig.
+        link: https://1177.se
+        linkText: Läs mer på 1177.se
+        title: Tack för dina svar
+      type: finalPage
   utter_submit_soreThroat:
   - custom:
       data:
@@ -1005,6 +1070,16 @@ responses:
         linkText: Läs mer på 1177.se
         title: Tack för dina svar
       type: finalPage
+  utter_submit_critical:
+  - custom:
+      data:
+      severity: high
+      text:
+      - content: Detta kan behöva undersökas omgående på en akutmottagning.
+        link: https://www.sosalarm.se/trygghet/viktiga-telefonnummer/112/
+        linkText: Ring 112 om det är livshotande eller akuta besvär
+        title: Kontakta oss direkt
+      type: finalPage
   utter_telljoke:
   - text: Vad är klockan? En anordning som visar tiden.
   - text: Vem i kryddskåpet jobbar extra? Tim-jan!
@@ -1018,6 +1093,11 @@ responses:
   - text: Hör av dig om du har några fler frågor.
   utter_version:
   - text: Model 1.0 - Mar 28, 2020
+  utter_good_song:
+  - text: Jag rekommenderar \"Fight The Virus\" med Alvin Oon. \"Corona Virus Alert\"
+      med Bobi Wine och Nubian Li är också bra!
+  utter_ask_whoami:
+  - text: Mitt namn är Aida! Vad heter du?
 actions:
 - action_default_ask_affirmation
 - action_default_fallback
@@ -1055,7 +1135,9 @@ actions:
 - utter_corona_symptom
 - utter_corona_virus
 - utter_default
+- utter_good_song
 - utter_goodbye
+- utter_ask_whoami
 - utter_greet
 - utter_handleinsult
 - utter_restart_with_button
@@ -1070,11 +1152,13 @@ actions:
 - utter_submit_headache_soreThroat
 - utter_submit_headache_soreThroat_fever
 - utter_submit_soreThroat
+- utter_submit_critical
 - utter_telljoke
 - utter_thanks
 - utter_version
 - utter_submit_headache_soreThroat_cough
 - utter_submit_headache_soreThroat_cough_fever
+- utter_submit_soreThroat_cough_fever
 forms:
 - cough_form
 - fever_form

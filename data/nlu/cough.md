@@ -1,11 +1,18 @@
 ## intent:ask_about_cough
-- Jag har hosta
+- Jag hostar
+- Jag har [hosta](cough)
 - jag har hosta
 - hosta
+- mycket [hostar](cough)
 - Hosta
 - hosta
-- hosta
+- hosthost
+- hostar o hostar
+- mycket hosta
+- att sluta hosta
 - frugan hostar
+- [torrhosta](cough_shape), främst på natten
+- Hosta efter dricker kaffe
 - godkväll hostar här hos mig
 - hallå jag har problem med hosta
 - har åkt på en hemsk hosta och behöver hjälp för att jag är gammal
@@ -24,7 +31,7 @@
 - Är hemma för [fjärde veckan med hosta](cough_length).
 - Har haft [influensa](cough_cold) med [mycket besvärlig hosta](cough_shape). Jag önskar undersöka om jag har [astma](cough_chronic) och om det kan vara [luftrörskatarr](other_symptoms). 
 - Är [förkyld](cough_cold) med [snuva](cough_cold) och hosta symptom. 
-- [torrhosta](cough_shape) o [smärta i bröstkorg/bröstryggen](other_symptoms)
+- [torrhosta](cough_shape) o [smärta i bröstkorg](other_symptoms)
 - Haft [hosta i tre veckor](cough_length)
 - Har haft [ret host](cough_shape:Torrhosta) som kommit och gått, kommer ofta på kvällen. [Har haft det mer eller mindre sen februari](cough_length).
 - Har [långvarig hosta](cough_shape), har det i det i drygt [1,5 månader](cough_length), började med en ordentlig [förkylning](cough_cold). [Hostan har blivit värre](symptoms_changed) de senaste dagarna. 
@@ -60,24 +67,41 @@
 - Jag har [hostat kraftigt i över 2 veckor](cough_length). Har använt min [astma medicin](medication)
 - hostat
 - [hostat i 4 veckor](cough_length)
+- jag hostar frukstansvärt mycket
+- Efterfrågar [läkarintyg](expectation) för min [torrhosta](cough_shape)
+- [Jag behöver hjälp och råd](expectation) hur jag ska göra för att få bort min hosta
+- Har haft [ret hosta i 8 dagar](cough_length)
+- [behöver ett läkarintyg](expectation) för min hosta
+- [Kontakta mig](expectation) för min hosta
+- [Började hosta för 1,5 - 2 v sedan](cough_length).
+- Jag har sen [några veckor hosta](cough_length). 
+- Har haft [hosta i drygt en månad](cough_length).
+- Jag har haft [hosta i flera veckor](cough_length) med genomskinlig sputum
+- Hosta, [torrhosta](cough_shape) på natten [sover dåligt](other_symptoms)
+- Jag har [hostat i 2 veckor](cough_length), det [blir inte bättre](symptoms_changed). Jag har [svårt att sova på natten](other_symptoms). Börjar blir jobbigt.
+- Jag vill gärna bli av med hostan och vete varför jag hostar. Kanske [få någon medicin som hjälper](expectation)
+- [hosta sed 3 v](cough_length)
+- Jag har [torrhosta](cough_shape)
+- Hosta på nätterna
+- [hosta sedan 2 veckor](cough_length)
+- HOSTAR MYCKET
+- hostar ibland
+- [torrhostan](cough_shape) eller [rethostan](cough_shape) beror på en förkylning går den över av sig själv, men [hostan kan hänga kvar i flera veckor](cough_length)
+- hostan orsakats av till exempel en [lunginflammation](other_symptoms) går den över efter att lunginflammationen behandlats.
+- [besväras kraftigt](symptoms_changed) av min [torrhosta](cough_shape) eller [rethosta](cough_shape)
+- [hosta suttit kvar i några veckor](cough_length)
 
 ## intent:ask_about_cough+ask_about_soreThroat
+- hosta och [ont i halsen i 5 dagar](soreThroat_duration).
+- besvär med hosta och halsont
+- halsont och hosta
 - [Har långvarig hosta](cough_length), har det i det i drygt [långvarig hosta i 1,5 månader](cough_length), började med en ordentlig [förkylning](cough_cold). [Hostan har blivit värre](symptoms_changed) de senaste dagarna. Jag har även [ont i halsen varje morgon](soreThroat_duration). 
 - Jag har under [fem veckors tid haft hosta](cough_length) som inte vill ge med sig. Det börjar med en rejäl [förkylning](cough_cold) [bihåleinflammation](symptom) och [ihållande hosta](cough_shape). 
-- Jag är fortfarande [förkyld](cough_cold) med hosta och halsont men min [astma](cough_chronic) är något bättre. 
+- Jag är fortfarande [förkyld](cough_cold:Förkyld) med hosta och halsont men min [astma](cough_chronic) är något bättre. 
 - Har [hostat, i 4 veckor](cough_length) nu. [Jag hostar nästan konstant](cough_shape). Jag har även lite ont i halsen, dock inte någon feber. 
-- Fortfarande [förkyld](cough_cold) med hosta och ont i halsen. 
+- Fortfarande [förkyld](cough_cold:Förkyld) med hosta och ont i halsen. 
 - Har fortfarande [ont när jag andas](other_symptoms), hostar och [snorar](cough_cold). Har dessutom haft [ont i underbenen](other_symptoms) från och till och ont i halsen, [hes](other_symptoms) igen. 
 - Jag har hosta, halsont, [ont i hela kroppen](other_symptoms), [ont i bröstet](other_symptoms), [orklös](other_symptoms) och [svårighet att andas](other_symptoms). 
-
-## synonym:hosta
-- hsta
-- hoista
-- cough
-- coughing
-
-## lookup:Torrhosta
-- ret hosta
-- rethosta
-- torrhosta
-- ret host
+- [behöver ett läkarintyg](expectation) för långvarig hosta och halsont
+- hosta, [snuva](cough_cold), onti i halsen
+- Det känns som en [torrhosta](cough_shape) som vägrar släppa. Får ont i halsen av att hosta

@@ -6,6 +6,8 @@
 - jag förstår dig inte
 - asdasfsf
 - mksamasmas
+- asnafsob asfinafsoin
+- bla bla
 
 ## intent:greet
 - Hej
@@ -14,6 +16,9 @@
 - Hej igen
 - Hej vän!
 - Hallå där
+- hej hej
+- Hejje!
+- hei
 - Hej allihopa
 - Hej google
 - Hej alexa
@@ -25,6 +30,10 @@
 - God morgon
 - God kväll
 - Hej herr!
+- tjena
+- tjabba
+- hi
+- goddag
 - hej robot
 - hej är någon där
 - hallo
@@ -34,6 +43,7 @@
 - Yo
 - yoyo
 - Yoyo
+- hej botten
 - Yo kompis
 - Hej på dig!
 - Halloj
@@ -124,6 +134,11 @@
 - väldigt ledsen
 - olycklig
 - inte bra
+- kasst
+- svagt
+- risigt
+- förkastlig
+- förkastligt
 - inte så bra
 - extremt ledsen
 - mår jättedåligt
@@ -134,6 +149,20 @@
 - Tack så mycket!
 - Tack för hjälpen
 - Tack bot
+- tackar
+- tack tack
+- tack för tålamodet
+- tack för alla svar
+- Du är bäst
+- bra jobbat
+- tackkkk
+- tack till dig
+- tusen tack
+- tack bror
+- tack mannen
+- tack bre
+- tacktack
+- thanks
 - Tack för det
 - hälsningar
 - thx
@@ -152,9 +181,12 @@
 - hur mår du denna morgon
 - Hur mår du idag?
 - Hur mår du?
+- hur är läget
 - hur mår du idag?
 - hur är läget?
+- mår du bra
 - är du okej?
+- är allt bra
 - Mår du bra?
 - hur går det för dig?
 - Hur står det till?
@@ -244,11 +276,25 @@
 - pratar jag med en bot?
 - pratar jag med en människa?
 
+## intent:good_song
+- Vilken är den bästa låten att lyssna på under Corona
+- rekommendera en bra låt
+- vad för låt rekommenderar du
+- har du någon favorit låt
+- har du någon bra låt
+- säg en bra låt
+
 ## intent:chitchat
 - Jag vill lära känna din skapare
 - Vem skapade dig?
 - Vem designade dig?
+- Hur byggde ni det här
+- Hur vet du så mycket?
+- vem står bakom denna bot
+- Vem utvecklade dig
 - vad heter företaget som byggde dig?
+- vem skapade dig
+- vem har skapat dig
 - Jag vill veta vem som uppfann dig
 - Får jag fråga vem som uppfann dig?
 - berätta vad företaget som skapade dig heter
@@ -344,18 +390,626 @@
 - från 3 november till 8 januari
 - 1 januari till 28 februari
 - För 1 - 30 dagar
+- Mindre än en vecka
+- 1 till 3 veckor
+- Mer än 3 veckor
+- Mindre än 1 dygn
+- 1 till 2 dygn
+- 3 till 4 dygn
+- 5 till 6 dygn
+- Mer än 7 dygn
+- För 1 till 24 timmar sedan
+- För 1 till 30 dagar sedan
+- För 1 till 12 månader sedan
+- Mindre än 3 dygn
+- Mellan 3 dygn och 2 veckor
+- Mer än 2 veckor
 
-## lookup:startade
-- började
-- grundades
-- utbröt
-- skapades
+## lookup:expectation
+- Diagnos
+- Behandlingsråd
+- Recept
+- Remiss
+- Intyg
+- vårdcentral
+- vård
+- Mottagning
+- Undersökning
+- Hudmottagning
+- Gynekolog
+- Kirurgmottagning
+- Psykatri
+- Ortoped
+- labprov
+- Läkarutlåtande
+- blodprover
+- förnya
+- Hälsokontroll
+- receptförnyelse
+- Boka om
+- Ändra tid
+- Doktorsbokning
+- Besök
+- läkarbesök
+- blodtest
+- Tidsbokning
+- Boka
+- provtagning
+- Läkarbesök
+- läkarintyg
+- Undersökning
+- Råd
+- Rådgivning
+- Vaccin
+- ersättning
+- Resa
+- Avboka
+- utlägg
+- Sjuksköterska
+- telefonsamtal
+- försökt ringa
+- svar på undersökning
+- Tid
+- Tips o råd
+- Hjälp
+- Egenvård
+- Kontakt
+- Återbesök
+- Kontroll
+- Hjälp
+- gynecbesök
+- Ett snabbt besök
+- önskar nytt recept 
+- Återbesök med läkare
+- Skulle vilja träffa en läkare och få en grundlig undersökning.
+- Önskar friskhetsintyg i jobbsyfte
+- Behöver råd
+- Klarhet
+- önskar vaccination
+- få sjukskrivningen förlängd
+- träffa en läkare för grundlig undersökning
+- Vill ha en tid
+- kontakta igen
+- En diagnos
+- kontakta mig
+- Förväntar mig bättring
+- hjälp och råd hur jag ska göra
+- få reda på orsaken 
+- kan få en tid
+- få kontakt med läkare
+- vill jag ta kontakt igen
+- något jag bör tänka på
+- behöver ett läkarintyg
+- behöva få någon mer hjälp
+- reda ut vad det är som gör ont
+- finns möjlighet att testa
+- Kan jag få det utskrivet?
+- vill gärna har er åsikt
+- vill bara få hjälp
+- Återkoppling av tidigare besök
+- Hur ska jag göra
+- behöver ett läkarintyg
+- behöver komma i kontakt med min läkare
+- få min behandling 
+- behöver nu ett läkarintyg.
+- Hur får man tag i sjukintyg?
+- Finns det någon hjälp att få?
+- Behöver hjälp med sjukskrivning.
+- jag skulle vilja komma i kontakt med provtagning
+- Vart vänder man sig?
+- intyg
+- Jag undrar hur jag ska göra för att få läkarintyg
+- Känner att jag behöver vara sjukskriven 
+- vill veta hur mkt jag ska begränsa mina sociala kontakter
+- behöver nu ett sjukintyg från
+- Undrar om jag ska jobba eller bli sjukskriven
+- jag behöver läkarintyg
+- sjukintyg till jobbet
+- behöva ett läkarintyg
+- Hur går jag tillväga?
+- Vill veta om jag är i riskgrupp
+- vilja ha ett recept på en starkare hostmedicin
+- undrar om jag behöver testas?
+- Vill bli testad 
+- undrar vad min försäkring täcker
+- vad ska jag göra om jag blir sjuk?
+- när är det läge att få medicin?
+- Kan ni hjälpa mig att få kontakt med läkare för intyg?
+- Har ni tips på någon bra medicin
 
-## lookup:kropp
-- kroppen
-- människokroppen
-- människan
-- människa
-- person
-- personen
-- personer
+## lookup:symptoms_changed
+- De har förbättrats
+- De är oförändrade
+- De har förvärrats
+- Lindrig
+- Lindriga
+- Måttliga
+- Måttlig
+- Svår
+- Svåra
+- Mycket svår
+- Mycket svåra
+- ingen smärta
+- värsta tänkbara smärta
+
+## lookup:cough_shape
+- Luftrörskatarr
+- Torrhosta
+- Skällande
+- hosta där inget slem hostas upp
+- Slemhosta
+- Kittlande
+- Hackande
+- luftrörsinflammation
+- luftrörskatarr
+- bröstkatarr
+- Väsande eller pipande
+- ret hosta
+- pipande
+- väsande
+- rosslig andning
+- bronkit
+- lunginflammation
+- pneumoni
+- rethosta
+- torrhosta
+- ret host
+- raspig
+- skrovlig
+- kraxig
+
+## lookup:cough_cold
+- täppt näsa
+- nästäppa
+- snuva
+- förkylning
+- muskelvärk
+- snorig
+- rinnande näsa
+- säsongsinfluensa
+- vanlig influensa
+- influenza
+- täppt i näsan
+- hösnuva
+
+## intent:fever_temperature
+- Under 38,0 grader
+- 38,0-38,4 grader
+- 38,5-38,9 grader
+- 39,0-39,9 grader
+- 40,0-40,9 grader
+- Över 41,0 grader
+- 39 gr feber
+- 39 grader feber
+- 36,7 feber
+- 36,8
+- feber kring 37.0-37.5
+- Feber kring 38 grader
+- mycket hög feber
+- hög feber
+
+## intent:length_weight
+- cm180,kg90
+- 180cm, 90kg
+- 90kg och 120cm
+
+## intent:medication
+- Paracetamol (Alvedon, Panodil, Pamol)
+- Ibuprofen (Ipren, Brufen, Ibumetin)
+- Alvedon
+- Penicillin
+- Brufen
+- Ibumetin
+- Panodil
+- Pamol
+- meformin
+- inolaxol
+- diklofenak
+- imovane
+- tiazid
+- seloken
+- enalapril
+- metoprolol
+- imovane
+- zomig
+- kortisonsalva
+- nässpray
+- zopiklon
+- zolpidem
+- vanquin
+- vermox
+- triptan
+- propavan
+- betapred
+- stilnoct
+- kåvepenin
+- tiazid
+- levaxin
+- Pneumovax
+- Ipren
+- penicillin
+- Cocillana
+- prednisolon
+- mecillinam
+- loratadin
+- selexid
+- desloratadin
+- furadantin
+- zyrlex
+- furantoin
+- detrusitol
+- metformin
+- victoza
+- glimepirid
+- cetirizin
+- spiriva
+- minirin
+- tolterodin
+- antihistamin
+- Cocillana-Etyfin
+- Betnovat
+- naproxen
+- voltaren
+- Paracetamol
+
+## lookup:other_symptoms
+- Trötthet
+- Yrsel
+- Akne
+- minnesstörning
+- demens
+- förvirring
+- svindel
+- snurrig
+- sömnig
+- andnöd
+- andningssvårigheter
+- spirometri
+- dyspné
+- bronkit
+- andningsbesvär
+- ont när jag andas
+- lymfkörtel
+- reumatiskt
+- oregelbunden puls
+- artros
+- reumatism
+- artrit
+- gikt
+- stukning
+- inflammation
+- brist på energi
+- utmattad
+- kraftlös
+- stress
+- Allergi
+- Astma
+- Annan lungsjukdom
+- Hjärtsjukdom
+- astmakontroll
+- KOL
+- Diabetes
+- Hjärtsvikt
+- Höga blodfetter
+- Benbesvär
+- Hyperkolesterolemi
+- Depression
+- sköldkörtel
+- TSH
+- Högt blodtryck
+- hjärtfel
+- hjärtproblem
+- hjärtsjukdom
+- förkylningsastma
+- förkylnings-astma
+- lungsjuk
+- allergisk luftvägssjukdom
+- andnöd
+- sömnighet
+- dåsighet
+- matthet
+- kraftlöshet
+- utmattning
+- överansträngning
+- orkeslöshet
+- Hypotyreos
+- utbränd
+- Heshet
+- Illamående
+- illamående
+- Kräkningar
+- kräkas
+- kräks
+- vomering
+- kräksjuk
+- Uppkastning
+- spy
+- kräkningskänsla
+- kväljningar
+- stelhet
+- luftstrupe
+- värmeslag
+- hypertermi
+- ryggbesvär
+- sömnstörning
+- kräkningar
+- sjukdomskänsla
+- må illa
+- snuva
+- näskatarr
+- nästäppa
+- Snuva eller nästäppa
+- Ökad ljuskänslighet
+- Ökad ljudkänslighet
+- Muskelsmärta
+- Synbesvär
+- Oavsiktlig viktförändring
+- soleksem
+- eksem
+- knottrigt
+- nässelutslag
+- ljuskänslighet
+- öronbesvär
+- ögontrötthet
+- ögoninflammation
+- ögoninfektion
+- ögonallergi
+- öroninflammation
+- öronvärk
+- lock för örat
+- impotens
+- ont i örat
+- knöl i huden
+- flytning från örat
+- trumhinna
+- ångest
+- upprördhet
+- stress
+- panik
+- panikångest
+- blod i urinen
+- starr
+- Minnesförlust
+- Personlighetsförändring
+- Förvrängt tal
+- Känselnedsättning eller domning
+- Svaghet
+- förlamning
+- kraftlöshet
+- orkeslöshet
+- deprimerad
+- bräcklig
+- nedstämd
+- deppig
+- ledsen
+- nedslagen
+- suicid
+- stroke
+- sårinfektion
+- näsblödning
+- blod i näsan
+- Hängande ögonlock
+- knäbesvär
+- korsband
+- inflammation
+- klåda
+- röda ögon
+- allergi
+- gasighet
+- aptitlöshet
+- urinvägsinfektion
+- kolik
+- ryggskada
+- ryggskott
+- ögonbesvär
+- munblåsor
+- krampanfall
+- ryckning
+- medvetslös
+- hudförändring
+- Hudbesvär
+- irritation
+- cancer
+- tumör
+- rinnande
+- sveda
+- bröstbesvär
+- Halsbränna
+- reflux
+- sura uppstötningar
+- magsår
+- kliar
+- utslag
+- bröstsmärta
+- hjärtinfarkt
+- tryck över bröstet
+- hjärtsvikt
+- sviktande hjärta
+- nedsatt hjärtfunktion
+- hälsena
+- hallux valgus
+- Mortons neurom
+- hallux rigidus
+- ont i bröstet
+- lös avföring
+- magkatarr
+- orolig mage
+- gastrit
+- magont
+- blindtarm
+- buksveda
+- matstrupe
+- dyspepsi
+- magvärk
+- underlivsbesvär
+- klåda
+- hudfläck
+- rusande hjärta
+- palpitationer
+- hjärtat i halsgropen
+- snabb puls
+- hög puls
+- bankar
+- EKG
+- hjärtklappning
+- prostata
+- sköldkörtel
+- munsår
+- herpes
+- smakförändring
+- smaksinne
+- känner ingen smak
+- smaklöst
+- metallsmak
+- domning
+- neuropati
+- sömnbesvär
+- ischiasz
+- Schlatter
+- nästäppa
+- bihålebesvär
+- polyp
+- dysfagi
+- sväljsvårighet
+- sväljningsbesvär
+- matstrupe
+- sväljningssvårighet
+- svälja
+- svårt att äta
+- bihåle
+- svimning
+- ont i magen
+- ont i buken
+- tarmvred
+- Buksmärta
+- diskbråck
+- lågt blodtryck
+- kväljningar
+- brännskada
+- brännsår
+- svartna för ögonen
+- säcka ihop
+- Spyfärdig
+- Diarré
+- dyspné
+- förstoppning
+- orolig mage
+- magproblem
+- IBS
+- öronskada
+- hörselnedsättning
+- blod ur örat
+- blödning från örat
+- sårskada
+- benskada
+- axelbesvär
+- fotskada
+- sårinfektion
+
+## lookup:headache_utter
+- En pågående episod av huvudvärk
+- Återkommande huvudvärk
+- regelbunden huvudvärk
+- oregelbunden
+- sporadisk
+- regelbunden
+- periodisk 
+- regelbunden
+- periodisk
+- upprepad
+- stående
+- repetitiv
+- som kommer tillbaka ofta
+- kommer och går
+- till och från
+- upprepad
+- stående
+- huvudvärk till och från
+- huvudvärk återkommande
+- recidiverande
+- rekurrent
+- Huvudvärken har kommit och gått
+- rekursiv
+- repetitiv
+- säsongmässig
+- årlig
+- som kommer tillbaka ofta och regelbundet
+- repetitiv
+
+## intent:location
+- Sidan av huvudet (tinning)
+- Runt eller bakom ögonen
+- Runt öronen
+- På höger sida
+- På vänster sida
+- På båda sidor
+
+## lookup:headache
+- ont i huvudet
+- smärta i huvudet
+- huvud värk
+- migrän
+- huvudet
+- smärta
+- huvud
+- Huvudskada
+- klusterhuvudvärk
+- Hortons
+- migrän
+- slag mot huvudet
+- hjärnskakning
+- värk
+- spänningshuvudvärk
+- annan huvudvärk
+- huvudvärk vid sjukdom
+- huvudvärk vid psykisk ohälsa
+- huvudvärk vid bettsmärta och käksmärta
+- huvudvärk orsakad av läkemedel.
+
+## lookup:soreThroat
+- ont i halsen
+- halsont
+- ont i halsne
+- halsfluss
+- hals fluss
+- halsskada
+- tonsillit
+- körtelfeber
+- mononukleos
+- halsinfektion
+- faryngit
+- scharlakansfeber
+- strep
+- strepa
+- strep-a
+- centor
+- halson
+- haslont
+- haslont
+
+## lookup:cough
+- hostar
+- rosslig i halsen
+
+## lookup:cough_length
+- långvarig hosta
+- hosta i 1,5 månader
+
+## lookup:soreThroat_duration
+- ont i halsen i 5 dagar
+- ont i halsen varje morgon
+
+## lookup:corona
+- covid19
+- coronavirus
+- coranen
+- Covd-19
+- coronaviruset
+
+## lookup:headache_where
+- mellan ögonen
+- bakom ögonen
+- Runt eller bakom ögonen
+- bakom örat
+
+

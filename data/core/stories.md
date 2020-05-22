@@ -29,9 +29,15 @@
 * telljoke
   - utter_telljoke
 
+## askwhoamI
+* ask_whoami
+  - utter_ask_whoami
+  - utter_greet
+
 ## chitchat
 * chitchat
   - utter_chitchat
+  - utter_greet
 
 ## story_goodbye
 * goodbye
