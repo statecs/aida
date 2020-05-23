@@ -13,7 +13,7 @@ import json
 import csv
 
 from rasa_sdk import Action, Tracker, ActionExecutionRejection
-from rasa_sdk.events import SlotSet, AllSlotsReset, EventType, FollowupAction, UserUtteranceReverted, ActionReverted
+from rasa_sdk.events import SlotSet, AllSlotsReset, EventType, FollowupAction, UserUtteranceReverted, Restarted, Form
 from rasa_sdk.forms import FormAction, REQUESTED_SLOT
 from rasa_sdk.executor import CollectingDispatcher
 
@@ -215,6 +215,30 @@ class HeadacheForm(FormAction):
             "expectation": [self.from_text()],
         }
 
+    def request_next_slot(
+        self,
+        dispatcher: "CollectingDispatcher",
+        tracker: "Tracker",
+        domain: Dict[Text, Any],
+    ) -> Optional[List[EventType]]:
+
+        # track intent of the input
+        msg = tracker.latest_message.get('text')
+        # classify deacitvate intent
+        if msg == "/back":
+            dispatcher.utter_template(
+                "utter_back", tracker, silent_fail=True)
+            return [UserUtteranceReverted(), UserUtteranceReverted()]
+        else:
+            for slot in self.required_slots(tracker):
+                if self._should_request_slot(tracker, slot):
+                    logger.debug("Request next slot '{}'".format(slot))
+                    dispatcher.utter_template("utter_ask_{}".format(slot),
+                                              tracker,
+                                              silent_fail=False,
+                                              **tracker.slots)
+                    return [SlotSet(REQUESTED_SLOT, slot)]
+
     def validate(self,
                  dispatcher: CollectingDispatcher,
                  tracker: Tracker,
@@ -235,17 +259,16 @@ class HeadacheForm(FormAction):
         for slot, value in slot_values.items():
 
             msg = tracker.latest_message.get('text')
-            if msg == "/back":
-                dispatcher.utter_template(
-                    "utter_back", tracker, silent_fail=True)
-                # return [FollowupAction('action_listen')]
-                return [FollowupAction("action_rewind")]
 
             if msg == "/restart":
                 dispatcher.utter_template(
                     "utter_restart", tracker, silent_fail=True)
-                # return [FollowupAction('action_listen')]
-                return [FollowupAction("action_restart")]
+                return [Form(None), AllSlotsReset(None), Restarted(None)]
+
+            if slot == "state_of_health":
+                if value <= '10':
+                    dispatcher.utter_message(template="utter_urgent")
+                    return [Form(None), AllSlotsReset(None), Restarted(None)]
 
         # validation succeed, set the slots values to the extracted values
         return [SlotSet(slot, value) for slot, value in slot_values.items()]
@@ -294,6 +317,30 @@ class soreThroatForm(FormAction):
             "expectation": [self.from_text()],
         }
 
+    def request_next_slot(
+        self,
+        dispatcher: "CollectingDispatcher",
+        tracker: "Tracker",
+        domain: Dict[Text, Any],
+    ) -> Optional[List[EventType]]:
+
+        # track intent of the input
+        msg = tracker.latest_message.get('text')
+        # classify deacitvate intent
+        if msg == "/back":
+            dispatcher.utter_template(
+                "utter_back", tracker, silent_fail=True)
+            return [UserUtteranceReverted(), UserUtteranceReverted()]
+        else:
+            for slot in self.required_slots(tracker):
+                if self._should_request_slot(tracker, slot):
+                    logger.debug("Request next slot '{}'".format(slot))
+                    dispatcher.utter_template("utter_ask_{}".format(slot),
+                                              tracker,
+                                              silent_fail=False,
+                                              **tracker.slots)
+                    return [SlotSet(REQUESTED_SLOT, slot)]
+
     def validate(self,
                  dispatcher: CollectingDispatcher,
                  tracker: Tracker,
@@ -324,7 +371,12 @@ class soreThroatForm(FormAction):
                 dispatcher.utter_template(
                     "utter_restart", tracker, silent_fail=True)
                 # return [FollowupAction('action_listen')]
-                return [FollowupAction("action_restart")]
+                return [Form(None), AllSlotsReset(None), Restarted(None)]
+
+            if slot == "state_of_health":
+                if value <= '10':
+                    dispatcher.utter_message(template="utter_urgent")
+                    return [Form(None), AllSlotsReset(None), Restarted(None)]
 
         # validation succeed, set the slots values to the extracted values
         return [SlotSet(slot, value) for slot, value in slot_values.items()]
@@ -378,6 +430,30 @@ class coughForm(FormAction):
             "expectation": [self.from_text()],
         }
 
+    def request_next_slot(
+        self,
+        dispatcher: "CollectingDispatcher",
+        tracker: "Tracker",
+        domain: Dict[Text, Any],
+    ) -> Optional[List[EventType]]:
+
+        # track intent of the input
+        msg = tracker.latest_message.get('text')
+        # classify deacitvate intent
+        if msg == "/back":
+            dispatcher.utter_template(
+                "utter_back", tracker, silent_fail=True)
+            return [UserUtteranceReverted(), UserUtteranceReverted()]
+        else:
+            for slot in self.required_slots(tracker):
+                if self._should_request_slot(tracker, slot):
+                    logger.debug("Request next slot '{}'".format(slot))
+                    dispatcher.utter_template("utter_ask_{}".format(slot),
+                                              tracker,
+                                              silent_fail=False,
+                                              **tracker.slots)
+                    return [SlotSet(REQUESTED_SLOT, slot)]
+
     def validate(self,
                  dispatcher: CollectingDispatcher,
                  tracker: Tracker,
@@ -408,7 +484,12 @@ class coughForm(FormAction):
                 dispatcher.utter_template(
                     "utter_restart", tracker, silent_fail=True)
                 # return [FollowupAction('action_listen')]
-                return [FollowupAction("action_restart")]
+                return [Form(None), AllSlotsReset(None), Restarted(None)]
+
+            if slot == "state_of_health":
+                if value <= '10':
+                    dispatcher.utter_message(template="utter_urgent")
+                    return [Form(None), AllSlotsReset(None), Restarted(None)]
 
         # validation succeed, set the slots values to the extracted values
         return [SlotSet(slot, value) for slot, value in slot_values.items()]
@@ -457,6 +538,30 @@ class feverForm(FormAction):
             "expectation": [self.from_text()],
         }
 
+    def request_next_slot(
+        self,
+        dispatcher: "CollectingDispatcher",
+        tracker: "Tracker",
+        domain: Dict[Text, Any],
+    ) -> Optional[List[EventType]]:
+
+        # track intent of the input
+        msg = tracker.latest_message.get('text')
+        # classify deacitvate intent
+        if msg == "/back":
+            dispatcher.utter_template(
+                "utter_back", tracker, silent_fail=True)
+            return [UserUtteranceReverted(), UserUtteranceReverted()]
+        else:
+            for slot in self.required_slots(tracker):
+                if self._should_request_slot(tracker, slot):
+                    logger.debug("Request next slot '{}'".format(slot))
+                    dispatcher.utter_template("utter_ask_{}".format(slot),
+                                              tracker,
+                                              silent_fail=False,
+                                              **tracker.slots)
+                    return [SlotSet(REQUESTED_SLOT, slot)]
+
     def validate(self,
                  dispatcher: CollectingDispatcher,
                  tracker: Tracker,
@@ -487,9 +592,17 @@ class feverForm(FormAction):
                 dispatcher.utter_template(
                     "utter_restart", tracker, silent_fail=True)
                 # return [FollowupAction('action_listen')]
-                return [FollowupAction("action_restart")]
+                return [Form(None), AllSlotsReset(None), Restarted(None)]
 
-        # validation succeed, set the slots values to the extracted values
+            if slot == "state_of_health":
+                if value <= '10':
+                    dispatcher.utter_message(template="utter_urgent")
+
+            if slot == "fever_temperature":
+                if value == 'Över 41,0 grader':
+                    dispatcher.utter_message(template="utter_urgent")
+                    return [Form(None), AllSlotsReset(None), Restarted(None)]
+                    # validation succeed, set the slots values to the extracted values
         return [SlotSet(slot, value) for slot, value in slot_values.items()]
 
     def submit(

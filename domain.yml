@@ -79,6 +79,7 @@ entities:
 - cold
 - cough
 - corona
+- fever_duration
 slots:
   cough_chronic:
     type: unfeaturized
@@ -216,7 +217,7 @@ responses:
       title: Mer än 7 dygn
     text: Hur länge har du haft feber?
   utter_ask_fever_temperature:
-  - :
+  - buttons:
     - payload: Under 38,0 grader
       title: Under 38,0 grader
     - payload: 38,0-38,4 grader
@@ -1070,9 +1071,8 @@ responses:
         linkText: Läs mer på 1177.se
         title: Tack för dina svar
       type: finalPage
-  utter_submit_critical:
+  utter_urgent:
   - custom:
-      data:
       severity: high
       text:
       - content: Detta kan behöva undersökas omgående på en akutmottagning.
@@ -1080,11 +1080,16 @@ responses:
         linkText: Ring 112 om det är livshotande eller akuta besvär
         title: Kontakta oss direkt
       type: finalPage
+    text: Detta kan behöva undersökas omgående på en akutmottagning.
   utter_telljoke:
   - text: Vad är klockan? En anordning som visar tiden.
   - text: Vem i kryddskåpet jobbar extra? Tim-jan!
   - text: Vilken kryddkille åker finlandsbåt? Per-silja!
   - text: När de skulle göra pannkakor i fängelset använde de en fånge som smet.
+  utter_empty:
+  - custom:
+      type: back
+    text: /back
   utter_thanks:
   - text: Mitt nöje.
   - text: Tack själv
@@ -1104,6 +1109,7 @@ actions:
 - action_rewind
 - action_version
 - action_reset
+- action_revert
 - utter_ask_howdoing
 - utter_ask_is_symptom
 - utter_ask_rephrase
@@ -1152,13 +1158,14 @@ actions:
 - utter_submit_headache_soreThroat
 - utter_submit_headache_soreThroat_fever
 - utter_submit_soreThroat
-- utter_submit_critical
 - utter_telljoke
 - utter_thanks
+- utter_empty
 - utter_version
 - utter_submit_headache_soreThroat_cough
 - utter_submit_headache_soreThroat_cough_fever
 - utter_submit_soreThroat_cough_fever
+- utter_urgent
 forms:
 - cough_form
 - fever_form

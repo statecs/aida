@@ -7,6 +7,7 @@
 - jag har ont i huvudet
 - Jag har ont i huvudet. Det gör mer ont när det är ljust.
 - [huvudvärk](headache)
+- kraftig huvudvärk
 - Huvudvärk
 - huvudvärk och [spända muskler, i nacken](headache_where)
 - spänningshuvudvärk [varje vecka](headache_when)
@@ -108,6 +109,7 @@
 - Kontaktade er ang mina symtom med huvudvärk, [yrsel](other_symptoms), hosta, [tryck över bröstet](other_symptoms) och att jag blir lätt [anfådd](other_symptoms).
 - [Vill ha en tid](expectation) för min huvudvärk och hosta
 - [Kontakta mig](expectation) för min huvudvärk och hosta
+- ont i huvuvdet och återkommande hosta
 
 ## intent:ask_about_headache+ask_about_fever
 - Har haft huvudvärk med [sus i öronen](other_symptoms) och lätt [feber en vecka](fever_length).
@@ -118,6 +120,7 @@
 - ont i huvudet och feber
 - jag har ont när jag [lutar huvudet framåt](headache_where). Det kommer ut gulbrunt slem från näsan och jag har feber.
 - Jag har huvudvärk samtidigt som jag har feber och är stel i nacken.
+
 
 ## intent:ask_about_headache+ask_about_soreThroat
 - Huvudvärk och halsont

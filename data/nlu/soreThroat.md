@@ -48,6 +48,9 @@
 - Ont i halsen kan även bero på andra saker så som [körtelfeber](other_symptoms), [halsböld](other_symptoms), [torr luft](other_symptoms) och [överanstränga stämband](other_symptoms).
 - Mina stämband är inflammerade och gör ont, och jag är hes
 - Vid sväljningssmärtor. Man kan dock avvakta några dagar om jag i övrigt är frisk och inte har stora svårigheter att äta eller dricka.
+- Halsont och svårt att gapa
+- [Halsont utan andra symtom i ett par veckor](soreThroat_duration)
+- Halsont och [förkylningssymtom](other_symptoms)
 
 
 ## intent:ask_about_soreThroat+ask_about_cough+ask_about_fever

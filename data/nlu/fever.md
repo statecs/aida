@@ -61,6 +61,13 @@
 - [feber sedan 10 dagar](fever_length)
 - [feber 40 dgar](fever_length)
 - [41 grader feber](fever_temperature)
+- [Över 41,0 grader](fever_temperature)
+- Feber utan förkylningssymtom
+- Feber som återkommer
+- Feber vid [annan allvarlig sjukdom](other_symptoms)
+- Feber efter vistelse i tropiskt land
+- [Feber i mer än fyra dygn](fever_length) med [förkylningssymtom](other_symptoms)
+- [Feber i mindre än fyra dygn](fever_length) med förkylningssymtom
 
 ## intent:ask_about_fever+ask_about_cough
 - Jag har feber och hosta
@@ -120,3 +127,5 @@
 - Jag har ont i halsen, har [svårt att svälja](other_symptoms), feber och känner mig sjuk.
 - ont i halsen och har drabbats av [halsfluss](other_symptoms)
 - scharlakansfeber med feber, [röda kinder](other_symptoms) och [blekhet runt munnen.](other_symptoms)
+- [Halsont och feber i två dagar](soreThroat_duration), utan andra förkylningssymtom
+- [Halsont och feber i två dagar](fever_duration), utan andra förkylningssymtom
