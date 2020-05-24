@@ -220,14 +220,14 @@ responses:
   - buttons:
     - payload: Under 38,0 grader
       title: Under 38,0 grader
-    - payload: 38,0-38,4 grader
-      title: 38,0-38,4 grader
-    - payload: 38,5-38,9 grader
-      title: 38,5-38,9 grader
-    - payload: 39,0-39,9 grader
-      title: 39,0-39,9 grader
-    - payload: 40,0-40,9 grader
-      title: 40,0-40,9 grader
+    - payload: 38,0 till 38,4 grader
+      title: 38,0 till 38,4 grader
+    - payload: 38,5 till 38,9 grader
+      title: 38,5 till 38,9 grader
+    - payload: 39,0 till 39,9 grader
+      title: 39,0 till 39,9 grader
+    - payload: 40,0 till 40,9 grader
+      title: 40,0 till 40,9 grader
     - payload: Över 41,0 grader
       title: Över 41,0 grader
     text: Vilken var din senast uppmätta temperatur?
@@ -261,7 +261,7 @@ responses:
       type: numberInput
       units:
       - range:
-          firstItem: '100'
+          firstItem: '150'
           lastItem: '220'
         step:
           number: '1'
@@ -269,7 +269,7 @@ responses:
         unit: cm
       - range:
           firstItem: '60'
-          lastItem: '200'
+          lastItem: '230'
         step:
           number: '0.1'
           values: '90'
@@ -284,6 +284,8 @@ responses:
         title: Ibuprofen (Ipren, Brufen, Ibumetin)
       - payload: Annat
         title: Annat
+      - payload: Nej
+        title: Nej
       type: multipleSelect
     text: ' Tar du några läkemedel eller naturläkemedel? Ange det nedan.'
   utter_ask_other:
@@ -328,10 +330,10 @@ responses:
   utter_ask_headache_pain:
   - custom:
       alt:
-        firstItem: Ingen smärta
-        lastItem: Värsta tänkbara smärta
+        firstItem: Värsta tänkbara smärta
+        lastItem: Ingen smärta
       type: range5
-    text: På en skala från 1 (ingen smärta) till 5 (värsta tänkbara smärta) hur skulle
+    text: På en skala från 5 (värsta tänkbara smärta) till 1 (ingen smärta) hur skulle
       du bedöma nivån på din huvudvärk?
   utter_ask_headache_utter:
   - custom:
@@ -542,6 +544,7 @@ responses:
         linkText: Läs mer på 1177.se
         title: Tack för dina svar
       type: finalPage
+    text: Tack för dina svar
   utter_submit_cough_soreThroat:
   - custom:
       data:
@@ -585,6 +588,7 @@ responses:
         linkText: Läs mer på 1177.se
         title: Tack för dina svar
       type: finalPage
+    text: Tack för dina svar
   utter_submit_fever_cough:
   - custom:
       data:
@@ -628,6 +632,7 @@ responses:
         linkText: Läs mer på 1177.se
         title: Tack för dina svar
       type: finalPage
+    text: Tack för dina svar
   utter_submit_fever_soreThroat:
   - custom:
       data:
@@ -660,6 +665,7 @@ responses:
         linkText: Läs mer på 1177.se
         title: Tack för dina svar
       type: finalPage
+    text: Tack för dina svar
   utter_submit_fever:
   - custom:
       data:
@@ -686,6 +692,7 @@ responses:
         linkText: Läs mer på 1177.se
         title: Tack för dina svar
       type: finalPage
+    text: Tack för dina svar
   utter_submit_headache:
   - custom:
       data:
@@ -721,6 +728,7 @@ responses:
         linkText: Läs mer på 1177.se
         title: Tack för dina svar
       type: finalPage
+    text: Tack för dina svar
   utter_submit_headache_fever:
   - custom:
       data:
@@ -762,6 +770,7 @@ responses:
         linkText: Läs mer på 1177.se
         title: Tack för dina svar
       type: finalPage
+    text: Tack för dina svar
   utter_submit_headache_cough:
   - custom:
       data:
@@ -810,6 +819,7 @@ responses:
         linkText: Läs mer på 1177.se
         title: Tack för dina svar
       type: finalPage
+    text: Tack för dina svar
   utter_submit_headache_soreThroat:
   - custom:
       data:
@@ -849,6 +859,7 @@ responses:
         linkText: Läs mer på 1177.se
         title: Tack för dina svar
       type: finalPage
+    text: Tack för dina svar
   utter_submit_headache_soreThroat_fever:
   - custom:
       data:
@@ -892,6 +903,7 @@ responses:
         linkText: Läs mer på 1177.se
         title: Tack för dina svar
       type: finalPage
+    text: Tack för dina svar
   utter_submit_headache_soreThroat_cough:
   - custom:
       data:
@@ -944,6 +956,7 @@ responses:
         linkText: Läs mer på 1177.se
         title: Tack för dina svar
       type: finalPage
+    text: Tack för dina svar
   utter_submit_headache_soreThroat_cough_fever:
   - custom:
       data:
@@ -1000,6 +1013,7 @@ responses:
         linkText: Läs mer på 1177.se
         title: Tack för dina svar
       type: finalPage
+    text: Tack för dina svar
   utter_submit_soreThroat_cough_fever:
   - custom:
       data:
@@ -1045,6 +1059,7 @@ responses:
         linkText: Läs mer på 1177.se
         title: Tack för dina svar
       type: finalPage
+    text: Tack för dina svar
   utter_submit_soreThroat:
   - custom:
       data:
@@ -1071,6 +1086,7 @@ responses:
         linkText: Läs mer på 1177.se
         title: Tack för dina svar
       type: finalPage
+    text: Tack för dina svar
   utter_urgent:
   - custom:
       severity: high

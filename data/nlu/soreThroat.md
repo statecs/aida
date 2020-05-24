@@ -63,3 +63,4 @@
 - Vanliga symtom är snuva, hosta, halsont och feber.  Vissa symtom som [hosta kan sitta i upp till några veckor](cough_length)
 - Vid en bihåleinflammation har vuxna oftast varigsnuva i mer än 10 dagar och samtidig påtaglig smärta över kinder och tänder. 
 - Vid samtidig [hög feber](fever_temperature:39,0-39,9 grader), påtaglig sjukdomskänsla, [andningsbesvär](other_symptoms), snabb andning eller ont vid inandning.
+- Halsont samt hosta och feber.
