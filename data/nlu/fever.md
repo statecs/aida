@@ -68,6 +68,8 @@
 - Feber efter vistelse i tropiskt land
 - [Feber i mer än fyra dygn](fever_length) med [förkylningssymtom](other_symptoms)
 - [Feber i mindre än fyra dygn](fever_length) med förkylningssymtom
+- hej jag har haft feber som går upp och ner i [10 dagar](fever_length)
+- hej jag har haft feber som går upp och ner i [2 dagar](fever_length)
 
 ## intent:ask_about_fever+ask_about_cough
 - Jag har feber och hosta
@@ -127,5 +129,5 @@
 - Jag har ont i halsen, har [svårt att svälja](other_symptoms), feber och känner mig sjuk.
 - ont i halsen och har drabbats av [halsfluss](other_symptoms)
 - scharlakansfeber med feber, [röda kinder](other_symptoms) och [blekhet runt munnen.](other_symptoms)
-- [Halsont och feber i två dagar](soreThroat_duration), utan andra förkylningssymtom
-- [Halsont och feber i två dagar](fever_duration), utan andra förkylningssymtom
+- Halsont och [feber i två dagar](fever_duration), utan andra förkylningssymtom
+- [Halsont i två dagar](soreThroat_duration), utan andra förkylningssymtom

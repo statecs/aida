@@ -2,12 +2,12 @@
 - Vad är symptomen av corona?
 - vad är symptomen för corona?
 - hur märker man om man har corona
-- hur mår man om man har [corona](corona:corona)
+- hur mår man om man har [corona](corona)
 - vad innebär corona
-- jag har [corona](corona:corona)
+- jag har [corona](corona)
 - hur vet jag om jag har corona
 - hur vet man att man har corona
-- vad är symptom för [corona](corona:corona)
+- vad är symptom för [corona](corona)
 - vad är covid-19?
 
 ## intent:ask_about_corona_virus
@@ -26,3 +26,6 @@
 - är corona genast smittsamt
 - hur snabbt smittar jag om jag fått covid-19
 - smittar jag under inkubationstiden
+
+## lookup:lookup.md
+  data/lookup.md

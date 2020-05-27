@@ -217,19 +217,16 @@ responses:
       title: Mer än 7 dygn
     text: Hur länge har du haft feber?
   utter_ask_fever_temperature:
-  - buttons:
-    - payload: Under 38,0 grader
-      title: Under 38,0 grader
-    - payload: 38,0 till 38,4 grader
-      title: 38,0 till 38,4 grader
-    - payload: 38,5 till 38,9 grader
-      title: 38,5 till 38,9 grader
-    - payload: 39,0 till 39,9 grader
-      title: 39,0 till 39,9 grader
-    - payload: 40,0 till 40,9 grader
-      title: 40,0 till 40,9 grader
-    - payload: Över 41,0 grader
-      title: Över 41,0 grader
+  - custom:
+      type: numberInput
+      units:
+      - range:
+          firstItem: '36'
+          lastItem: '44'
+        step:
+          number: '0.1'
+          values: '38'
+        unit: grader
     text: Vilken var din senast uppmätta temperatur?
   utter_ask_symptoms_changed:
   - buttons:
@@ -282,10 +279,10 @@ responses:
         title: Paracetamol (Alvedon, Panodil, Pamol)
       - payload: Ibuprofen (Ipren, Brufen, Ibumetin)
         title: Ibuprofen (Ipren, Brufen, Ibumetin)
-      - payload: Annat
-        title: Annat
       - payload: Nej
         title: Nej
+      - payload: Annat
+        title: Annat
       type: multipleSelect
     text: ' Tar du några läkemedel eller naturläkemedel? Ange det nedan.'
   utter_ask_other:
@@ -427,7 +424,7 @@ responses:
     text: Hur bra är din hälsa idag? Från 1 (sämsta tillstånd) till 100 (bästa tänkbara
       tillstånd)
   utter_chitchat:
-  - text: Jag finns fär för att svara på dina frågor.
+  - text: Jag finns här för att svara på dina frågor.
   - text: Jag skapades som ett examensarbete på KTH
   - text: Jag tror inte det. Men vad vet jag, jag är bara en robot.
   - text: Tråkigt att höra! Jag kanske kan hjälpa dig på något sätt?
@@ -542,9 +539,11 @@ responses:
       - content: Det verkar som att du behöver mer vård än vad vi kan ge dig.
         link: https://1177.se
         linkText: Läs mer på 1177.se
-        title: Tack för dina svar
+        title: Tack för dina svar. Det verkar som att du behöver mer vård än vad vi
+          kan ge dig.
       type: finalPage
-    text: Tack för dina svar
+    text: Tack för dina svar. Det verkar som att du behöver mer vård än vad vi kan
+      ge dig.
   utter_submit_cough_soreThroat:
   - custom:
       data:
@@ -588,7 +587,8 @@ responses:
         linkText: Läs mer på 1177.se
         title: Tack för dina svar
       type: finalPage
-    text: Tack för dina svar
+    text: Tack för dina svar. Det verkar som att du behöver mer vård än vad vi kan
+      ge dig.
   utter_submit_fever_cough:
   - custom:
       data:
@@ -632,7 +632,8 @@ responses:
         linkText: Läs mer på 1177.se
         title: Tack för dina svar
       type: finalPage
-    text: Tack för dina svar
+    text: Tack för dina svar. Det verkar som att du behöver mer vård än vad vi kan
+      ge dig.
   utter_submit_fever_soreThroat:
   - custom:
       data:
@@ -665,7 +666,8 @@ responses:
         linkText: Läs mer på 1177.se
         title: Tack för dina svar
       type: finalPage
-    text: Tack för dina svar
+    text: Tack för dina svar. Det verkar som att du behöver mer vård än vad vi kan
+      ge dig.
   utter_submit_fever:
   - custom:
       data:
@@ -692,7 +694,8 @@ responses:
         linkText: Läs mer på 1177.se
         title: Tack för dina svar
       type: finalPage
-    text: Tack för dina svar
+    text: Tack för dina svar. Det verkar som att du behöver mer vård än vad vi kan
+      ge dig.
   utter_submit_headache:
   - custom:
       data:
@@ -704,8 +707,8 @@ responses:
       - answer: '{headache_when}'
         title: När började din nuvarande huvudvärk?
       - answer: '{headache_pain}'
-        title: På en skala från 1 (ingen smärta) till 5 (värsta tänkbara smärta) hur
-          skulle du bedöma nivån på din huvudvärk?'
+        title: På en skala från 5 (värsta tänkbara smärta) till 1 (ingen smärta) hur
+          skulle du bedöma nivån på din huvudvärk?
       - answer: '{symptoms_changed}'
         title: Hur har dina besvär utvecklats senaste tiden?
       - answer: '{headache_where}'
@@ -728,7 +731,8 @@ responses:
         linkText: Läs mer på 1177.se
         title: Tack för dina svar
       type: finalPage
-    text: Tack för dina svar
+    text: Tack för dina svar. Det verkar som att du behöver mer vård än vad vi kan
+      ge dig.
   utter_submit_headache_fever:
   - custom:
       data:
@@ -740,8 +744,8 @@ responses:
       - answer: '{headache_when}'
         title: När började din nuvarande huvudvärk?
       - answer: '{headache_pain}'
-        title: På en skala från 1 (ingen smärta) till 5 (värsta tänkbara smärta) hur
-          skulle du bedöma nivån på din huvudvärk?'
+        title: På en skala från 5 (värsta tänkbara smärta) till 1 (ingen smärta) hur
+          skulle du bedöma nivån på din huvudvärk?
       - answer: '{symptoms_changed}'
         title: Hur har dina besvär utvecklats senaste tiden?
       - answer: '{headache_where}'
@@ -770,7 +774,8 @@ responses:
         linkText: Läs mer på 1177.se
         title: Tack för dina svar
       type: finalPage
-    text: Tack för dina svar
+    text: Tack för dina svar. Det verkar som att du behöver mer vård än vad vi kan
+      ge dig.
   utter_submit_headache_cough:
   - custom:
       data:
@@ -782,8 +787,8 @@ responses:
       - answer: '{headache_when}'
         title: När började din nuvarande huvudvärk?
       - answer: '{headache_pain}'
-        title: På en skala från 1 (ingen smärta) till 5 (värsta tänkbara smärta) hur
-          skulle du bedöma nivån på din huvudvärk?'
+        title: På en skala från 5 (värsta tänkbara smärta) till 1 (ingen smärta) hur
+          skulle du bedöma nivån på din huvudvärk?
       - answer: '{symptoms_changed}'
         title: Hur har dina besvär utvecklats senaste tiden?
       - answer: '{headache_where}'
@@ -819,7 +824,8 @@ responses:
         linkText: Läs mer på 1177.se
         title: Tack för dina svar
       type: finalPage
-    text: Tack för dina svar
+    text: Tack för dina svar. Det verkar som att du behöver mer vård än vad vi kan
+      ge dig.
   utter_submit_headache_soreThroat:
   - custom:
       data:
@@ -831,8 +837,8 @@ responses:
       - answer: '{headache_when}'
         title: När började din nuvarande huvudvärk?
       - answer: '{headache_pain}'
-        title: På en skala från 1 (ingen smärta) till 5 (värsta tänkbara smärta) hur
-          skulle du bedöma nivån på din huvudvärk?'
+        title: På en skala från 5 (värsta tänkbara smärta) till 1 (ingen smärta) hur
+          skulle du bedöma nivån på din huvudvärk?
       - answer: '{symptoms_changed}'
         title: Hur har dina besvär utvecklats senaste tiden?
       - answer: '{headache_where}'
@@ -859,7 +865,8 @@ responses:
         linkText: Läs mer på 1177.se
         title: Tack för dina svar
       type: finalPage
-    text: Tack för dina svar
+    text: Tack för dina svar. Det verkar som att du behöver mer vård än vad vi kan
+      ge dig.
   utter_submit_headache_soreThroat_fever:
   - custom:
       data:
@@ -871,8 +878,8 @@ responses:
       - answer: '{headache_when}'
         title: När började din nuvarande huvudvärk?
       - answer: '{headache_pain}'
-        title: På en skala från 1 (ingen smärta) till 5 (värsta tänkbara smärta) hur
-          skulle du bedöma nivån på din huvudvärk?'
+        title: På en skala från 5 (värsta tänkbara smärta) till 1 (ingen smärta) hur
+          skulle du bedöma nivån på din huvudvärk?
       - answer: '{symptoms_changed}'
         title: Hur har dina besvär utvecklats senaste tiden?
       - answer: '{headache_where}'
@@ -903,7 +910,8 @@ responses:
         linkText: Läs mer på 1177.se
         title: Tack för dina svar
       type: finalPage
-    text: Tack för dina svar
+    text: Tack för dina svar. Det verkar som att du behöver mer vård än vad vi kan
+      ge dig.
   utter_submit_headache_soreThroat_cough:
   - custom:
       data:
@@ -915,8 +923,8 @@ responses:
       - answer: '{headache_when}'
         title: När började din nuvarande huvudvärk?
       - answer: '{headache_pain}'
-        title: På en skala från 1 (ingen smärta) till 5 (värsta tänkbara smärta) hur
-          skulle du bedöma nivån på din huvudvärk?'
+        title: På en skala från 5 (värsta tänkbara smärta) till 1 (ingen smärta) hur
+          skulle du bedöma nivån på din huvudvärk?
       - answer: '{symptoms_changed}'
         title: Hur har dina besvär utvecklats senaste tiden?
       - answer: '{headache_where}'
@@ -956,7 +964,8 @@ responses:
         linkText: Läs mer på 1177.se
         title: Tack för dina svar
       type: finalPage
-    text: Tack för dina svar
+    text: Tack för dina svar. Det verkar som att du behöver mer vård än vad vi kan
+      ge dig.
   utter_submit_headache_soreThroat_cough_fever:
   - custom:
       data:
@@ -968,8 +977,8 @@ responses:
       - answer: '{headache_when}'
         title: När började din nuvarande huvudvärk?
       - answer: '{headache_pain}'
-        title: På en skala från 1 (ingen smärta) till 5 (värsta tänkbara smärta) hur
-          skulle du bedöma nivån på din huvudvärk?'
+        title: På en skala från 5 (värsta tänkbara smärta) till 1 (ingen smärta) hur
+          skulle du bedöma nivån på din huvudvärk?
       - answer: '{symptoms_changed}'
         title: Hur har dina besvär utvecklats senaste tiden?
       - answer: '{headache_where}'
@@ -1013,7 +1022,8 @@ responses:
         linkText: Läs mer på 1177.se
         title: Tack för dina svar
       type: finalPage
-    text: Tack för dina svar
+    text: Tack för dina svar. Det verkar som att du behöver mer vård än vad vi kan
+      ge dig.
   utter_submit_soreThroat_cough_fever:
   - custom:
       data:
@@ -1059,7 +1069,8 @@ responses:
         linkText: Läs mer på 1177.se
         title: Tack för dina svar
       type: finalPage
-    text: Tack för dina svar
+    text: Tack för dina svar. Det verkar som att du behöver mer vård än vad vi kan
+      ge dig.
   utter_submit_soreThroat:
   - custom:
       data:
@@ -1086,7 +1097,8 @@ responses:
         linkText: Läs mer på 1177.se
         title: Tack för dina svar
       type: finalPage
-    text: Tack för dina svar
+    text: Tack för dina svar. Det verkar som att du behöver mer vård än vad vi kan
+      ge dig.
   utter_urgent:
   - custom:
       severity: high
