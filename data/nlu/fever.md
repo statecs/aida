@@ -60,6 +60,7 @@
 - [feber 38 grader](fever_temperature)
 - [feber sedan 10 dagar](fever_length)
 - [feber 40 dgar](fever_length)
+- [39 grader feber](fever_temperature)
 - [41 grader feber](fever_temperature)
 - [Över 41,0 grader](fever_temperature)
 - Feber utan förkylningssymtom

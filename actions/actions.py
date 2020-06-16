@@ -225,12 +225,394 @@ class HeadacheForm(FormAction):
         # track intent of the input
         msg = tracker.latest_message.get('text')
         # classify deacitvate intent
+        if msg == "/restart":
+            dispatcher.utter_template(
+                "utter_restart", tracker, silent_fail=True)
+            return [Form(None), AllSlotsReset(None), Restarted(None)]
         if msg == "/back":
             dispatcher.utter_template(
                 "utter_back", tracker, silent_fail=True)
             return [UserUtteranceReverted(), UserUtteranceReverted()]
+        if msg == "/Nej":
+            dispatcher.utter_template(
+                "utter_ask_rephrase", tracker, silent_fail=True)
+
+            return [Form(None), AllSlotsReset(None), Restarted(None), FollowupAction("action_reset")]
         else:
             for slot in self.required_slots(tracker):
+                if self._should_request_slot(tracker, slot):
+                    if tracker.latest_message['intent'].get('name') == "ask_about_headache":
+
+                        numb_user_list = []
+
+                        slot = tracker.get_slot("headache_utter")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("headache_utter")[:])
+                        slot = tracker.get_slot("headache_pain")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("headache_pain")[:])
+                        slot = tracker.get_slot("headache_when")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("headache_when")[:])
+                        slot = tracker.get_slot("headache_where")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("headache_where")[:])
+
+                        if numb_user_list:
+                            numb_user_string = ', '.join(numb_user_list)
+                            dispatcher.utter_template(
+                                "utter_ask_about_cause", tracker, search_reasons="huvudvärk, " + numb_user_string)
+                            return [SlotSet("search_reasons", "huvudvärk, " + numb_user_string),  SlotSet(REQUESTED_SLOT, slot)]
+                        else:
+                            dispatcher.utter_template(
+                                "utter_ask_about_cause", tracker, search_reasons="huvudvärk")
+                            return [SlotSet("search_reasons", "huvudvärk"), SlotSet(REQUESTED_SLOT, slot)]
+
+                    if tracker.latest_message['intent'].get('name') == "ask_about_headache+ask_about_cough":
+
+                        numb_user_list = []
+
+                        slot = tracker.get_slot("headache_utter")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("headache_utter")[:])
+                        slot = tracker.get_slot("headache_pain")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("headache_pain")[:])
+                        slot = tracker.get_slot("headache_when")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("headache_when")[:])
+                        slot = tracker.get_slot("headache_where")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("headache_where")[:])
+
+                        slot = tracker.get_slot("cough_chronic")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("cough_chronic")[:])
+                        slot = tracker.get_slot("cough_cold")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("cough_cold")[:])
+                        slot = tracker.get_slot("cough_length")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("cough_length")[:])
+                        slot = tracker.get_slot("cough_pain")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("cough_pain")[:])
+                        slot = tracker.get_slot("cough_shape")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("cough_shape")[:])
+                        slot = tracker.get_slot("cough_smoke")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("cough_smoke")[:])
+
+                        if numb_user_list:
+                            numb_user_string = ', '.join(numb_user_list)
+                            dispatcher.utter_template(
+                                "utter_ask_about_cause", tracker, search_reasons="huvudvärk, hosta, " + numb_user_string)
+                            return [SlotSet("search_reasons", "huvudvärk, hosta,  " + numb_user_string),  SlotSet(REQUESTED_SLOT, slot)]
+                        else:
+                            dispatcher.utter_template(
+                                "utter_ask_about_cause", tracker, search_reasons="huvudvärk och hosta")
+                            return [SlotSet("search_reasons", "huvudvärk och hosta"), SlotSet(REQUESTED_SLOT, slot)]
+
+                    if tracker.latest_message['intent'].get('name') == "ask_about_headache+ask_about_fever":
+
+                        numb_user_list = []
+
+                        slot = tracker.get_slot("headache_utter")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("headache_utter")[:])
+                        slot = tracker.get_slot("headache_pain")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("headache_pain")[:])
+                        slot = tracker.get_slot("headache_when")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("headache_when")[:])
+                        slot = tracker.get_slot("headache_where")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("headache_where")[:])
+
+                        slot = tracker.get_slot("fever_length")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("fever_length")[:])
+                        slot = tracker.get_slot("fever_temperature")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("fever_temperature")[:])
+
+                        if numb_user_list:
+                            numb_user_string = ', '.join(numb_user_list)
+                            dispatcher.utter_template(
+                                "utter_ask_about_cause", tracker, search_reasons="huvudvärk, feber, " + numb_user_string)
+                            return [SlotSet("search_reasons", "huvudvärk, feber, " + numb_user_string),  SlotSet(REQUESTED_SLOT, slot)]
+                        else:
+                            dispatcher.utter_template(
+                                "utter_ask_about_cause", tracker, search_reasons="huvudvärk, och feber")
+                            return [SlotSet("search_reasons", "huvudvärk och feber"), SlotSet(REQUESTED_SLOT, slot)]
+
+                    if tracker.latest_message['intent'].get('name') == "ask_about_headache+ask_about_soreThroat":
+
+                        numb_user_list = []
+
+                        slot = tracker.get_slot("headache_utter")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("headache_utter")[:])
+                        slot = tracker.get_slot("headache_pain")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("headache_pain")[:])
+                        slot = tracker.get_slot("headache_when")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("headache_when")[:])
+                        slot = tracker.get_slot("headache_where")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("headache_where")[:])
+
+                        slot = tracker.get_slot("soreThroat_duration")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("soreThroat_duration")[:])
+                        slot = tracker.get_slot("soreThroat_location")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("soreThroat_location")[:])
+                        slot = tracker.get_slot("soreThroat_pain")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("soreThroat_pain")[:])
+
+                        if numb_user_list:
+                            numb_user_string = ', '.join(numb_user_list)
+                            dispatcher.utter_template(
+                                "utter_ask_about_cause", tracker, search_reasons="huvudvärk, halsont, " + numb_user_string)
+                            return [SlotSet("search_reasons", "huvudvärk, halsont, " + numb_user_string),  SlotSet(REQUESTED_SLOT, slot)]
+                        else:
+                            dispatcher.utter_template(
+                                "utter_ask_about_cause", tracker, search_reasons="huvudvärk och halsont")
+                            return [SlotSet("search_reasons", "huvudvärk och halsont"), SlotSet(REQUESTED_SLOT, slot)]
+
+                    if tracker.latest_message['intent'].get('name') == "ask_about_headache+ask_about_soreThroat+ask_about_fever":
+
+                        numb_user_list = []
+
+                        slot = tracker.get_slot("headache_utter")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("headache_utter")[:])
+                        slot = tracker.get_slot("headache_pain")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("headache_pain")[:])
+                        slot = tracker.get_slot("headache_when")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("headache_when")[:])
+                        slot = tracker.get_slot("headache_where")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("headache_where")[:])
+
+                        slot = tracker.get_slot("soreThroat_duration")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("soreThroat_duration")[:])
+                        slot = tracker.get_slot("soreThroat_location")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("soreThroat_location")[:])
+                        slot = tracker.get_slot("soreThroat_pain")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("soreThroat_pain")[:])
+
+                        slot = tracker.get_slot("fever_length")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("fever_length")[:])
+                        slot = tracker.get_slot("fever_temperature")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("fever_temperature")[:])
+
+                        if numb_user_list:
+                            numb_user_string = ', '.join(numb_user_list)
+                            dispatcher.utter_template(
+                                "utter_ask_about_cause", tracker, search_reasons="huvudvärk, halsont, feber, " + numb_user_string)
+                            return [SlotSet("search_reasons", "huvudvärk, halsont, feber, " + numb_user_string),  SlotSet(REQUESTED_SLOT, slot)]
+                        else:
+                            dispatcher.utter_template(
+                                "utter_ask_about_cause", tracker, search_reasons="huvudvärk, halsont och feber")
+                            return [SlotSet("search_reasons", "huvudvärk, halsont och feber"), SlotSet(REQUESTED_SLOT, slot)]
+
+                    if tracker.latest_message['intent'].get('name') == "ask_about_headache+ask_about_soreThroat+ask_about_cough":
+
+                        numb_user_list = []
+
+                        slot = tracker.get_slot("headache_utter")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("headache_utter")[:])
+                        slot = tracker.get_slot("headache_pain")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("headache_pain")[:])
+                        slot = tracker.get_slot("headache_when")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("headache_when")[:])
+                        slot = tracker.get_slot("headache_where")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("headache_where")[:])
+
+                        slot = tracker.get_slot("soreThroat_duration")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("soreThroat_duration")[:])
+                        slot = tracker.get_slot("soreThroat_location")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("soreThroat_location")[:])
+                        slot = tracker.get_slot("soreThroat_pain")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("soreThroat_pain")[:])
+
+                        slot = tracker.get_slot("cough_chronic")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("cough_chronic")[:])
+                        slot = tracker.get_slot("cough_cold")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("cough_cold")[:])
+                        slot = tracker.get_slot("cough_length")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("cough_length")[:])
+                        slot = tracker.get_slot("cough_pain")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("cough_pain")[:])
+                        slot = tracker.get_slot("cough_shape")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("cough_shape")[:])
+                        slot = tracker.get_slot("cough_smoke")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("cough_smoke")[:])
+
+                        if numb_user_list:
+                            numb_user_string = ', '.join(numb_user_list)
+                            dispatcher.utter_template(
+                                "utter_ask_about_cause", tracker, search_reasons="huvudvärk, halsont, hosta, " + numb_user_string)
+                            return [SlotSet("search_reasons", "huvudvärk, halsont, hosta, " + numb_user_string),  SlotSet(REQUESTED_SLOT, slot)]
+                        else:
+                            dispatcher.utter_template(
+                                "utter_ask_about_cause", tracker, search_reasons="huvudvärk, halsont och hosta")
+                            return [SlotSet("search_reasons", "huvudvärk, halsont och hosta"), SlotSet(REQUESTED_SLOT, slot)]
+
+                    if tracker.latest_message['intent'].get('name') == "ask_about_headache+ask_about_soreThroat+ask_about_cough+ask_about_fever":
+
+                        numb_user_list = []
+
+                        slot = tracker.get_slot("headache_utter")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("headache_utter")[:])
+                        slot = tracker.get_slot("headache_pain")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("headache_pain")[:])
+                        slot = tracker.get_slot("headache_when")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("headache_when")[:])
+                        slot = tracker.get_slot("headache_where")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("headache_where")[:])
+
+                        slot = tracker.get_slot("soreThroat_duration")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("soreThroat_duration")[:])
+                        slot = tracker.get_slot("soreThroat_location")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("soreThroat_location")[:])
+                        slot = tracker.get_slot("soreThroat_pain")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("soreThroat_pain")[:])
+
+                        slot = tracker.get_slot("cough_chronic")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("cough_chronic")[:])
+                        slot = tracker.get_slot("cough_cold")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("cough_cold")[:])
+                        slot = tracker.get_slot("cough_length")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("cough_length")[:])
+                        slot = tracker.get_slot("cough_pain")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("cough_pain")[:])
+                        slot = tracker.get_slot("cough_shape")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("cough_shape")[:])
+                        slot = tracker.get_slot("cough_smoke")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("cough_smoke")[:])
+
+                        slot = tracker.get_slot("fever_length")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("fever_length")[:])
+                        slot = tracker.get_slot("fever_temperature")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("fever_temperature")[:])
+
+                        if numb_user_list:
+                            numb_user_string = ', '.join(numb_user_list)
+                            dispatcher.utter_template(
+                                "utter_ask_about_cause", tracker, search_reasons="huvudvärk, halsont, hosta, feber, " + numb_user_string)
+
+                            return [SlotSet("search_reasons", "huvudvärk, halsont, hosta, feber, " + numb_user_string),  SlotSet(REQUESTED_SLOT, slot)]
+                        else:
+                            dispatcher.utter_template(
+                                "utter_ask_about_cause", tracker, search_reasons="huvudvärk, halsont, hosta och feber")
+                            return [SlotSet("search_reasons", "huvudvärk, halsont, hosta och feber"), SlotSet(REQUESTED_SLOT, slot)]
+
                 if self._should_request_slot(tracker, slot):
                     logger.debug("Request next slot '{}'".format(slot))
                     dispatcher.utter_template("utter_ask_{}".format(slot),
@@ -331,8 +713,106 @@ class soreThroatForm(FormAction):
             dispatcher.utter_template(
                 "utter_back", tracker, silent_fail=True)
             return [UserUtteranceReverted(), UserUtteranceReverted()]
+        if msg == "/restart":
+            dispatcher.utter_template(
+                "utter_restart", tracker, silent_fail=True)
+            return [Form(None), AllSlotsReset(None), Restarted(None)]
+        if msg == "/Nej":
+            dispatcher.utter_template(
+                "utter_ask_rephrase", tracker, silent_fail=True)
+
+            return [Form(None), AllSlotsReset(None), Restarted(None), FollowupAction("action_reset")]
         else:
             for slot in self.required_slots(tracker):
+                if self._should_request_slot(tracker, slot):
+                    if tracker.latest_message['intent'].get('name') == "ask_about_soreThroat":
+
+                        numb_user_list = []
+
+                        slot = tracker.get_slot("soreThroat_duration")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("soreThroat_duration")[:])
+                        slot = tracker.get_slot("soreThroat_location")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("soreThroat_location")[:])
+                        slot = tracker.get_slot("soreThroat_pain")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("soreThroat_pain")[:])
+
+                        if numb_user_list:
+                            numb_user_string = ', '.join(numb_user_list)
+                            dispatcher.utter_template(
+                                "utter_ask_about_cause", tracker, search_reasons="halsont, " + numb_user_string)
+                            return [SlotSet("search_reasons", "halsont, " + numb_user_string),  SlotSet(REQUESTED_SLOT, slot)]
+                        else:
+                            dispatcher.utter_template(
+                                "utter_ask_about_cause", tracker, search_reasons="halsont")
+                            return [SlotSet("search_reasons", "halsont"), SlotSet(REQUESTED_SLOT, slot)]
+
+                    if tracker.latest_message['intent'].get('name') == "ask_about_soreThroat+ask_about_cough+ask_about_fever":
+
+                        numb_user_list = []
+
+                        slot = tracker.get_slot("soreThroat_duration")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("soreThroat_duration")[:])
+                        slot = tracker.get_slot("soreThroat_location")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("soreThroat_location")[:])
+                        slot = tracker.get_slot("soreThroat_pain")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("soreThroat_pain")[:])
+
+                        slot = tracker.get_slot("cough_chronic")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("cough_chronic")[:])
+                        slot = tracker.get_slot("cough_cold")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("cough_cold")[:])
+                        slot = tracker.get_slot("cough_length")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("cough_length")[:])
+                        slot = tracker.get_slot("cough_pain")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("cough_pain")[:])
+                        slot = tracker.get_slot("cough_shape")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("cough_shape")[:])
+                        slot = tracker.get_slot("cough_smoke")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("cough_smoke")[:])
+
+                        slot = tracker.get_slot("fever_length")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("fever_length")[:])
+                        slot = tracker.get_slot("fever_temperature")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("fever_temperature")[:])
+
+                        if numb_user_list:
+                            numb_user_string = ', '.join(numb_user_list)
+                            dispatcher.utter_template(
+                                "utter_ask_about_cause", tracker, search_reasons="halsont, hosta, feber, " + numb_user_string)
+                            return [SlotSet("search_reasons", "halsont, hosta, feber, " + numb_user_string),  SlotSet(REQUESTED_SLOT, slot)]
+                        else:
+                            dispatcher.utter_template(
+                                "utter_ask_about_cause", tracker, search_reasons="halsont, hosta och feber")
+                            return [SlotSet("search_reasons", "halsont, hosta och feber"), SlotSet(REQUESTED_SLOT, slot)]
+
                 if self._should_request_slot(tracker, slot):
                     logger.debug("Request next slot '{}'".format(slot))
                     dispatcher.utter_template("utter_ask_{}".format(slot),
@@ -440,12 +920,112 @@ class coughForm(FormAction):
         # track intent of the input
         msg = tracker.latest_message.get('text')
         # classify deacitvate intent
+        if msg == "/restart":
+            dispatcher.utter_template(
+                "utter_restart", tracker, silent_fail=True)
+            return [Form(None), AllSlotsReset(None), Restarted(None)]
         if msg == "/back":
             dispatcher.utter_template(
                 "utter_back", tracker, silent_fail=True)
             return [UserUtteranceReverted(), UserUtteranceReverted()]
+        if msg == "/Nej":
+            dispatcher.utter_template(
+                "utter_ask_rephrase", tracker, silent_fail=True)
+
+            return [Form(None), AllSlotsReset(None), Restarted(None), FollowupAction("action_reset")]
         else:
             for slot in self.required_slots(tracker):
+                if self._should_request_slot(tracker, slot):
+                    if tracker.latest_message['intent'].get('name') == "ask_about_cough":
+                        numb_user_list = []
+
+                        slot = tracker.get_slot("cough_chronic")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("cough_chronic")[:])
+                        slot = tracker.get_slot("cough_cold")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("cough_cold")[:])
+                        slot = tracker.get_slot("cough_length")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("cough_length")[:])
+                        slot = tracker.get_slot("cough_pain")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("cough_pain")[:])
+                        slot = tracker.get_slot("cough_shape")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("cough_shape")[:])
+                        slot = tracker.get_slot("cough_smoke")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("cough_smoke")[:])
+
+                        if numb_user_list:
+                            numb_user_string = ', '.join(numb_user_list)
+                            dispatcher.utter_template(
+                                "utter_ask_about_cause", tracker, search_reasons="hosta, " + numb_user_string)
+                            return [SlotSet("search_reasons", "hosta, " + numb_user_string),  SlotSet(REQUESTED_SLOT, slot)]
+                        else:
+                            dispatcher.utter_template(
+                                "utter_ask_about_cause", tracker, search_reasons="hosta")
+                            return [SlotSet("search_reasons", "hosta"), SlotSet(REQUESTED_SLOT, slot)]
+
+                    if tracker.latest_message['intent'].get('name') == "ask_about_cough+ask_about_soreThroat":
+
+                        numb_user_list = []
+
+                        slot = tracker.get_slot("cough_chronic")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("cough_chronic")[:])
+                        slot = tracker.get_slot("cough_cold")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("cough_cold")[:])
+                        slot = tracker.get_slot("cough_length")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("cough_length")[:])
+                        slot = tracker.get_slot("cough_pain")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("cough_pain")[:])
+                        slot = tracker.get_slot("cough_shape")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("cough_shape")[:])
+                        slot = tracker.get_slot("cough_smoke")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("cough_smoke")[:])
+
+                        slot = tracker.get_slot("soreThroat_duration")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("soreThroat_duration")[:])
+                        slot = tracker.get_slot("soreThroat_location")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("soreThroat_location")[:])
+                        slot = tracker.get_slot("soreThroat_pain")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("soreThroat_pain")[:])
+
+                        if numb_user_list:
+                            numb_user_string = ', '.join(numb_user_list)
+                            dispatcher.utter_template(
+                                "utter_ask_about_cause", tracker, search_reasons="hosta, halsont, " + numb_user_string)
+                            return [SlotSet("search_reasons", "hosta, halsont, " + numb_user_string),  SlotSet(REQUESTED_SLOT, slot)]
+                        else:
+                            dispatcher.utter_template(
+                                "utter_ask_about_cause", tracker, search_reasons="hosta och halsont")
+                            return [SlotSet("search_reasons", "hosta och halsont"), SlotSet(REQUESTED_SLOT, slot)]
+
                 if self._should_request_slot(tracker, slot):
                     logger.debug("Request next slot '{}'".format(slot))
                     dispatcher.utter_template("utter_ask_{}".format(slot),
@@ -548,12 +1128,127 @@ class feverForm(FormAction):
         # track intent of the input
         msg = tracker.latest_message.get('text')
         # classify deacitvate intent
+        if msg == "/restart":
+            dispatcher.utter_template(
+                "utter_restart", tracker, silent_fail=True)
+            return [Form(None), AllSlotsReset(None), Restarted(None)]
         if msg == "/back":
             dispatcher.utter_template(
                 "utter_back", tracker, silent_fail=True)
             return [UserUtteranceReverted(), UserUtteranceReverted()]
+        if msg == "/Nej":
+            dispatcher.utter_template(
+                "utter_ask_rephrase", tracker, silent_fail=True)
+
+            return [Form(None), AllSlotsReset(None), Restarted(None), FollowupAction("action_reset")]
         else:
             for slot in self.required_slots(tracker):
+                if self._should_request_slot(tracker, slot):
+                    if tracker.latest_message['intent'].get('name') == "ask_about_fever":
+                        numb_user_list = []
+
+                        slot = tracker.get_slot("fever_length")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("fever_length")[:])
+                        slot = tracker.get_slot("fever_temperature")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("fever_temperature")[:])
+
+                        if numb_user_list:
+                            numb_user_string = ', '.join(numb_user_list)
+                            dispatcher.utter_template(
+                                "utter_ask_about_cause", tracker, search_reasons="feber, " + numb_user_string)
+                            return [SlotSet("search_reasons", "feber, " + numb_user_string),  SlotSet(REQUESTED_SLOT, slot)]
+                        else:
+                            dispatcher.utter_template(
+                                "utter_ask_about_cause", tracker, search_reasons="feber")
+                            return [SlotSet("search_reasons", "feber"), SlotSet(REQUESTED_SLOT, slot)]
+
+                    if tracker.latest_message['intent'].get('name') == "ask_about_fever+ask_about_cough":
+
+                        numb_user_list = []
+
+                        slot = tracker.get_slot("fever_length")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("fever_length")[:])
+                        slot = tracker.get_slot("fever_temperature")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("fever_temperature")[:])
+
+                        slot = tracker.get_slot("cough_chronic")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("cough_chronic")[:])
+                        slot = tracker.get_slot("cough_cold")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("cough_cold")[:])
+                        slot = tracker.get_slot("cough_length")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("cough_length")[:])
+                        slot = tracker.get_slot("cough_pain")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("cough_pain")[:])
+                        slot = tracker.get_slot("cough_shape")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("cough_shape")[:])
+                        slot = tracker.get_slot("cough_smoke")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("cough_smoke")[:])
+
+                        if numb_user_list:
+                            numb_user_string = ', '.join(numb_user_list)
+                            dispatcher.utter_template(
+                                "utter_ask_about_cause", tracker, search_reasons="feber, hosta, " + numb_user_string)
+                            return [SlotSet("search_reasons", "feber, hosta, " + numb_user_string),  SlotSet(REQUESTED_SLOT, slot)]
+                        else:
+                            dispatcher.utter_template(
+                                "utter_ask_about_cause", tracker, search_reasons="feber och hosta")
+                            return [SlotSet("search_reasons", "feber och hosta"), SlotSet(REQUESTED_SLOT, slot)]
+
+                    if tracker.latest_message['intent'].get('name') == "ask_about_fever+ask_about_soreThroat":
+                        numb_user_list = []
+
+                        slot = tracker.get_slot("fever_length")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("fever_length")[:])
+                        slot = tracker.get_slot("fever_temperature")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("fever_temperature")[:])
+
+                        slot = tracker.get_slot("soreThroat_duration")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("soreThroat_duration")[:])
+                        slot = tracker.get_slot("soreThroat_location")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("soreThroat_location")[:])
+                        slot = tracker.get_slot("soreThroat_pain")
+                        if slot:
+                            numb_user_list.append(
+                                tracker.get_slot("soreThroat_pain")[:])
+
+                        if numb_user_list:
+                            numb_user_string = ', '.join(numb_user_list)
+                            dispatcher.utter_template(
+                                "utter_ask_about_cause", tracker, search_reasons="feber, halsont, " + numb_user_string)
+                            return [SlotSet("search_reasons", "feber, halsont, " + numb_user_string),  SlotSet(REQUESTED_SLOT, slot)]
+                        else:
+                            dispatcher.utter_template(
+                                "utter_ask_about_cause", tracker, search_reasons="feber och halsont")
+                            return [SlotSet("search_reasons", "feber och halsont"), SlotSet(REQUESTED_SLOT, slot)]
+
                 if self._should_request_slot(tracker, slot):
                     logger.debug("Request next slot '{}'".format(slot))
                     dispatcher.utter_template("utter_ask_{}".format(slot),

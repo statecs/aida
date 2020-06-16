@@ -81,6 +81,8 @@ entities:
 - corona
 - fever_duration
 slots:
+  about_cause:
+    type: unfeaturized
   cough_chronic:
     type: unfeaturized
   cough_cold:
@@ -105,6 +107,8 @@ slots:
     type: unfeaturized
   fever_temperature:
     type: unfeaturized
+  headache:
+    type: unfeaturized
   headache_pain:
     type: unfeaturized
   headache_utter:
@@ -122,6 +126,8 @@ slots:
   other_symptoms:
     type: list
   requested_slot:
+    type: unfeaturized
+  search_reasons:
     type: unfeaturized
   soreThroat_duration:
     type: unfeaturized
@@ -375,13 +381,20 @@ responses:
   - text: Inget speciellt! Hur mår du?
   - text: Läget är bra, tack!
   - text: Jag mår suveränt!
+  utter_ask_about_cause:
+  - buttons:
+    - payload: Ja
+      title: Ja
+    - payload: /Nej
+      title: Nej
+    text: Har jag uppfattat rätt att du har {search_reasons}?
   utter_ask_is_symptom:
   - buttons:
     - payload: Ja
       title: Ja
-    - payload: Nej
+    - payload: /Nej
       title: Nej
-    text: Har jag uppfattat rätt att du har {symptoms}?
+    text: Har jag uppfattat rätt att du har {search_reasons}?
   utter_ask_rephrase:
   - text: Okej! Jag lär mig nya saker hela tiden! Kan du omformulera din fråga?
   utter_ask_soreThroat_duration:
@@ -1138,6 +1151,7 @@ actions:
 - action_version
 - action_reset
 - action_revert
+- utter_ask_about_cause
 - utter_ask_howdoing
 - utter_ask_is_symptom
 - utter_ask_rephrase

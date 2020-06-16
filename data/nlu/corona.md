@@ -9,6 +9,10 @@
 - hur vet man att man har corona
 - vad är symptom för [corona](corona)
 - vad är covid-19?
+- vad är corona?
+- jag har corona
+- vad är covid-19?
+- hjälp jag har corona
 
 ## intent:ask_about_corona_virus
 - Hur sjuk blir man av covid-19?
