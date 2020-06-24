@@ -1,0 +1,107 @@
+## intent:ask_about_cough
+- Jag hostar
+- Jag har [hosta](cough)
+- jag har hosta
+- hosta
+- mycket [hostar](cough)
+- Hosta
+- hosta
+- hosthost
+- hostar o hostar
+- mycket hosta
+- att sluta hosta
+- frugan hostar
+- [torrhosta](cough_shape), främst på natten
+- Hosta efter dricker kaffe
+- godkväll hostar här hos mig
+- hallå jag har problem med hosta
+- har åkt på en hemsk hosta och behöver hjälp för att jag är gammal
+- har badat kallt har nu hosta
+- har frågor om hosta
+- har hosta men jag är inte förkyld
+- har varit i Thailand har hosta nu
+- hej du har problem med hosta
+- hejsan jag har problem med hosta
+- jobbig hosta
+- [hosta i 3-9 veckor](cough_length)
+- [konstant hosta](cough_shape) hela dagen
+- [hosta sitter kvar från förskylning](cough_cold) eller [influensa](cough_cold) nyligen
+- [förvärrande hosta](symptoms_changed)
+- Har [kronisk bronkit](cough_chronic) och det gör [ont i lungorna](other_symptoms). 
+- Är hemma för [fjärde veckan med hosta](cough_length).
+- Har haft [influensa](cough_cold) med [mycket besvärlig hosta](cough_shape). Jag önskar undersöka om jag har [astma](cough_chronic) och om det kan vara [luftrörskatarr](other_symptoms). 
+- Är [förkyld](cough_cold) med [snuva](cough_cold) och hosta symptom. 
+- [torrhosta](cough_shape) o [smärta i bröstkorg](other_symptoms)
+- Haft [hosta i tre veckor](cough_length)
+- Har haft [ret host](cough_shape:Torrhosta) som kommit och gått, kommer ofta på kvällen. [Har haft det mer eller mindre sen februari](cough_length).
+- Har [långvarig hosta](cough_shape), har det i det i drygt [1,5 månader](cough_length), började med en ordentlig [förkylning](cough_cold). [Hostan har blivit värre](symptoms_changed) de senaste dagarna. 
+- Hosta och [tryck över bröstet](other_symptoms) vid djupa andetag. [Smärta i leder](other_symptoms). Har [diabetes](other_symptoms) och [högt blodtryck](other_symptoms). 
+- Jag har [slemhosta](cough_shape:Slemhosta). Inga andra symptom
+- [Hostat i ca 3 veckor](cough_length), har använt 2 flaskor [mollypect](medication) och [astma förebyggande](medication) men hostar fortfarande. Känner att det är [slem](cough_shape:Slemhosta) kvar som kommer upp. 
+- Min son har varit hemma med [snuva](cough_cold) och [hosta i nästan 3 veckor](cough_length). Han har också [rinnande ögon](other_symptoms) vid några tillfället
+- Var I kontakt med er [förra veckan pga hostat](cough_length) och [andfåddhet](other_symptoms) vid ansträngning. [Slem i halsen](cough_shape) byggs på.
+- Har varit [tungandad](other_symptoms) och [hostig sedan över en vecka tillbaka](cough_length). Är [mycket trött](other_symptoms) och har [låg energi](other_symptoms). Har framförallt svårt med andningen på kvällen och nätter. [Ont i bröstkorg och rygg](other_symptoms) när jag inte hostar. 
+- Jag har haft [torrhosta](cough_shape) och [lindriga andningsbesvär](other_symptoms) ([kli](other_symptoms), [brinnande känsla i lungorna](other_symptoms), något [minskad lungkapacitet](other_symptoms)) i [över tre veckor](cough_length). 
+- [Hosta till och från flera månader](cough_length). Hostan har hållit i sig en längre tid. 
+- Vissa perioder mer [intensiv hosta](cough_shape) (även natt) och ibland mer [oregelbunden hosta](cough_shape).
+- Jag känner mig inte riktigt frisk. Fortfarande hostig och [snorig](cough_shape). 
+- Har haft [hosta i drygt en månad](cough_length). Började med [torrhosta](cough_shape) men har fått lite [slem](cough_shape:Slemhosta) för ca [2 veckor sedan](cough_length). Sedan någon dag har jag fått [tungt att andas](other_symptoms) med [pip ljud](cough_shape:Väsande eller pipande). 
+- Har haft [influensa](cough_cold) sedan [v12 torsdag](cough_length). Blivit [bättre i allmäntillstånd](state_of_health:80) men [hostar hårt slem](cough_shape:Slemhosta) och snyter mig med hårt slem. 
+- [Lätt hosta](cough_shape), [svidande hals](other_symptoms), [lätt tryck mot bröstet](other_symptoms). Haft besvär [i en vecka](cough_length) 
+- Efter [förkylning](cough_cold) får jag ofta en mkt besvärlig [torrhosta](cough_length).
+- Har fortfarande [svårt att andas](other_symptoms) i mellan åt hosta.
+- [Hosta har hällt i sig en längre tid](cough_length). [Vissa perioder mer intensiv (även natt) och ibland mer oregelbunden](cough_shape).
+- Har fått [influensa](cough_cold) för 7 dagar sedan. [Hostan har blivit värre nu](symptoms_changed) och känner mig [svullen i halsen](other_symptoms).
+- Jag har haft [slemhosta](cough_shape) [sedan igår](cough_length) och under långa perioder [lock för öronen](other_symptoms) främst det vänstra 
+- Jag har [hostat kraftigt](cough_shape) i [hostat i över 2 veckor](cough_length). Har använt min [astma](cough_chronic) medicin
+- [Kvarstående hosta](cough_shape) och [nästäppa](other_symptoms)
+- Har haft [torrhosta](cough_shape:Torrhosta) i [torrhosta i tre veckor](cough_length) nu och blir [andfådd](other_symptoms) vid ansträngning. 
+- [Hostat i 4 veckor](cough_length), [Orklös](other_symptoms)
+- Min son har haft [hosta i 2-3 veckor](cough_length) som inte vill ge sig. Hostar mest morgon och kväll. Har även varit [förkyld](cough_cold). 
+- Har haft [ret hosta](cough_shape:Torrhosta) i [rethosta i 8 dagar](cough_length), lite [snuvig](cough_cold), ingen feber ([lätt ögoninfektion](other_symptoms)
+- [Rosslar kraftigt i luftrören](cough_shape), [lätt hosta](cough_shape), ingen feber. 
+- [Torrhosta](cough_shape) som inte ger sig
+- Våra barn hostar, jag har [ledvärk](other_symptoms) och [känner mig hängig](other_symptoms).
+- Sedan drygt [två veckor tillbaka har jag haft hosta](cough_length) ([hostar upp slem](cough_shape:Slemhosta), i omgångar [kliar det i halsen](other_symptoms) och känns varmt i bröstet. Har i samband med detta haft ett [tryck över bröstet](other_symptoms) och känt med [andfådd](other_symptoms). 
+- Jag har [influensan](cough_cold) nu och besvärar av svår [hosta](symptom). 
+- Jag har [hostat kraftigt i över 2 veckor](cough_length). Har använt min [astma medicin](medication)
+- hostat
+- [hostat i 4 veckor](cough_length)
+- jag hostar frukstansvärt mycket
+- Efterfrågar [läkarintyg](expectation) för min [torrhosta](cough_shape)
+- [Jag behöver hjälp och råd](expectation) hur jag ska göra för att få bort min hosta
+- Har haft [ret hosta i 8 dagar](cough_length)
+- [behöver ett läkarintyg](expectation) för min hosta
+- [Kontakta mig](expectation) för min hosta
+- [Började hosta för 1,5 - 2 v sedan](cough_length).
+- Jag har sen [några veckor hosta](cough_length). 
+- Har haft [hosta i drygt en månad](cough_length).
+- Jag har haft [hosta i flera veckor](cough_length) med genomskinlig sputum
+- Hosta, [torrhosta](cough_shape) på natten [sover dåligt](other_symptoms)
+- Jag har [hostat i 2 veckor](cough_length), det [blir inte bättre](symptoms_changed). Jag har [svårt att sova på natten](other_symptoms). Börjar blir jobbigt.
+- Jag vill gärna bli av med hostan och vete varför jag hostar. Kanske [få någon medicin som hjälper](expectation)
+- [hosta sed 3 v](cough_length)
+- Jag har [torrhosta](cough_shape)
+- Hosta på nätterna
+- [hosta sedan 2 veckor](cough_length)
+- HOSTAR MYCKET
+- hostar ibland
+- [torrhostan](cough_shape) eller [rethostan](cough_shape) beror på en förkylning går den över av sig själv, men [hostan kan hänga kvar i flera veckor](cough_length)
+- hostan orsakats av till exempel en [lunginflammation](other_symptoms) går den över efter att lunginflammationen behandlats.
+- [besväras kraftigt](symptoms_changed) av min [torrhosta](cough_shape) eller [rethosta](cough_shape)
+- [hosta suttit kvar i några veckor](cough_length)
+
+## intent:ask_about_cough+ask_about_soreThroat
+- hosta och [ont i halsen i 5 dagar](soreThroat_duration).
+- besvär med hosta och halsont
+- halsont och hosta
+- [Har långvarig hosta](cough_length), har det i det i drygt [långvarig hosta i 1,5 månader](cough_length), började med en ordentlig [förkylning](cough_cold). [Hostan har blivit värre](symptoms_changed) de senaste dagarna. Jag har även [ont i halsen varje morgon](soreThroat_duration). 
+- Jag har under [fem veckors tid haft hosta](cough_length) som inte vill ge med sig. Det börjar med en rejäl [förkylning](cough_cold) [bihåleinflammation](symptom) och [ihållande hosta](cough_shape). 
+- Jag är fortfarande [förkyld](cough_cold:Förkyld) med hosta och halsont men min [astma](cough_chronic) är något bättre. 
+- Har [hostat, i 4 veckor](cough_length) nu. [Jag hostar nästan konstant](cough_shape). Jag har även lite ont i halsen, dock inte någon feber. 
+- Fortfarande [förkyld](cough_cold:Förkyld) med hosta och ont i halsen. 
+- Har fortfarande [ont när jag andas](other_symptoms), hostar och [snorar](cough_cold). Har dessutom haft [ont i underbenen](other_symptoms) från och till och ont i halsen, [hes](other_symptoms) igen. 
+- Jag har hosta, halsont, [ont i hela kroppen](other_symptoms), [ont i bröstet](other_symptoms), [orklös](other_symptoms) och [svårighet att andas](other_symptoms). 
+- [behöver ett läkarintyg](expectation) för långvarig hosta och halsont
+- hosta, [snuva](cough_cold), onti i halsen
+- Det känns som en [torrhosta](cough_shape) som vägrar släppa. Får ont i halsen av att hosta

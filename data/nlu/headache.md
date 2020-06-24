@@ -1,50 +1,152 @@
 ## intent:ask_about_headache
-- jag har [huvudvärk](symptom)
-- Jag har [huvudvärk](symptom)
-- jag har [ont i huvudet](symptom)
-- [huvudvärk](symptom)
-- [Huvudvärk](symptom)
-- [ont i huvudet](symptom)
-- [En pågående episod](headache_utter) av [huvudvärk](symptom) 
-- [återkommande](headache_utter) [huvudvärk](symptom) 
-- [Återkommande](headache_utter) [huvudvärk](symptom) 
-- jag har [återkommande](headache_utter) [huvudvärk](symptom) 
-- jag har [återkommande](headache_utter) [huvudvärk](symptom) 
-- jag har [regelbunden](headache_utter) [huvudvärk](symptom) 
-- Jag har jätte [ont i huvudet](symptom) och blir jätte trött. 
+- [huvudvärk](headache)
+- jag har [huvudvärk](headache)
+- Jag har [huvudvärk](headache)
+- Jag har [huvudvärk](headache)......
+- [Ont i huvudet](headache:huvudvärk)
+- [ont i huvudet](headache:huvudvärk)
+- jag har [ont i huvudet](headache:huvudvärk)
+- Jag har [ont i huvudet](headache:huvudvärk). Det gör mer ont när det är ljust.
+- [huvudvärk](headache)
+- [kraftig huvudvärk](headache_pain:4)
+- [Huvudvärk](headache)
+- huvudvärk och [spända muskler, i nacken](headache_where)
+- spänningshuvudvärk [varje vecka](headache_when)
+- Huvudvärk [stress](other_symptoms)
+- klusterhuvudvärk
+- [huvudvärk bakom ögonen och pannan](headache_where)
+- [ensidig](headache_utter) huvudvärk
+- [huvudvärk](headache) [från nacken](headache_where)
+- [huvudvärk](headache) [uppe på huvudet](headache_where)
+- [huvudvärk](headache) [bakom ögonen](headache_where)
+- jag har haft [huvudvärk i en vecka](headache_when)
+- [Spänningshuvudvärk](headache)
+- vaknar av [huvudvärk på natten](headache_when)
+- Jag vaknar med [migrän](headache:huvudvärk) [på natten](headache_when)
+- mycket jobbigt med [migrän](headache:huvudvärk)
+- Haft [återkommande huvudvärk](headache_utter) [senaste 3-4 mån](headache_when). Kan komma när som helst men framförallt dagtid. LOC gå hem från jobbet flertalet ggr. Inte haft liknande huvudvärk tidigare.
+- Du får en dov, [molande eller tryckande värk i huvudet](headache_utter). Värken är vanligtvis inte skärande, [huggande](headache_utter) eller [pulserande](headache_utter)
+- Värken känns ofta på [båda sidor av huvudet](headache_where)
+- [En pågående episod av huvudvärk](headache_utter)
+- [återkommande huvudvärk](headache_utter)
+- [Återkommande huvudvärk](headache_utter)
+- [Huvudvärken återkommer i perioder](headache_utter) som [varar från timmar till dagar](headache_when)
+- [Huvudvärken är lätt till måttlig](headache_pain:2) . Den kan variera, men blir ofta värre under dagen.
+- jag har [återkommande huvudvärk](headache_utter)
+- jag har [regelbunden huvudvärk](headache_utter)
+- Jag har [jätte ont i huvudet](headache_pain:3) och blir [jätte trött](other_symptoms:Trötthet).
+- Började med [huvudvärk](headache) och [trötthet](other_symptoms) [förra veckan](headache_when). Supertrött. [Lösmage](other_symptoms).
+- Värken blir oftast inte värre av fysisk ansträngning utan lindras istället. Men en del kan få ökad huvudvärk av kraftig fysisk ansträngning.
+- Jag har fått ett slag mot huvudet och efter det fått huvudvärk och känner dig slö.
+- [Huvudvärk](headache) som ökar och blir [starkare och kommer oftare](headache_utter)
+- [Huvudvärk](headache) och känner mig [trött](other_symptoms), har [yrsel](other_symptoms), [öronsus](other_symptoms), [problem med minnet](other_symptoms) och [svårt att koncentrera mig](other_symptoms).
+- Min dotter har ofta [kraftig huvudvärk](headache_pain:4) och [i måndags](headache_when) [kräktes](other_symptoms:Kräkningar) hon.
+- Jag har plötsligt fått en [intensiv huvudvärk](headache_utter)
+- Jag får andra symtom än de som är typiska för [spänningshuvudvärk](headache).
+- Jag har [huvudvärk](headache) som stör det vardagliga livet.
+- Jag har [huvudvärk](headache), är över 50 år och har inte haft spänningshuvudvärk tidigare.
+- Du använder [läkemedel](medication) mot [huvudvärk flera gånger i veckan](headache_when)
+- Jag har haft [daglig huvudvärk i mer än en vecka](headache_when)
+- Jag har tidigare haft [huvudvärk men den nu har den ändrat karaktär](headache_utter)
+- Har sedan [i måndags kväll](headache_when) haft en [ihållande huvudvärk](headache_utter). Sitter över [hela huvudet ner i nacken](headache_where). Tar [Alvedon](medication) och [Ipren](medication).
+- [Ilande](headache_utter) huvudvärk på [hö sida](headache_where:Sidan av huvudet (tinning))
+- Jag har haft [huvudvärk](headache) varje dag de [senaste tre veckorna](headache_when). Jag har ont i [toppen av huvudet](headache_where) och det blir inte bättre
+- [Ont i huvudet](headache:huvudvärk) sen i [fredags morse](headache_when). Tar [alvedon](medication) men hjälper inte mycket
+- Spänningshuvudvärk, värk på [vänster sida](headache_where:Sidan av huvudet (tinning)) av huvudet samt [stel nacke](other_symptoms)
+- Jag har [sjukligt ont i huvudet](headache_pain:4), [mellan ögonen samt efter ögonen (hela pann-zonen](headache_where:Runt eller bakom ögonen) jag har [dimsyn](other_symptoms:Synbesvär) och känner mig lite [yr](other_symptoms:Svindel)
+- Akut [huvudvärk](headache) och [värk bakom ögon](headache_where) går ej över med [Alvedon](medication) och [Ipren](medication)
+- Har varit hemma från jobb pga av [huvudvärk](headache) och [illamående](other_symptoms:Illamående). Har varken feber eller hosta
+- Jag har väldigt [ont i huvudet](headache:huvudvärk), [migrän](symptom). Vanliga [värktabletter](medication) och receptfria medicin hjälper inte
+- [Huvudvärk](headache) som inte går över
+- Jag har [extremt mycket huvudvärk](headache_pain:4) som antagligen är spänningshuvudvärk. Jag orkar inte göra något och [mår även väldigt illa](other_symptoms:Illamående)
+- [Kraftig huvudvärk](headache_pain:4), Det känns som att något [sväller i huvudet](other_symptoms). Jag har tagit [Alvedon](medication)
+- Ont i huvud, i [över två veckor](headache_when)
+- Jag har under de [två senaste dagarna](headache_when) haft [ihållande huvudvärk](headache_utter:Återkommande huvudvärk) som inte ger sig
+- Haft [huvudvärk](headache) med [domningar i ansiktet](other_symptoms:Känselnedsättning eller domning) samt [problem med smak och lukt](other_symptoms)
+- Jag har väldigt länge haft stora problem med [migrän](headache:huvudvärk)
+- Jag har haft [huvudvärk i 1,5v](headache_when:För 1 till 30 dagar sedan)
+- Jag har haft en [huvudvärk](headache) som har varit mer eller mindre [konstant](headache_utter) [sedan en vecka tillbaka](headache_when). Huvudvärken ligger i [tinningarna och i pannan](headache_where)
+- [Huvudvärk dagligen](headache_utter) sedan [ca 1 år tillbaka](headache_when)
+- Jag har haft [huvudvärk i 5 dagar](headache_when), lindrar symptomen med min [migränmedicin](medication)
+- Jag skulle behöva en starkare medicin mot [huvudvärk](headache). [Panodil](medication) hjälper inte.
+- [huvudvärk till och från](headache_utter)
+- [återkommande](headache_utter) [huvudvärk](headache)
+- Upplever ett [försämrat allmäntillstånd](state_of_health:40) sen förra veckan. [Yrsel](other_symptoms), huvudvärk, [illamående](other_symptoms), [lös i magen](other_symptoms), [trötthet](other_symptoms), [värk i kroppen](other_symptoms), behöver ta mer [astmamedicin](medication) än vanligt, stundtals tyngre med andningen.
+- Har [huvudvärk. Detta sedan 1 dygn tillbaka](headache_when).
+- [Huvudvärk](headache), [ljud- och ljuskänslig](other_symptoms), samt [ögonmigrän](other_symptoms)
+- [Spänningshuvudvärk, senaste veckan](headache_when)
+- Ihållande [huvudvärk sedan 5 dagar](headache_when)
+- [Täppt](other_symptoms), huvudvärk
+- [huvudvärk](headache), [synbesvär](other_symptoms)
+- [jag vill boka tid](expectation) för huvuvdvärk
+- [huvudvärk sedan 3 dagar tillbaka](headache_when)
+- [rekursiv](headache_utter) huvudvärk
+- Många får [huvudvärk](headache) av [stress](other_symptoms)
+- [problem med käkarna](other_symptoms) och huvudvärk
+- [huvudvärk](headache) och [synfel](other_symptoms)
+- min [huvudvärk ökar under flera veckors tid](headache_when)
+- jag efter ett [slag mot huvudet har huvudvärk](headache_utter) och känner mig [slö](other_symptoms)
+- jag får [huvudvärk](headache) med eller utan neurologiska bortfall
+- jag får [huvudvärk](headache) med eller utan [yrsel](other_symptoms) och [förvirring](other_symptoms)
+- jag får [huvudvärk](headache) som du [inte känner igen sedan tidigare](headache_utter)
+- jag får [ont i ena ögat](headache_where) och förändrad syn, [huvudvärk](headache)
+- jag får [ont vid tinningen och käkarna](headache_where)
+- jag får [svårt att tala eller röra dig som vanligt](other_symptoms)
+- jag får [plötslig och intensiv huvudvärk](headache_utter)
+- huvudvärk och [dåligt allmänttillstånd](state_of_health:30)
+- jag [mår väldigt dåligt](state_of_health:30) och har [ont i huvudet](headache:huvudvärk)
 
-## intent:ask_about_headache+ask_about_coughFever
-- [Huvudvärk](symptom) och [hosta](symptom)
-- [huvudvärk](symptom) och [hosta](symptom)
-- jag har [huvudvärk](symptom) och [hosta](symptom)
-- Jag har [huvudvärk](symptom) och [hosta](symptom)
-- Har haft [huvudvärk](symptom) med sus i öronen och lätt [feber](symptom) en vecka.
+## intent:ask_about_headache+ask_about_cough
+- [Huvudvärk](headache) och [hosta](cough)
+- [huvudvärk](headache) och [hosta](cough)
+- jag har [huvudvärk](headache) och [hosta](cough)
+- Jag har [huvudvärk](headache) och [hosta](cough)
+- Jag har [hosta](cough) och [huvudvärk](headache)
+- [Hosta](cough) och [huvudvärk](headache)
+- [Hostar](cough:hosta) fortfarande och har [ont i bröstet](other_symptoms), [huvudvärk till och från](headache_utter) och blir väldigt [andfådd](other_symptoms).
+- Väldigt [intensiv hosta](cough_shape), [huvudvärk](headache), får [ont i nacken](other_symptoms) vid minsta fysiska aktivitet. [Väldigt trött](other_symptoms), [svullna ögon](other_symptoms).
+- [hostigt](cough:hosta) och [ont i huvudet](headache)
+- Har varit sjuk och är nu bättre men [hostar](cough:hosta) fortfarande och har [ont i bröstet](other_symptoms), [huvudvärk](headache) till och från och blir väldigt anfådd. [Behöver jag ett sjukintyg?](expectation)
+- Kontaktade er ang mina symtom med [huvudvärk](headache), [yrsel](other_symptoms), [hosta](cough), [tryck över bröstet](other_symptoms) och att jag blir lätt [anfådd](other_symptoms).
+- [Vill ha en tid](expectation) för min [huvudvärk](headache) och [hosta](cough)
+- [Kontakta mig](expectation) för min [huvudvärk](headache) och [hosta](cough)
+- [ont i huvuvdet](headache:Huvudvärk) och återkommande [hosta](cough)
 
-## intent:headache_meds
-- Paracetamol (Alvedon, Panodil, Pamol)
-- Ibuprofen (Ipren, Brufen, Ibumetin)
-- Alvedon
-- Brufen
-- Ibumetin
-- Panodil
-- Pamol
-- Ipren
-- Paracetamol
+## intent:ask_about_headache+ask_about_fever
+- Har haft huvudvärk med [sus i öronen](other_symptoms) och lätt [feber en vecka](fever_length).
+- [Hög feber](fever_temperature:39,0-39,9 grader) [feber i många dagar](fever_length). Ont i huvudet, [dåligt allmäntillstånd](state_of_health:40). [Andfåddhet](other_symptoms) vid minsta ansträngning.
+- [Kraftig huvudvärk](headache_pain:4), [ont i kroppen](other_symptoms), [orkeslös](other_symptoms), [matt](other_symptoms), [hjälpklappning](other_symptoms) vid ansträngning, [feber som kommer och går](fever_length), ont i halsen, [torr i ögonen](other_symptoms), pågått [i två veckor](headache_when)
+- Blev [snuvig](symptom) igår o idag har jag fått feber o ont i huvudet ingen hosta
+- feber och huvudvärk
+- ont i huvudet och feber
+- jag har ont när jag [lutar huvudet framåt](headache_where). Det kommer ut gulbrunt slem från näsan och jag har feber.
+- Jag har huvudvärk samtidigt som jag har feber och är stel i nacken.
 
-## synonym:återkommande
-- regelbunden
-- periodisk
-- upprepad
-- stående
-- repetitiv
-- som kommer tillbaka ofta
 
-## synonym:huvudvärk
-- ont i huvudet
-- migrän
-- spänningshuvudvärk
-- annan huvudvärk
-- huvudvärk vid sjukdom
-- huvudvärk vid psykisk ohälsa
-- huvudvärk vid bettsmärta och käksmärta
-- huvudvärk orsakad av läkemedel.
+## intent:ask_about_headache+ask_about_soreThroat
+- Huvudvärk och halsont
+- Huvudvärk och ont i halsen
+- huvudvärk och halsont
+- jag har huvudvärk och halsont
+- halsont och huvudvärk
+- jag har problem med halsen och ont i huvudet
+- Har [sedan torsdags varit hemma med huvudvärk](headache_when) och halsont. [Paracetamol](medication) hjälper inte mot huvudvärken. [Huvudvärken har kommit och gått](headache_utter) så även halsonda.
+- Jag har haft [ont i halsen i 3 veckor](soreThroat_duration), men [i onsdags Huvudvärk](headache_when), “tung” känsla i huvudet och halsont.
+- ont i halsen och huvudvärk
+- få ont i halsen, huvudvärk eller [ont i muskler och leder](other_symptoms).
+- Barn kan klaga på huvudvärk, ont upp mot halsen och ont i magen.
+- Halsont, [snuva](other_symptoms), huvudvärk och [muskelvärk](other_symptoms) är till exempel vanligt i samband med tillfälliga [virusinfektioner](other_symptoms)
+
+## intent:ask_about_headache+ask_about_soreThroat+ask_about_fever
+- huvudvärk, halsont och feber
+- halsont, huvudvärk och feber
+- jag har huduvdärk och ont i halsen och feber
+
+## intent:ask_about_headache+ask_about_soreThroat+ask_about_cough
+- huvudvärk, halsont och hosta
+- huvudvärk och feber och hosta
+
+## intent:ask_about_headache+ask_about_soreThroat+ask_about_cough+ask_about_fever
+- huvudvärk, halsont, feber och hosta
+- huvudvärk, halsont, feber och host
+- jag har hög feber och huvudvärk sedan igår, ont i halsen sedan 2 dagar tillbaka och hostar
